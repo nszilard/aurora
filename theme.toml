@@ -1,0 +1,38 @@
+name        = "Aurora"
+description = "A fully responsive Hugo theme featuring a minimalist and user-friendly design."
+homepage    = "https://github.com/nszilard/aurora"
+license     = "MIT"
+licenselink = "https://github.com/nszilard/aurora/blob/main/LICENSE"
+min_version = "0.111.0"
+
+features = [
+  "Minimalist design",
+  "User-friendly",
+  "Fully responsive",
+  "Card design",
+  "Experience timeline",
+  "Project cards",
+  "Dark theme",
+  "Post categories and topics",
+  "Syntax highlighting",
+  "PWA",
+]
+
+tags = [
+  "Minimalist",
+  "Responsive",
+  "User-friendly",
+  "Resume",
+  "Portfolio",
+  "Projects",
+  "Posts",
+  "Blog",
+  "Dark mode",
+  "Bootstrap",
+  "Syntax highlighting",
+  "PWA",
+]
+
+[author]
+  name = "Szilárd Nagy"
+  homepage = "https://nszilard.github.io"
