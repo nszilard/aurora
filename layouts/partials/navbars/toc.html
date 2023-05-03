@@ -1,0 +1,16 @@
+{{- $startLevel := .Site.Params.tocStartLevel | default 2 -}}
+{{- $endLevel := .Site.Params.tocEndLevel | default 3 -}}
+{{- $tagRe := printf "h[%d-%d]" $startLevel $endLevel -}}
+{{- $tocRe := printf "<%s.*?>(.|\n])+?</%s>" $tagRe $tagRe -}}
+{{- $headers := findRE $tocRe .Content -}}
+{{- with $headers }}
+<li class="divider"></li>
+<li class="title">Table of Content</li>
+{{- range . }}
+{{- $tagname := substr . 1 2 }}
+{{- $header := . | plainify | htmlUnescape }}
+<li class="nav-item toc">
+  <a class="nav-link" id="{{ $tagname }}-{{ $header | anchorize }}" href='#{{ $header | anchorize }}'>{{ $header }}</a>
+</li>
+{{- end -}}
+{{- end -}}

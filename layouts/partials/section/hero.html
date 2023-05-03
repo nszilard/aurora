@@ -1,0 +1,19 @@
+{{- $hero := "" -}}
+{{- if or (eq .Title "Portfolio") (eq .Title "Projects") (eq .Title "Posts") -}}
+  {{- with .Params.hero }}
+    {{- $hero = . -}}
+  {{- else -}}
+    {{- $hero = .Title -}}
+  {{- end -}}
+{{- else -}}
+  {{- $hero = (print .Title " " "posts") -}}
+{{- end -}}
+
+<section class="container-fluid p-lg-5 py-3 hero aurora-background" id="hero">
+  <div class="row">
+    <h1 class="title text-center"> {{ $hero }} </h1>
+    {{ with .Params.description -}}
+    <div class="description text-center"> {{ . }} </div>
+    {{ end -}}
+  </div>
+</section>

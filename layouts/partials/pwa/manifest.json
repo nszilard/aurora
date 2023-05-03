@@ -1,0 +1,50 @@
+{{- $data := newScratch -}}
+{{- $logo := partialCached "get/logo/pwa" . -}}
+{{- $logoSVG := partialCached "get/logo/site" . -}}
+
+{{- $data.SetInMap "json" "lang" $.Language.Lang -}}
+{{- $data.SetInMap "json" "name" $.Site.Title -}}
+{{- $data.SetInMap "json" "short_name" $.Site.Title -}}
+{{- $data.SetInMap "json" "description" $.Site.Params.description -}}
+{{- $data.SetInMap "json" "start_url" "/" -}}
+{{- $data.SetInMap "json" "scope" "/" -}}
+{{- $data.SetInMap "json" "display" "standalone" -}}
+{{- $data.SetInMap "json" "orientation" "portrait" -}}
+{{- $data.SetInMap "json" "theme_color" "#3daabb" -}}
+{{- $data.SetInMap "json" "background_color" "#191f26" -}}
+
+{{- $icons := slice -}}
+{{- $iconSizes := slice "48x48" "72x72" "96x96" "144x144" "168x168" "192x192" "256x256" "512x512" -}}
+{{- range $iconSizes -}}
+  {{- $resizedIcon := $logo.Resize . -}}
+  {{- $icon := newScratch -}}
+  {{- $icon.SetInMap "data" "sizes" . -}}
+  {{- $icon.SetInMap "data" "src" $resizedIcon.RelPermalink -}}
+  {{- $icon.SetInMap "data" "type" "image/png" -}}
+  {{- $icons = $icons | append ($icon.Get "data") -}}
+{{- end -}}
+{{- $icon := newScratch -}}
+{{- $icon.SetInMap "data" "purpose" "any maskable" -}}
+{{- $icon.SetInMap "data" "sizes" "512x512" -}}
+{{- $icon.SetInMap "data" "src" $logoSVG.RelPermalink -}}
+{{- $icon.SetInMap "data" "type" "image/svg+xml" -}}
+{{- $icons = $icons | append ($icon.Get "data") -}}
+{{- $data.SetInMap "json" "icons" $icons -}}
+
+{{- $shortcuts := slice -}}
+{{- $portfolio := $.Site.GetPage "/portfolio" -}}
+{{- $projects := $.Site.GetPage "/projects" -}}
+{{- $posts := $.Site.GetPage "/posts" -}}
+{{- $pages := slice $portfolio $projects $posts -}}
+{{- range $pages -}}
+  {{- $page := newScratch -}}
+  {{- $page.SetInMap "data" "name" ( printf "%s%s%s" .Title " | " .Site.Title) -}}
+  {{- $page.SetInMap "data" "shortname" .Title -}}
+  {{- $page.SetInMap "data" "description" ( .Params.description | default .Title ) -}}
+  {{- $page.SetInMap "data" "url" .RelPermalink -}}
+  {{- $page.SetInMap "data" "icons" $icons -}}
+  {{- $shortcuts = $shortcuts | append ($page.Get "data") -}}
+{{- end -}}
+{{- $data.SetInMap "json" "shortcuts" $shortcuts -}}
+
+{{- $data.Get "json" | jsonify (dict "prefix" "" "indent" "  ") -}}

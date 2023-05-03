@@ -1,0 +1,25 @@
+{{- $icon := "fas fa-ribbon" -}}
+{{- if eq .type "Award" }} {{ $icon = "fas fa-award" }} {{ end -}}
+{{- if eq .type "Certificate" }} {{ $icon = "fas fa-medal" }} {{ end -}}
+{{- if .icon }} {{ $icon = .icon }} {{ end -}}
+
+<div class="card">
+  <div class="icon">
+    <i class="{{ $icon }}"></i>
+  </div>
+  <div class="header">
+    <div class="title"> {{ .name }} </div>
+    <div class="date"> {{ .date }} </div>
+  </div>
+  <div class="content">
+    {{ if eq .type "Award" -}}
+    <div class="description">{{ .description }}</div>
+    {{ end -}}
+    {{ if eq .type "Certificate" -}}
+    <div>
+      <span>ID: </span>
+      <a class="id" href="{{ .link }}" target="_blank">{{ .ID }}</a>
+    </div>
+    {{ end -}}
+  </div>
+</div>

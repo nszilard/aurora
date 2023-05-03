@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5"/>
+<meta name="designer" content="Szilárd Nagy">
+<meta name="theme-color" content="#3daabb"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#3daabb">
+<meta name="msapplication-TileColor" content="#3daabb">
+{{ with site.Params.author -}}
+<meta name="author" content="{{ .firstname }} {{ .lastname }}"/>
+{{ end -}}
+{{ with site.Params.description -}}
+<meta name="description" content="{{ . }}"/>
+{{ end -}}
+{{ with .Site.Params.keywords -}}
+<meta name="keywords" content="{{ . }}"/>
+{{ end -}}
+
+{{ if .Paginator -}}
+{{ if .Paginator.HasPrev -}}
+<link rel="prev" href="{{ .Paginator.Prev.URL | absURL }}" />
+{{ end -}}
+{{ if .Paginator.HasNext -}}
+<link rel="next" href="{{ .Paginator.Next.URL | absURL }}" />
+{{ end -}}
+<link rel="canonical" href="{{ .Paginator.URL | absURL }}" />
+{{ else -}}
+<link rel="canonical" href="{{ .Permalink }}" />
+{{ end -}}
+
+{{ with .Params.robots | default "index, follow" -}}
+<meta name="robots" content="{{ . }}"/>
+{{ end -}}
+{{ with .Site.Params.verification.google -}}
+<meta name="google-site-verification" content="{{ . }}" />
+{{ end -}}
+{{ with .Site.Params.verification.bing -}}
+<meta name="msvalidate.01" content="{{ . }}" />
+{{ end -}}

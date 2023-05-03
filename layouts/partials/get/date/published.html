@@ -1,0 +1,7 @@
+{{- $date := now -}}
+
+{{- with or .Date .Lastmod -}}
+  {{- $date = . -}}
+{{- end -}}
+
+{{- return $date -}}

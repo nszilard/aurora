@@ -1,0 +1,19 @@
+{{- define "content" -}}
+
+{{ partial "navbars/posts" . }}
+{{ partial "section/hero" . }}
+<div class="bg container container-fluid p-lg-5 py-3 blog" id="blog">
+  <div class="row pt-4">
+    {{ partial "section/taxonomy" . }}
+  </div>
+  <div class="row posts pt-4">
+  {{ range .Paginator.Pages -}}
+    <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
+      {{ partial "cards/article" . }}
+    </div>
+  {{ end -}}
+  </div>
+</div>
+{{ partial "section/pagination" . -}}
+
+{{- end -}}

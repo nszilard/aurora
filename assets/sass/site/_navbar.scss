@@ -1,0 +1,144 @@
+.top-navbar {
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  word-spacing: 1.5px;
+  letter-spacing: 0.2px;
+  transition: $AURORA_TRANSITION;
+  background-color: $BACKGROUND_BLACK;
+  border-bottom: 1px solid $BACKGROUND_HIGHLIGHT;
+
+  .navbar-brand {
+    color: $FONT;
+    font-weight: 600;
+    font-size: 1.15rem;
+  }
+
+  .navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+    padding: 0.3rem 0.5rem;
+    margin-left: 1rem;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .nav-link.active {
+    color: $PRIMARY;
+    font-weight: 600;
+  }
+
+  .navbar-collapse {
+    flex-direction: row-reverse;
+
+    li {
+      a {
+        font-weight: 500;
+        color: $FONT;
+
+        &:hover {
+          color: $HIGHLIGHT;
+        }
+
+        &:active {
+          color: $PRIMARY;
+          font-weight: 600;
+        }
+      }
+    }
+
+    &.show,
+    &.collapsing {
+      padding-bottom: 0.5rem;
+      background-color: $BACKGROUND_BLACK;
+    }
+  }
+
+  .divider {
+    display: none;
+    background: $FONT_LOWLIGHT;
+  }
+}
+
+.article-navbar {
+  .posts-link {
+    margin-right: 52px;
+  }
+
+  .divider {
+    display: block;
+    height: auto;
+    width: auto;
+    margin: 0.75rem 1rem;
+    border-top: 1px solid $FONT_LOWLIGHT;
+  }
+
+  .title {
+    color: $BACKGROUND_HIGHLIGHT;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .toc {
+    font-style: italic;
+  }
+
+  li {
+    a {
+      font-weight: 500;
+      color: $PRIMARY;
+
+      &:hover {
+        color: $HIGHLIGHT;
+      }
+
+      &:active {
+        color: $PRIMARY;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+/* ============= Device specific fixes ============= */
+
+@include desktop-sm {
+  .top-navbar {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+
+    .navbar-brand {
+      font-size: 0;
+    }
+
+    .divider {
+      display: block;
+      height: auto;
+      width: auto;
+      margin: 0.5rem 0;
+      border-top: 1px solid $FONT_LOWLIGHT;
+    }
+  }
+
+  .article-navbar {
+    .posts-link {
+      margin-right: 0;
+    }
+  }
+}

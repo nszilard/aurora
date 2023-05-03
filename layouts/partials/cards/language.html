@@ -1,0 +1,14 @@
+{{- $icon := "fas fa-globe-europe" -}}
+{{- if .logo }} {{ $icon = .logo }} {{ end -}}
+
+<div class="card">
+  <div class="icon">
+    <i class="{{ $icon }}"></i>
+  </div>
+  <div class="title">
+    {{ .name }}
+  </div>
+  <div class="content">
+    <span class="qualification">{{ .qualification }}</span>
+  </div>
+</div>

@@ -1,0 +1,146 @@
+article {
+  flex-grow: 1;
+
+  mark {
+    clear: both;
+    font-style: italic;
+    text-transform: unset;
+    background-color: $BACKGROUND_LIGHTER;
+
+    &:hover {
+      background-color: $FONT;
+    }
+  }
+
+  .card {
+    margin-bottom: 2em;
+
+    .content {
+      margin: 0.5rem;
+
+      .meta {
+        color: $FONT_LOWLIGHT;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: 0.8rem;
+        font-style: italic;
+        margin: 0.25rem;
+        letter-spacing: 0.01rem;
+
+        i {
+          color: $PRIMARY;
+          margin: 0 0.15rem;
+          font-size: 1rem;
+          vertical-align: top;
+        }
+      }
+
+      .title {
+        font-size: 2rem;
+        margin: 1rem 0 0;
+        transition: $AURORA_TRANSITION;
+      }
+
+      .preamble {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: $FONT;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0.2rem;
+        margin: 0.25rem 0.5rem;
+      }
+
+      .read-more {
+        margin: 1.25rem auto 1.5rem auto;
+
+        .btn,
+        .btn-dark {
+          padding: 0.4rem 1rem;
+          color: $PRIMARY;
+          border-color: $BACKGROUND_HIGHLIGHT;
+          background: transparentize($BACKGROUND_LIGHTER, 0.30);
+          transition: $AURORA_TRANSITION;
+
+          &:hover {
+            color: $BACKGROUND_DARKER;
+            background: $PRIMARY;
+          }
+
+          &:active {
+            color: $PRIMARY;
+            background: $BACKGROUND_LIGHTER;
+          }
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+
+      .tags {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 0.25rem;
+        margin: 0 0.25rem;
+        transition: $AURORA_TRANSITION;
+        border-top: 1px solid $FONT_LOWLIGHT;
+        border-image: linear-gradient(
+          90deg,
+          $BACKGROUND_HIGHLIGHT 0%,
+          $FONT_LOWLIGHT 50%,
+          $BACKGROUND_HIGHLIGHT 100%
+        ) 1;
+
+        .name {
+          flex-grow: 0;
+          flex-shrink: 0;
+          font-size: 0.8rem;
+          font-style: italic;
+          margin-top: 0.3rem;
+          padding-right: 0.5rem;
+          letter-spacing: 0.01rem;
+
+          i {
+            color: $PRIMARY;
+            margin: 0 0.15rem;
+            font-size: 1rem;
+          }
+        }
+
+        .topics {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          flex-grow: 1;
+          justify-content: flex-end;
+
+          mark {
+            font-size: 0.7rem;
+            line-height: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .card {
+      .content {
+        .tags {
+          border-image: linear-gradient(
+            90deg,
+            $BACKGROUND_HIGHLIGHT 0%,
+            $FONT 50%,
+            $BACKGROUND_HIGHLIGHT 100%
+          ) 1;
+        }
+      }
+    }
+  }
+}

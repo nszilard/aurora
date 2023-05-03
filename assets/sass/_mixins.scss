@@ -1,0 +1,52 @@
+@mixin mobile-xs {
+  @media only screen and (max-width:375px) {
+    @content;
+  }
+}
+
+@mixin mobile-s {
+  @media only screen and (max-width:400px) {
+    @content;
+  }
+}
+
+// Bootstrap class suffix: sm
+@mixin mobile {
+  @media only screen and (max-width:575px) {
+    @content;
+  }
+}
+
+// Bootstrap class suffix: md
+@mixin tablet {
+  @media only screen and (max-width:767px) {
+    @content;
+  }
+}
+
+// Bootstrap class suffix: lg
+@mixin desktop-sm {
+  @media only screen and (max-width:991px) {
+    @content;
+  }
+}
+
+// Bootstrap class suffix: xl
+@mixin desktop {
+  @media only screen and (max-width:1200px) {
+    @content;
+  }
+}
+
+@mixin desktop-lg {
+  @media only screen and (max-width:1400px) {
+    @content;
+  }
+}
+
+// Bootstrap class suffix: xxl
+@mixin desktop-xl {
+  @media only screen and (min-width:1400px) {
+    @content;
+  }
+}

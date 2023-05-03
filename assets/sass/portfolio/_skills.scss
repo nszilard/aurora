@@ -1,0 +1,65 @@
+.skills {
+  .slider {
+    .wrapper {
+      .card {
+        min-height: 320px;
+        width: 550px;
+
+        .content {
+          overflow-y: scroll;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ============= Device specific fixes ============= */
+
+@include tablet {
+  .skills {
+    .slider {
+      .wrapper {
+        .card {
+          min-height: 350px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .skills {
+    .slider {
+      .wrapper {
+        .card {
+          min-height: 380px;
+
+          .title {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile-s {
+  .skills {
+    .slider {
+      .wrapper {
+        .card {
+          min-height: 420px;
+          .title {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{{- $slickOptions := (dict "targetPath" "css/slick.css" "outputStyle" "compressed") -}}
+{{- $slick := resources.Get "plugins/slick/slick.min.css" -}}
+{{- $slick = $slick | resources.ToCSS $slickOptions }}
+<link rel="stylesheet" type="text/css" media="screen" href="{{ $slick.RelPermalink }}" integrity="{{ $slick.Data.Integrity }}"/>
+
+{{- $bootstrapOptions := (dict "targetPath" "css/bootstrap.css" "outputStyle" "compressed") -}}
+{{- $bootstrap := resources.Get "plugins/bootstrap/bootstrap.css" -}}
+{{- $bootstrap = $bootstrap | resources.ToCSS $bootstrapOptions -}}
+{{- $bootstrap = $bootstrap | resources.PostCSS -}}
+{{- $bootstrap = $bootstrap | resources.PostProcess }}
+<link rel="stylesheet" type="text/css" media="screen" href="{{ $bootstrap.RelPermalink }}" integrity="{{ $bootstrap.Data.Integrity }}"/>
+
+{{- $faOptions := (dict "targetPath" "css/font-awesome.css" "outputStyle" "compressed") -}}
+{{- $fa := resources.Get "plugins/font-awesome/all.min.css" -}}
+{{- $fa = $fa | resources.ToCSS $faOptions -}}
+{{- $fa = $fa | resources.PostCSS -}}
+{{- $fa = $fa | resources.PostProcess }}
+<link rel="stylesheet" type="text/css" media="screen" href="{{ $fa.RelPermalink }}" integrity="{{ $fa.Data.Integrity }}"/>
+
+{{- $options := (dict "targetPath" "css/main.css" "outputStyle" "compressed") -}}
+{{- $main := resources.Get "sass/main.scss" -}}
+{{- $main = $main | resources.ToCSS $options }}
+<link rel="stylesheet" type="text/css" media="screen" href="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}"/>

@@ -1,0 +1,48 @@
+.taxonomies {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+
+  .title {
+    color: $FONT_HIGHLIGHT;
+    margin: 0.25rem 0 0.75rem;
+    font-size: 1.5rem;
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .category {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tag {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+
+  .items {
+    font-style: italic;
+
+    a {
+      margin: auto 0.1rem;
+    }
+
+    mark {
+      font-size: 0.95rem;
+      text-transform: none;
+      letter-spacing: 0.02rem;
+    }
+  }
+}

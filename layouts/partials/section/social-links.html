@@ -1,0 +1,76 @@
+{{ with site.Params.Social -}}
+{{ with .email -}}
+<li class="list-inline-item">
+  <a target="_blank" href="mailto:{{ . | htmlEscape }}">
+    <i class="fas fa-envelope" title="Email"></i>
+  </a>
+</li>
+{{ end -}}
+
+{{ with .github -}}
+<li class="list-inline-item">
+  <a target="_blank" href="https://github.com/{{ . | htmlEscape }}" rel="noopener">
+    <i class="fab fa-github" title="GitHub"></i>
+  </a>
+</li>
+{{ end -}}
+
+{{ with .gitlab -}}
+<li class="list-inline-item">
+  <a target="_blank" href="https://gitlab.com/{{ . | htmlEscape }}" rel="noopener">
+    <i class="fab fa-gitlab" title="GitLab"></i>
+  </a>
+</li>
+{{ end -}}
+
+{{ with .linkedin -}}
+<li class="list-inline-item">
+  <a target="_blank" href="https://linkedin.com/in/{{ . | htmlEscape }}" rel="noopener">
+    <i class="fab fa-linkedin" title="LinkedIn"></i>
+  </a>
+</li>
+{{ end -}}
+
+{{ with .stackoverflow -}}
+<li class="list-inline-item">
+  <a target="_blank" href="https://stackoverflow.com/users/{{ . | htmlEscape }}" rel="noopener">
+    <i class="fab fa-stack-overflow" title="StackOverflow"></i>
+  </a>
+</li>
+{{ end -}}
+
+{{ with .instagram -}}
+<li class="list-inline-item">
+  <a target="_blank" href="https://instagram.com/{{ . | htmlEscape }}" rel="noopener">
+    <i class="fab fa-instagram" title="Instagram"></i>
+  </a>
+</li>
+{{ end -}}
+
+{{ with .facebook -}}
+<li class="list-inline-item">
+  <a target="_blank" href="https://facebook.com/{{ . | htmlEscape }}" rel="noopener">
+    <i class="fab fa-facebook" title="Facebook"></i>
+  </a>
+</li>
+{{ end -}}
+
+{{ with .twitter -}}
+<li class="list-inline-item">
+  <a target="_blank" href="https://twitter.com/{{ . | htmlEscape }}" rel="noopener">
+    <i class="fab fa-twitter" title="Twitter"></i>
+  </a>
+</li>
+{{ end -}}
+
+
+{{ if .custom -}}
+  {{ range .custom -}}
+<li class="list-inline-item">
+  <a target="_blank" href="{{ .url | htmlEscape }}" rel="noopener">
+    <i class="{{ .icon }}" title="{{ .name | title }}"></i>
+  </a>
+</li>
+  {{ end -}}
+{{ end -}}
+{{- end -}}

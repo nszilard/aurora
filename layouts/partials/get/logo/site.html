@@ -1,0 +1,12 @@
+{{- $asset := "/theme/logo.svg" -}}
+
+{{- with site.Params.Logo.Main -}}
+  {{- if (fileExists (printf "assets/%s" . )) -}}
+    {{- $asset = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $logo := resources.Get $asset -}}
+{{- if and $logo (ne $logo.MediaType.SubType "svg") }} {{ $logo = $logo.Resize "42x" }} {{ end -}}
+
+{{- return $logo -}}

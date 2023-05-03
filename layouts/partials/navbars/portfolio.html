@@ -1,0 +1,52 @@
+{{- $logo := partialCached "get/logo/site" . -}}
+{{- $projectsCount := len site.Data.projects -}}
+{{- $postCount := len (where .Site.RegularPages "Section" "==" "posts") -}}
+
+{{- $portfolioNavs := slice -}}
+{{- if site.Data.portfolio -}}
+  {{- range sort site.Data.portfolio "section.weight" -}}
+    {{- if .section.showOnNavbar -}}
+      {{- $sectionID := replace (lower .section.name) " " "-" -}}
+      {{- if .section.id }} {{ $sectionID = .section.id }} {{ end -}}
+      {{- $portfolioNavs = $portfolioNavs | append (dict "name" .section.name "id" $sectionID ) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<nav class="navbar navbar-expand-lg top-navbar sticky-top scroll-target" id="portfolio-navbar">
+  <div class="container container-fluid">
+    <a class="navbar-brand" id="home-link" href="{{ site.BaseURL | relURL }}">
+      <img src="{{ $logo.RelPermalink }}" id="logo" alt="logo" height="40" width="40">
+      Home
+    </a>
+    <button type="button" id="navbar-toggler" class="navbar-toggler navbar-dark"
+      data-bs-toggle="collapse" data-bs-target=".collapse"
+      aria-label="menu" aria-expanded="false" aria-controls="portfolioSectionNavs">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="portfolioSectionNavs">
+      <ul class="navbar-nav">
+        {{ range $portfolioNavs -}}
+        <li class="nav-item">
+          <a class="nav-link" id="{{ .name }}-link" href="#{{ .id }}">{{ .name }}</a>
+        </li>
+        {{ end -}}
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="pageNavs">
+      <ul class="navbar-nav">
+        <li class="divider"> </li>
+        {{ if gt $projectsCount 0 -}}
+        <li class="nav-item">
+          <a class="nav-link" id="projects-link" href='{{ partial "get/path/projects" }}'>Projects</a>
+        </li>
+        {{ end -}}
+        {{ if gt $postCount 0 -}}
+        <li class="nav-item">
+          <a class="nav-link" id="blog-link" href='{{ partial "get/path/posts" }}'> Posts </a>
+        </li>
+        {{ end -}}
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,19 @@
+/*!
+ *------------------------------------------------------------------
+ * PROJECT: Aurora
+ * VERSION: 1.0.0
+ * AUTHOR:  Szilárd Nagy
+ *-------------------------------------------------------------------
+*/
+
+@import "colors";
+@import "mixins";
+@import "animations";
+
+@import "site/main";
+@import "cards/main";
+@import "portfolio/main";
+@import "projects/main";
+@import "posts/main";
+
+@import "overwrite";

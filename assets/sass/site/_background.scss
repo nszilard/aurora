@@ -1,0 +1,20 @@
+.bg {
+  background: $BACKGROUND_LIGHTER !important;
+}
+
+.bg-darker {
+  background: $BACKGROUND_DARKER !important;
+}
+
+.aurora-background {
+  background: $BACKGROUND_BLACK;
+  background: linear-gradient(180deg,
+    $AURORA_GREEN 0%,
+    black 25%,
+    black 75%,
+    $AURORA_BLUE 100%
+  );
+
+  border-top: 1px solid $BACKGROUND_HIGHLIGHT;
+  border-bottom: 1px solid $BACKGROUND_HIGHLIGHT;
+}

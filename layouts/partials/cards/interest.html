@@ -1,0 +1,16 @@
+{{- $icon := "far fa-star" -}}
+{{- if .icon }} {{ $icon = .icon }} {{ end -}}
+
+<div class="card">
+  <div class="icon">
+    <i class="{{ $icon }}"></i>
+  </div>
+  <div class="title">
+    {{ .type }}
+  </div>
+  <div class="content">
+    {{ range .items -}}
+    <mark>{{ . }}</mark>
+    {{ end -}}
+  </div>
+</div>

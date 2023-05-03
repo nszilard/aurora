@@ -1,0 +1,9 @@
+{{- $value := "" -}}
+{{- $modified := .Lastmod.UTC.Format "2006.01.2." -}}
+{{- $published := .Date.UTC.Format "2006.01.2." -}}
+
+{{- if and (ne $modified $published) (gt $modified $published) -}}
+  {{- $value = .Lastmod -}}
+{{- end -}}
+
+{{- return $value -}}

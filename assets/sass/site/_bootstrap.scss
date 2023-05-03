@@ -1,0 +1,40 @@
+.container {
+  max-width: 75%;
+  max-width: calc(min(75vw, 1700px));
+}
+
+mark {
+  font-size: 0.9rem;
+  line-height: 2.2rem;
+  margin: 0 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  letter-spacing: 0.06rem;
+  font-style: italic;
+  white-space: nowrap;
+  transition: $AURORA_TRANSITION;
+
+  color: $FONT_LOWLIGHT;
+  background-color: transparent;
+  box-shadow: 0 1px 2px $PRIMARY, 0 -2px 0px $BACKGROUND_BLACK;
+
+  &:hover {
+    color: $BACKGROUND_BLACK;
+    background-color: $FONT;
+    box-shadow: 0 1px 2px $BACKGROUND_BLACK;
+  }
+}
+
+/* ============= Device specific fixes ============= */
+
+@include desktop-lg {
+  .container {
+    max-width: 95%;
+  }
+}
+
+@include tablet {
+  .container {
+    max-width: 99%;
+  }
+}

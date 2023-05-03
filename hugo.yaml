@@ -1,0 +1,110 @@
+# ---------------------------------------
+# Top level settings
+# ---------------------------------------
+paginate: 6
+enableEmoji: true
+enableGitInfo: true
+enableRobotsTXT: true
+enableInlineShortcodes: true
+pygmentsUseClasses: true
+pygmentsCodefences: true
+
+# ---------------------------------------
+# Build settings
+# ---------------------------------------
+build:
+  writeStats: true
+
+# ---------------------------------------
+# Languages settings
+# ---------------------------------------
+languages:
+  en:
+    weight: 1
+    languageName: English
+
+# ---------------------------------------
+# Markup settings
+# ---------------------------------------
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+    renderer:
+      unsafe: true
+      hardWraps: false
+  highlight:
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    noClasses: false
+    tabWidth: 2
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+    ordered: false
+
+#-----------------------------------------
+# Module settings
+#-----------------------------------------
+module:
+  hugoVersion:
+    extended: true
+    min: "0.111.0"
+
+# ---------------------------------------
+# Privacy settings
+# ---------------------------------------
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    anonymizeIP: true
+    disable: true
+    respectDoNotTrack: true
+    useSessionStorage: true
+  instagram:
+    disable: false
+    simple: false
+  twitter:
+    disable: false
+    enableDNT: true
+    simple: false
+  vimeo:
+    disable: true
+  youtube:
+    disable: false
+    privacyEnhanced: true
+
+# ---------------------------------------
+# Related settings
+# ---------------------------------------
+related:
+  threshold: 75
+  toLower: true
+  includeNewer: true
+  indices:
+  - name: topics
+    weight: 100
+  - name: date
+    weight: 10
+
+# ---------------------------------------
+# Server settings
+# ---------------------------------------
+server:
+  headers:
+    for: /*
+    values:
+      X-XSS-Protection: "1; mode=block"
+      X-Content-Type-Options: "nosniff"
+      Referrer-Policy: "strict-origin-when-cross-origin"
+
+# ---------------------------------------
+# Taxonomies settings
+# ---------------------------------------
+taxonomies:
+  category: categories
+  topics: topics

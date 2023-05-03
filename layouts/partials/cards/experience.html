@@ -1,0 +1,52 @@
+{{- $icon := "fas fa-dot-circle" -}}
+{{- if .icon }} {{ $icon = .icon }} {{ end -}}
+{{- $experienceID := replaceRE "(\\s)" "_" .company -}}
+
+{{- $start := 0 }} {{ $end := 0 -}}
+{{- $list := (sort .jobs .date) -}}
+{{- $len := (len $list) -}}
+{{- range $i, $d := (sort .jobs .date) -}}
+  {{- if eq $i 0 }} {{ $end = $d.date.finish }} {{ end -}}
+  {{- if eq (add $i 1) $len }} {{ $start = $d.date.start }} {{ end -}}
+{{- end -}}
+
+<div class="card">
+  <div class="icon {{ $icon }}"></div>
+  <div class="header">
+    <div class="head">
+      <a class="link" href="{{ .link }}" target="_blank" rel="noopener">{{ .company }}</a>
+      <span class="date"> {{- $start }} - {{ $end -}} </span>
+    </div>
+    {{ range .jobs -}}
+    <div class="row">
+      <div class="title">{{ .title }}</div>
+      <span class="date sub-date">({{ .date.start }} - {{ .date.finish }})</span>
+    </div>
+    {{ end -}}
+  </div>
+  <div class="content">
+    {{ if .languages -}}
+    <div class="languages marks">
+      <div class="sub-title">Languages</div>
+      <ul>
+        {{ range .languages -}} <li><mark>{{ . }}</mark></li> {{- end }}
+      </ul>
+    </div>
+    {{ end -}}
+    {{ if .highlights -}}
+    <div class="highlights marks">
+      <div class="sub-title">Highlights</div>
+      <ul>
+        {{ range .highlights -}} <li><mark>{{ . }}</mark></li> {{- end }}
+      </ul>
+    </div>
+    {{ end -}}
+    <div class="details" id="{{ $experienceID }}-details">
+      <div class="sub-title">Details</div>
+      <div class="markdown collapse"> {{ .description | markdownify }} </div>
+      <div class="toggle bounce-small" role="button" aria-label="Expand/collapse details" aria-expanded="false" aria-controls="{{ $experienceID }}-details">
+        <i class="toggler fas fa-angle-double-down"></i>
+      </div>
+    </div>
+  </div>
+</div>

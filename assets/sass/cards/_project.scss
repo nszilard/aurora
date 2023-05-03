@@ -1,0 +1,223 @@
+.projects {
+  .card {
+    margin: 1rem 0;
+    flex-grow: 1 !important;
+    flex-basis: auto !important;
+    justify-content: space-between;
+
+    .cover {
+      .media {
+        height: 10vh;
+      }
+
+      &::before {
+        height: 10vh;
+      }
+
+      i {
+        color: $FONT;
+        font-size: 2.25em;
+        line-height: 2.25em;
+        transition: $AURORA_TRANSITION;
+      }
+    }
+
+    .content {
+      margin: 0.5rem;
+
+      .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        margin: 0.25rem;
+        letter-spacing: 0.01rem;
+
+        .repository {
+          display: inline-flex;
+          flex-grow: 1;
+          flex-direction: row;
+
+          .git-icon {
+            text-align: left !important;
+            transition: $AURORA_TRANSITION;
+
+            i {
+              font-size: 1.95em;
+              vertical-align: top;
+            }
+          }
+
+          .git-repo {
+            flex-grow: 1;
+            padding-left: 0;
+            margin-left: 0.25rem;
+            transition: $AURORA_TRANSITION;
+
+            .user {
+              color: $FONT;
+            }
+
+            .repo {
+              transition: $AURORA_TRANSITION;
+            }
+          }
+        }
+
+        .stargaze {
+          flex-shrink: 0;
+          text-align: right !important;
+
+          .github-button {
+            margin-right: 0;
+            color: $FONT;
+            border-color: $FONT;
+            font-size: 0.9em;
+            letter-spacing: 0.05rem;
+            padding: 0.15rem 0.55rem 0.15rem 0.7rem;
+            transition: $AURORA_TRANSITION;
+
+            i {
+              margin-right: 0;
+              margin-left: 0.1rem;
+              padding-right: 0;
+            }
+
+            &:hover {
+              color: $BACKGROUND_DARKER;
+              background-color: $FONT;
+            }
+          }
+        }
+      }
+
+      .title {
+        color: $PRIMARY;
+        margin: 1.25rem 0 0;
+      }
+
+      .description {
+        flex-grow: 1;
+        text-align: center;
+        padding: 0.2rem;
+        margin: 0.5rem 0.5rem 1.5rem;
+      }
+
+      .details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        font-size: 0.8rem;
+        color: $FONT_LOWLIGHT;
+        margin: 0 0.25rem;
+        padding-top: 0.25rem;
+        letter-spacing: 0.012rem;
+        font-style: italic;
+
+        transition: $AURORA_TRANSITION;
+        border-top: 1px solid $FONT_LOWLIGHT;
+        border-image: linear-gradient(
+          90deg,
+          $BACKGROUND_HIGHLIGHT 0%,
+          $FONT_LOWLIGHT 50%,
+          $BACKGROUND_HIGHLIGHT 100%,
+        ) 1;
+
+        i {
+          color: $PRIMARY;
+        }
+
+        .languages {
+          i {
+            margin-right: 0.1rem;
+          }
+        }
+
+        .type {
+          i {
+            margin-left: 0.1rem;
+          }
+        }
+      }
+    }
+
+    &:hover{
+      .cover {
+        &::before {
+          opacity: 0.6;
+        }
+
+        i {
+          color: $FONT_HIGHLIGHT;
+        }
+      }
+
+      .content {
+        .header {
+          .repository {
+            .git-icon {
+              color: $FONT;
+            }
+
+            .git-repo {
+              .repo {
+                color: $PRIMARY;
+              }
+            }
+          }
+        }
+
+        .title {
+          color: $HIGHLIGHT;
+        }
+
+        .details {
+          border-image: linear-gradient(
+            90deg,
+            $BACKGROUND_HIGHLIGHT 0%,
+            $FONT 50%,
+            $BACKGROUND_HIGHLIGHT 100%,
+          ) 1;
+        }
+      }
+    }
+  }
+}
+
+/* ============= Device specific fixes ============= */
+
+@include tablet {
+  .projects {
+    .card {
+      .cover {
+        .media {
+          height: 15vh;
+        }
+
+        &::before {
+          height: 15vh;
+        }
+      }
+    }
+  }
+}
+
+@include mobile-s {
+  .projects {
+    .card {
+      .cover {
+        i {
+          font-size: 2em;
+          line-height: 2em;
+        }
+      }
+
+      .content {
+        .title {
+          margin-top: 1.25rem;
+        }
+      }
+    }
+  }
+}

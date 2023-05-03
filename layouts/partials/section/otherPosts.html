@@ -1,0 +1,30 @@
+{{- if or ( .NextInSection ) ( .PrevInSection ) -}}
+<section class="bg container container-fluid p-lg-5 py-3 related-posts" id="related-posts">
+  <div>{{ . }}</div>
+  {{ partial "section/title" "Related posts" }}
+  <div class="content">
+    {{ with .NextInSection -}}
+    <a class="next" href="{{ .RelPermalink }}">
+      <span class="title">Next</span>
+      <div class="card">
+        <span class="title">{{ .Title }}</span>
+        {{ with .Params.description -}}
+        <span class="description">{{ . }}</span>
+        {{ end -}}
+      </div>
+    </a>
+    {{ end -}}
+    {{ with .PrevInSection -}}
+    <a class="previous" href="{{ .RelPermalink }}">
+      <span class="title">Previous</span>
+      <div class="card">
+        <span class="title">{{ .Title }}</span>
+        {{ with .Params.description -}}
+        <span class="description">{{ . }}</span>
+        {{ end -}}
+      </div>
+    </a>
+    {{ end -}}
+  </div>
+</section>
+{{- end -}}

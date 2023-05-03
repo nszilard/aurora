@@ -1,0 +1,61 @@
+{{- define "content" -}}
+{{- $publishedOn := partial "get/date/published" . -}}
+{{- $modifiedOn := partial "get/date/modified" . -}}
+
+{{ partial "navbars/article" . }}
+<section class="bg-darker container-fluid p-lg-5 py-3 single-post" id="{{ .Title | anchorize }}">
+  <div class="container article">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-lg-10 col-xl-8">
+        <header class="header">
+          <h1 class="title"> {{ .Title }} </h1>
+          {{ with .Params.description -}}
+          <div class="description">{{ . }}</div>
+          {{ end -}}
+          <div class="title-border"></div>
+          <aside class="meta">
+            <div class="item published">
+              <i class="fa-regular fa-calendar"></i>
+              <span class="key">Published: </span>
+              {{ partial "get/date/formatLong" $publishedOn }}
+            </div>
+            <div class="item wordcount">
+              <i class="fas fa-book-open"></i>
+              <span class="key">Word count:</span>
+              {{ .WordCount }}
+            </div>
+            <div class="item read-time">
+              <i class="fa-regular fa-clock"></i>
+              <span class="key">Read time: </span>
+              ~{{ .ReadingTime }} minutes
+            </div>
+            {{ with $modifiedOn -}}
+            <div class="item updated">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span class="key">Last updated: </span>
+              {{ partial "get/date/formatLong" . }}
+            </div>
+            {{ end -}}
+          </aside>
+          <div class="title-border"></div>
+        </header>
+        <article class="content markdown pt-4" id="content">
+          {{ .Content | markdownify }}
+        </article>
+        <div class="share">
+          {{ partial "section/title" "Share this article" }}
+          <div class="items">
+            {{ partial "section/shareButtons" . }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ partial "section/relatedPosts" . -}}
+
+{{- end -}}
+
+{{ define "scripts" -}}
+  <script src='{{ `js/article.js` | relURL }}'></script>
+{{- end -}}

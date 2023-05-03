@@ -1,0 +1,26 @@
+{{- $bg := partial "get/section/background" .section -}}
+{{- $sectionID := partial "get/section/ID" .section -}}
+
+<section class="{{ $bg }} container-fluid p-lg-5 py-3 experiences" id="{{ $sectionID }}">
+  <div class="container">
+    {{ partial "section/title" .section.name }}
+    <div class="row pt-sm-2 pt-md-4">
+      <div class="col-12">
+        <div class="timeline">
+          <div class="center-line">
+            <div class="scroll-icon"></div>
+          </div>
+          {{- $class:= "odd" -}}
+          {{ range .experiences -}}
+          <div class="wrapper">
+            <div class="{{ $class }}">
+              {{ partial "cards/experience" . }}
+            </div>
+          </div>
+          {{- if eq $class "odd" }} {{ $class = "even" }} {{ else }} {{ $class = "odd" }} {{ end -}}
+          {{ end -}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,4 @@
+{{- $sectionID := replace (lower .name) " " "-" -}}
+{{- with .id }} {{ $sectionID = . }} {{ end -}}
+{{- $sectionID = replaceRE "(\\s)" "-" $sectionID -}}
+{{- return $sectionID -}}

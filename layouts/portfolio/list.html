@@ -1,0 +1,17 @@
+{{- define "content" -}}
+
+{{ partial "navbars/portfolio" . }}
+{{ partial "section/hero" . }}
+{{ range sort site.Data.portfolio "section.weight" -}}
+  {{ partial .section.template . }}
+{{ end -}}
+
+{{- end -}}
+
+{{- define "scripts" }}
+  <script src='{{ partial "get/path/itypePlugin" }}'></script>
+  <script src='{{ partial "get/path/itypeConfig" }}'></script>
+  <script src='{{ partial "get/path/slickPlugin" }}'></script>
+  <script src='{{ partial "get/path/slickConfig" }}'></script>
+  <script src="{{ `js/expand.js` | relURL }}"></script>
+{{- end -}}

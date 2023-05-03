@@ -1,11 +1,17 @@
+{{- $languageCode := "en-gb" -}}
+{{- with site.LanguageCode }} {{ $languageCode = . }} {{ end -}}
+
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+<html lang="{{ $languageCode }}">
+  <head>
+    {{ partial "head/main" . }}
+    {{ block "header" . -}} {{- end }}
+  </head>
+  <body id="body" data-bs-spy="scroll" data-bs-target=".scroll-target" data-bs-offset="50">
+    <div class="page-content">
+      {{ block "content" . -}} {{- end }}
+    </div>
+    {{ if ne site.Home.Page .Page -}} {{ partialCached "footer" . }} {{- end }}
+    {{ block "scripts" . -}} {{- end }}
+  </body>
 </html>

@@ -1,0 +1,43 @@
+{{- $icon := "fa-brands fa-git-alt" -}}
+{{- if .icon }} {{ $icon = .icon }} {{ end -}}
+
+<div class="card flex-fill">
+  <div class="cover">
+    <div class="media">
+      <i class="{{ $icon }}"></i>
+    </div>
+  </div>
+  <div class="content">
+    <div class="header">
+      <div class="repository">
+        <div class="git-icon">
+          <i class="fa-brands fa-github-square"></i>
+        </div>
+        <div class="git-repo align-self-center">
+          <span class="user">{{ .user }}</span>/<wbr><span class="repo">{{ .repo }}</span>
+        </div>
+      </div>
+      <div class="stargaze">
+        <a class="btn github-button" data-size="large" target="_blank"
+          href="https://github.com/{{ .user }}/{{ .repo }}" rel="noopener"
+          aria-label="Star {{ .user }}/<wbr>{{ .repo }} on GitHub">
+          Star <i class="fa-solid fa-star"></i>
+        </a>
+      </div>
+    </div>
+    <div class="title">{{ .name }}</div>
+    <div class="description markdown">
+      {{ .description | markdownify }}
+    </div>
+    <div class="details">
+      <div class="languages">
+        <i class="fa-solid fa-gear"></i>
+        <span> {{ delimit .language ", " }} </span>
+      </div>
+      <div class="type text-right">
+        <span> {{ delimit .status ", " }} </span>
+        <i class="fa-solid fa-bookmark"></i>
+      </div>
+    </div>
+  </div>
+</div>

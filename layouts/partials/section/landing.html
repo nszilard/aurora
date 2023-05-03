@@ -1,0 +1,56 @@
+{{- $logo := partialCached "get/logo/site" . -}}
+{{- $projectsCount := len site.Data.projects -}}
+{{- $postCount := len (where site.RegularPages "Section" "==" "posts") -}}
+
+<div class="container-fluid aurora-background single-page landing" id="landing">
+  {{ with .particles -}} <div id="particles-js" class="particles"></div> {{- end }}
+  <div class="container">
+    <div class="row content">
+      <div class="col-sm-12 col-md-4 d-flex left">
+        <div class="logo">
+          <img src="{{ $logo.RelPermalink }}" draggable="false" id="logo" alt="logo" height="300" width="300"/>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-8 d-flex right">
+        <div class="row">
+          {{ with .greeting -}}
+          <div class="greeting">{{ . | emojify }}</div>
+          {{ end -}}
+          {{ with .intro -}}
+          <div class="intro"> {{ . | markdownify }}</div>
+          {{ end -}}
+          {{ with .headlines -}}
+          <div class="typing-carousel">
+            <span id="ityped" class="ityped"></span>
+            <span class="ityped-cursor"></span>
+            <ul id="typing-carousel-data">
+              {{ range . -}}
+              <li>{{ . | emojify }}</li>
+              {{ end -}}
+            </ul>
+          </div>
+          {{ end -}}
+        </div>
+        <div class="row">
+          <nav class="links">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link btn" id="portfolio-link" href='{{ partial "get/path/portfolio" }}'>Portfolio</a>
+              </li>
+              {{ if gt $projectsCount 0 -}}
+              <li class="nav-item">
+                <a class="nav-link btn" id="projects-link" href='{{ partial "get/path/projects" }}'>Projects</a>
+              </li>
+              {{ end -}}
+              {{ if gt $postCount 0 -}}
+              <li class="nav-item">
+                <a class="nav-link btn" id="posts-link" href='{{ partial "get/path/posts" }}'>Posts</a>
+              </li>
+              {{ end -}}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

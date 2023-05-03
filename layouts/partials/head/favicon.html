@@ -1,0 +1,6 @@
+{{- $logo := partial "get/logo/pwa" . -}}
+{{- $favicon := partial "get/logo/favicon" . -}}
+
+<link rel="icon" type="image/svg" href="{{ $favicon.RelPermalink }}" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ $logo.RelPermalink }}" />
+<meta name="msapplication-TileImage" content="{{ $logo.RelPermalink }}">

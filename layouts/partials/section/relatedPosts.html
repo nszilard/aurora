@@ -1,0 +1,13 @@
+{{- $related := .Site.RegularPages.Related . | first 3 -}}
+{{- with $related -}}
+<section class="bg container container-fluid p-lg-5 py-3 related-posts" id="related-posts">
+  {{ partial "section/title" "Related posts" }}
+  <div class="row posts">
+  {{ range . -}}
+    <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
+      {{ partial "cards/article" . }}
+    </div>
+  {{ end -}}
+  </div>
+</section>
+{{- end -}}

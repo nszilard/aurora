@@ -1,0 +1,16 @@
+{{- $icon := "far fa-star" -}}
+{{- $bg := partial "get/section/background" .section -}}
+{{- $sectionID := partial "get/section/ID" .section -}}
+
+<section class="{{ $bg }} container-fluid p-lg-5 py-3 interest" id="{{ $sectionID }}">
+  <div class="container">
+    {{ partial "section/title" .section.name }}
+    <div class="row">
+    {{ range .content -}}
+      <div class="col-sm-12 col-lg-6">
+        {{ partial "cards/interest" . }}
+      </div>
+    {{ end -}}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+.hero {
+  min-height: 25vh;
+  margin-top: 50px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .title {
+    font-size: 3.5rem;
+    color: $FONT_HIGHLIGHT;
+    font-variant: small-caps;
+  }
+
+  .description {
+    margin-top: 1.5rem;
+    font-size: 1.15rem;
+  }
+}
+
+/* ============= Device specific fixes ============= */
+
+@include mobile {
+  .hero {
+    .title {
+      font-size: 3rem;
+    }
+  }
+}

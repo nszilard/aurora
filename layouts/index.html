@@ -1,0 +1,17 @@
+{{- define "header" -}}
+
+{{- end -}}
+
+{{- define "content" -}}
+  {{ partial "section/landing" site.Data.landing }}
+{{- end -}}
+
+{{- define "scripts" -}}
+  {{- partialCached "scripts" . }}
+  <script src='{{ partial "get/path/itypePlugin" }}'></script>
+  <script src='{{ partial "get/path/itypeConfig" }}'></script>
+  {{ with site.Data.landing.particles -}}
+  <script src='{{ partial "get/path/particlesPlugin" }}'></script>
+  <script src='{{ partial "get/path/particlesConfig" }}'></script>
+  {{ end -}}
+{{- end -}}

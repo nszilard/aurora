@@ -1,0 +1,17 @@
+{{- $year := dateFormat "2006" .UTC -}}
+{{- $month := dateFormat "January" .UTC -}}
+{{- $day := dateFormat "Monday" .UTC -}}
+{{- $dayOrdinal := "" -}}
+
+{{- if in (slice 1 21 31) .UTC.Day -}}
+  {{- $dayOrdinal = printf "%vst" .UTC.Day -}}
+{{- else if in (slice 2 22) .UTC -}}
+  {{- $dayOrdinal = printf "%vnd" .UTC.Day -}}
+{{- else if in (slice 3 23) .UTC.Day -}}
+  {{- $dayOrdinal = printf "%vrd" .UTC.Day -}}
+{{- else -}}
+  {{- $dayOrdinal = printf "%vth" .UTC.Day -}}
+{{- end -}}
+
+{{- $date := printf "%v, %v of %v %v" $day $dayOrdinal $month $year -}}
+{{- return $date -}}

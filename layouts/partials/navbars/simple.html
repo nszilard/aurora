@@ -1,0 +1,34 @@
+{{- $logo := partialCached "get/logo/site" . -}}
+{{- $projectsCount := len site.Data.projects -}}
+{{- $postCount := len (where .Site.RegularPages "Section" "==" "posts") -}}
+
+<nav class="navbar navbar-expand-lg top-navbar sticky-top" id="simple-navbar">
+  <div class="container container-fluid">
+    <a class="navbar-brand" id="home-link" href="{{ site.BaseURL | relURL }}">
+      <img src="{{ $logo.RelPermalink }}" id="logo" alt="logo" height="40" width="40">
+      Home
+    </a>
+    <button type="button" id="navbar-toggler" class="navbar-toggler navbar-dark"
+      data-bs-toggle="collapse" data-bs-target="#navbarDropdownItems"
+      aria-label="menu" aria-expanded="false" aria-controls="navbarDropdownItems">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarDropdownItems">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" id="portfolio-link" href='{{ partial "get/path/portfolio" }}'>Portfolio</a>
+        </li>
+        {{ if gt $projectsCount 0 -}}
+        <li class="nav-item">
+          <a class="nav-link" id="projects-link" href='{{ partial "get/path/projects" }}'>Projects</a>
+        </li>
+        {{ end -}}
+        {{ if gt $postCount 0 -}}
+        <li class="nav-item">
+          <a class="nav-link posts-link" id="posts-link" href='{{ partial "get/path/posts" }}'>Posts</a>
+        </li>
+        {{ end -}}
+      </ul>
+    </div>
+  </div>
+</nav>

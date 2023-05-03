@@ -1,0 +1,18 @@
+{{- $bg := partial "get/section/background" .section -}}
+{{- $sectionID := partial "get/section/ID" .section -}}
+
+<section class="{{ $bg }} container-fluid p-lg-5 py-3 skills" id="{{ $sectionID }}">
+  <div class="container">
+    {{ partial "section/title" .section.name }}
+    <div class="row">
+      <div class="slider">
+        <i class="fas fa-chevron-left previous"></i>
+        <i class="fas fa-chevron-right next"></i>
+        <div class="wrapper">
+          {{ range .skills }} {{ partial "cards/skill" . }} {{ end }}
+        </div>
+      </div>
+      <div class="indicator"></div>
+    </div>
+  </div>
+</section>

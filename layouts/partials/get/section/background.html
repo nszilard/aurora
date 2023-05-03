@@ -1,0 +1,3 @@
+{{- $backgroundClass := "bg" -}}
+{{- if eq .background "dark" -}} {{ $backgroundClass = "bg-darker" }} {{ end -}}
+{{- return $backgroundClass -}}

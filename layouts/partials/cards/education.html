@@ -1,0 +1,41 @@
+{{- $icon := "fas fa-dot-circle" -}}
+{{- if .icon }} {{ $icon = .icon }} {{ end -}}
+{{- $educationID := replaceRE "(\\s)" "_" .institution.name -}}
+
+<div class="card">
+  <div class="icon {{ $icon }}"></div>
+  <div class="header">
+    <div class="head">
+      <a class="link" target="_blank" href="{{ .institution.url }}" rel="noopener">{{ .institution.name }}</a>
+      <span class="date">{{ .date.start }} - {{ .date.finish }}</span>
+    </div>
+    <div class="row">
+      <div class="title">{{ .name }}</div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="thesis">
+      <div class="sub-title">Thesis</div>
+      <q>{{ .thesis }}</q>
+    </div>
+    {{ if .publications -}}
+    <div class="publications">
+      <div class="sub-title">Publications</div>
+      {{ range .publications -}}
+      <p>
+        <a class="publication" target="_blank" href="{{ .url }}" rel="noopener">
+          <q>{{ .title }}</q>
+        </a>
+      </p>
+      {{ end -}}
+    </div>
+    {{ end -}}
+    <div class="details" id="{{ $educationID }}-details">
+      <div class="sub-title">Details</div>
+      <div class="markdown collapse"> {{ .description | markdownify }} </div>
+      <div class="toggle bounce-small" role="button" aria-label="Expand/collapse details" aria-expanded="false" aria-controls="{{ $educationID }}-details">
+        <i class="fas fa-angle-double-down"></i>
+      </div>
+    </div>
+  </div>
+</div>

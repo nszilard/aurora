@@ -1,0 +1,10 @@
+{{- $asset := "/theme/logo.png" -}}
+
+{{- with site.Params.Logo.PNG -}}
+  {{- if (fileExists (printf "assets/%s" . )) -}}
+    {{- $asset = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $logo := resources.Get $asset -}}
+{{- return $logo -}}
