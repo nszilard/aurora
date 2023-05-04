@@ -4,7 +4,6 @@
 _merge: deep
 
 title: Hugo Aurora
-theme: Aurora
 languageCode: en-gb
 
 paginate: 3
@@ -32,3 +31,11 @@ params:
     twitter: "#"
     stackoverflow: "#"
     email: "#"
+
+#-----------------------------------------
+# Module settings
+#-----------------------------------------
+module:
+  replacements: "github.com/nszilard/aurora -> ../.."
+  imports:
+  - path: github.com/nszilard/aurora

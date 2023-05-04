@@ -13,14 +13,16 @@ bootstrap: ## Ensures Node dependencies are installed
 
 .PHONY: dev
 dev: clean ## Serves the site locally
-	@hugo server --themesDir ../.. --buildDrafts --minify --gc
+	@hugo server --buildDrafts --minify --gc
 
 .PHONY: build
 build: clean bootstrap ## Compiles site for deployment
-	@hugo --minify --themesDir ../..
+	@hugo --minify
 
 .PHONY: clean
 clean: ## Cleanup
+	@hugo mod clean
+	@hugo mod tidy
 	@rm -rf public
 	@rm -rf resources
 	@rm -f .hugo_build.lock
