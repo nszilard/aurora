@@ -25,9 +25,6 @@ with a focus on delivering a seamless user experience across multiple devices.**
 - `Golang` v1.18 (*or later*)
 - `Node` LTS version (*v16 or later*)
 
-> **Note:**
-> `Node` is only required if you want to minimize your CSS files.
-
 ## Usage
 
 ### 1. Initialize Hugo modules
@@ -63,7 +60,7 @@ hugo mod get -u github.com/nszilard/aurora
 hugo mod tidy
 ```
 
-### 4. *(Optional)* Add Node packages
+### 4. Configure PurgeCSS
 
 In order to minimize CSS files, you can use `@fullhuman/postcss-purgecss` and `postcss-cli` packages.
 
@@ -71,5 +68,24 @@ In order to minimize CSS files, you can use `@fullhuman/postcss-purgecss` and `p
 npm install @fullhuman/postcss-purgecss postcss-cli
 ```
 
-However, you will need to configure them, so have a look at their documentation on how to do so.
+Next you will have to configure purge-css by adding the following file at the root of your repo:
+
+``` js
+// File: postcss.config.js
+const purgecss = require('@fullhuman/postcss-purgecss')({
+  content: ['./hugo_stats.json'],
+  safelist: [],
+  defaultExtractor: (content) => {
+    let els = JSON.parse(content).htmlElements;
+    return els.tags.concat(els.classes, els.ids);
+  }
+});
+
+module.exports = {
+  plugins: [
+    purgecss
+  ]
+};
+
+```
 
