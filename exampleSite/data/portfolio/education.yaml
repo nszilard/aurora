@@ -1,0 +1,50 @@
+# Section information
+section:
+  name: Education
+  id: education
+  weight: 5
+  background: dark
+  showOnNavbar: true
+  template: section/education
+
+# Content
+degrees:
+  - name: M.Sc. in Artificial Intelligence
+    icon: fas fa-microscope
+    date:
+      start: 2014
+      finish: 2016
+    institution:
+      name: Stanford University
+      url: "#"
+    thesis: Master's thesis title here
+    description: |
+      Courses:
+        - Machine Learning
+        - Natural Language Processing
+        - Computer Vision
+        - Deep Learning
+        - Reinforcement Learning
+        - Probabilistic Graphical Models
+        - Robotics
+        - Neural Networks
+
+  - name: B.Sc. in Computer Science
+    icon: fas fa-graduation-cap
+    date:
+      start: 2010
+      finish: 2014
+    institution:
+      name: New York University
+      url: "#"
+    thesis: Bachelor's title here
+    description: |
+      Courses:
+        - Programming Fundamentals with Java
+        - Discrete Mathematics
+        - Computer Organization and Architecture
+        - Data Structures and Algorithms
+        - Operating Systems
+        - Database Systems
+        - Computer Networks
+        - Software Engineering

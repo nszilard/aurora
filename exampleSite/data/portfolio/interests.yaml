@@ -1,0 +1,26 @@
+# Section information
+section:
+  name: Interests
+  id: interests
+  weight: 7
+  background: dark
+  showOnNavbar: true
+  template: section/interests
+
+# Content
+content:
+  - type: Sport
+    icon: fas fa-dumbbell
+    items:
+      - Snowboarding
+      - Running
+      - Swimming
+      - Biathlon
+
+  - type: Leisure
+    icon: fas fa-passport
+    items:
+      - Photography
+      - Cooking
+      - Travelling
+      - Stargazing

@@ -1,0 +1,27 @@
+# Section information
+section:
+  name: Achievements
+  id: achievements
+  weight: 6
+  background: light
+  showOnNavbar: true
+  template: section/achievements
+
+# Content
+achievements:
+- type: Award
+  icon: fas fa-medal
+  name: CS Achievement Award
+  date: 2023
+  description: Presented by the New York University Computer Science Department
+
+- type: Award
+  name: Best Paper Award
+  date: 2020
+  description: International Conference on Artificial Intelligence for a research paper on deep reinforcement learning in robotics
+
+- type: Certificate
+  icon: fa-brands fa-jedi-order
+  name: AWS Certified Solutions Architect
+  date: May 2021
+  ID: ABCD012345

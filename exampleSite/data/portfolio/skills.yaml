@@ -1,0 +1,33 @@
+# Section information
+section:
+  name: Skills
+  id: skills
+  weight: 2
+  background: light
+  showOnNavbar: true
+  template: section/skills
+
+# Content
+skills:
+- name: Software Development
+  icon: fas fa-code
+  summary: |
+    I have a deep understanding of software development, including programming languages, software architecture, and agile methodologies. With years of experience in the tech industry,
+    I have a proven track record of developing innovative solutions that solve complex problems and drive business success.
+
+- name: Cloud Computing
+  icon: fas fa-cloud
+  summary: |
+    I have a strong understanding of cloud computing, including cloud infrastructure, security, and deployment models.
+    With this knowledge, I can help businesses make informed decisions about cloud solutions and drive successful cloud-based projects.
+
+- name: Data Science
+  icon: fab fa-gg-circle
+  summary: |
+    With experience in data analysis, machine learning, and artificial intelligence, I have a deep understanding of the latest data science tools and techniques.
+    This skillset enables me to make data-driven decisions and guide teams in developing cutting-edge solutions.
+
+- name: Cybersecurity
+  icon: fas fa-dharmachakra
+  summary: |
+    In today's digital landscape, cybersecurity is more important than ever, and Aurora has a strong understanding of cybersecurity best practices. With expertise in threat analysis, vulnerability assessment, and risk management, Aurora can help organizations keep their data secure and protected from cyber threats.

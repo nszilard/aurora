@@ -1,0 +1,34 @@
+#-----------------------------------------
+# Site settings
+#-----------------------------------------
+_merge: deep
+
+title: Hugo Aurora
+theme: Aurora
+languageCode: en-gb
+
+paginate: 3
+enableEmoji:            true
+enableGitInfo:          true
+enableRobotsTXT:        true
+enableInlineShortcodes: true
+pygmentsUseClasses:     true
+pygmentsCodefences:     true
+
+#-----------------------------------------
+# Params settings
+#-----------------------------------------
+params:
+  author:
+    firstName: Aurora
+    lastName: Borealis
+  description: An example site showcasing the Aurora Hugo theme.
+  social:
+    github: "#"
+    gitlab: "#"
+    linkedin: "#"
+    instagram: "#"
+    facebook: "#"
+    twitter: "#"
+    stackoverflow: "#"
+    email: "#"

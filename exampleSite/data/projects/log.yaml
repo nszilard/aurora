@@ -1,0 +1,14 @@
+type: github
+icon: fa-brands fa-golang
+
+weight: 2
+user: nszilard
+repo: log
+name: Log
+status:
+  - User
+language:
+  - Go
+description: |
+  A Golang logger that is both flexible and thread-safe, featuring 7 different log levels.
+  It is designed for seamless migration from the built-in log package.

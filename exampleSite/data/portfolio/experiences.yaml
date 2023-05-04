@@ -1,0 +1,53 @@
+# Section information
+section:
+  name: Experiences
+  id: experiences
+  weight: 3
+  background: dark
+  showOnNavbar: true
+  template: section/experiences
+
+# Content
+experiences:
+- company: Cloud9 Technologies
+  link: "#"
+  jobs:
+    - title: Chief Technology Officer (CTO)
+      date:
+        start: 2021
+    - title: Head of Engineering
+      date:
+        start: 2017
+        finish: 2021
+  highlights:
+    - AWS
+    - Kubernetes
+    - Docker
+    - React Native
+    - Node.js
+    - PostgreSQL
+  languages:
+    - JavaScript
+    - Python
+    - SQL
+  description: |
+    As CTO at Cloud9 Technologies, I was responsible for overseeing the company's technology strategy and operations. Played a critical role in developing and implementing the company's cloud-based communication platform, which has since become one of the most widely used solutions in the financial industry. Also managed a team of developers and engineers, ensuring that all products and services met the highest standards of quality and innovation.
+    - Led the company's technical strategy and oversaw software development teams
+    - Managed large-scale projects, including the development of a new mobile app and the implementation of a cloud-based infrastructure
+
+- company: FutureTech, LLC
+  jobs:
+    - title: Director of Engineering
+      date:
+        start: 2013
+        finish: 2017
+  highlights:
+    - AWS
+    - Elasticsearch
+    - Redis
+  languages:
+    - Golang
+  description: |
+    - Led a team of software developers and engineers to develop cutting-edge technology solutions
+    - Managed the development of a complex web application used by millions of users
+    - Spearheaded the adoption of new technologies, including machine learning and artificial intelligence, to improve the company's offerings and stay ahead of the competition.
