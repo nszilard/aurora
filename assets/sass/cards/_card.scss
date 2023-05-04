@@ -14,7 +14,7 @@
   .cover {
     .media {
       width: 100%;
-      height: calc(min(20vh, 200px));
+      height: 200px;
       display: flex;
       text-align: center;
       align-items: center;
@@ -38,7 +38,7 @@
       content: '';
       position: absolute;
       width: 100%;
-      height: calc(min(20vh, 200px));
+      height: 200px;
       transition: $AURORA_TRANSITION;
       border-top-left-radius: 0.35rem;
       border-top-right-radius: 0.35rem;
@@ -112,6 +112,22 @@
 
     .title {
       color: $PRIMARY;
+    }
+  }
+}
+
+/* ============= Device specific fixes ============= */
+
+@include tablet {
+  .card {
+    .cover {
+      .media {
+        height: 150px;
+      }
+
+      &::before {
+        height: 150px;
+      }
     }
   }
 }
