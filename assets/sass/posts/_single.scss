@@ -1,8 +1,9 @@
 .single-post {
   .article {
+    max-width: 1000px;
+
     .header {
       text-align: center;
-      margin-bottom: 2.5rem;
 
       .title {
         margin: 0.75rem 0;
@@ -43,6 +44,7 @@
       width: 100%;
       padding: 1.5rem;
       overflow-x: auto;
+      font-size: 1.1rem;
 
       h1, h2 {
         color: $FONT_HIGHLIGHT;
@@ -94,6 +96,7 @@
         .share-buttons {
           display: flex;
           flex-wrap: wrap;
+          justify-content: center;
 
           a {
             transition: $AURORA_TRANSITION;
@@ -141,10 +144,6 @@
 @include tablet {
   .single-post {
     .article {
-      .header {
-        margin-bottom: 2rem;
-      }
-
       .content {
         padding: 1rem;
       }
@@ -155,10 +154,6 @@
 @include mobile {
   .single-post {
     .article {
-      .header {
-        margin-bottom: 1.5rem;
-      }
-
       .content {
         padding: 0.25rem;
       }
