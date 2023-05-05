@@ -18,7 +18,7 @@
     {{ if eq .type "Certificate" -}}
     <div>
       <span>ID: </span>
-      <a class="id" href="{{ .link }}" target="_blank">{{ .ID }}</a>
+      <a class="id" href="{{ .link }}" target="_blank" rel="noopener">{{ .ID }}</a>
     </div>
     {{ end -}}
   </div>

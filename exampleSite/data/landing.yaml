@@ -1,4 +1,5 @@
 particles: true
+greeting: Welcome!
 intro: This is Aurora,
 headlines:
-  - "An example site to showcase the theme"
+  - "A demo website to highlight the theme"

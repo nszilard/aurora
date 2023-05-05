@@ -13,9 +13,9 @@ content:
     icon: fas fa-dumbbell
     items:
       - Snowboarding
-      - Running
-      - Swimming
-      - Biathlon
+      - Hiking
+      - Rock climbing
+      - Kayaking
 
   - type: Leisure
     icon: fas fa-passport

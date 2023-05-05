@@ -1,7 +1,7 @@
 {{ with site.Params.Social -}}
 {{ with .email -}}
 <li class="list-inline-item">
-  <a target="_blank" href="mailto:{{ . | htmlEscape }}">
+  <a target="_blank" href="mailto:{{ . | htmlEscape }}" rel="noopener">
     <i class="fas fa-envelope" title="Email"></i>
   </a>
 </li>
