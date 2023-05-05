@@ -2,6 +2,7 @@
 
 <aside class="taxonomies">
   {{ if isset site.Taxonomies "categories" -}}
+  {{ if (gt (len site.Taxonomies.categories) 1) -}}
   <div class="category">
     <div class="title">
       <i class="fa-solid fa-user-tag"></i>
@@ -13,17 +14,17 @@
       {{ end -}}
     </div>
     <div class="items">
-      {{ if not (eq (len site.Taxonomies.categories) 0) -}}
       {{ range $name, $items := site.Taxonomies.categories -}}
       <a href="{{ `categories/` | relLangURL }}{{ $name | urlize | lower }}">
         <mark>{{ $name | title | humanize }}</mark>
       </a>
       {{ end -}}
-      {{ end -}}
     </div>
   </div>
   {{ end -}}
+  {{- end -}}
   {{ if isset site.Taxonomies "topics" -}}
+  {{ if (gt (len site.Taxonomies.topics) 1) -}}
   <div class="tag">
     <div class="title">
       <i class="fa-solid fa-tags"></i>
@@ -35,14 +36,13 @@
       {{ end -}}
     </div>
     <div class="items">
-      {{ if not (eq (len site.Taxonomies.topics) 0) -}}
       {{ range site.Taxonomies.topics.Alphabetical -}}
       <a href="{{ `topics/` | relLangURL }}{{ .Term | urlize | lower }}">
         <mark>{{ .Term | humanize }} ({{ .Count }})</mark>
       </a>
       {{ end -}}
-      {{ end -}}
     </div>
   </div>
+  {{ end -}}
   {{- end }}
 </aside>
