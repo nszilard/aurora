@@ -1,26 +1,26 @@
 <div class="share-buttons">
-  <a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u={{ .Permalink }}" id="share-facebook" target="_blank">
+  <a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u={{ .Permalink }}" id="share-facebook" target="_blank" aria-label="Share on Facebook">
     <i class="fab fa-facebook"></i>
   </a>
-  <a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}&via={{- site.Title -}}" id="share-twitter" target="_blank">
+  <a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}&via={{- site.Title -}}" id="share-twitter" target="_blank" aria-label="Share on Twitter">
     <i class="fab fa-twitter"></i>
   </a>
-  <a class="btn btn-sm pocket-btn" href="https://getpocket.com/save?url={{ .Permalink }}&title={{ .Title }}" id="share-pocket" target="_blank">
+  <a class="btn btn-sm pocket-btn" href="https://getpocket.com/save?url={{ .Permalink }}&title={{ .Title }}" id="share-pocket" target="_blank" aria-label="Share on Pocket">
     <i class="fab fa-get-pocket"></i>
   </a>
-  <a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title }}" id="share-linkedin" target="_blank">
+  <a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title }}" id="share-linkedin" target="_blank" aria-label="Share on LinkedIn">
     <i class="fab fa-linkedin"></i>
   </a>
-  <a class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}" id="share-reddit" target="_blank">
+  <a class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}" id="share-reddit" target="_blank" aria-label="Share on Reddit">
     <i class="fab fa-reddit"></i>
   </a>
-  <a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text=Check%20out%20this%20article%3A%20%22{{ .Title }}%22%21%20{{ .Permalink }}" id="share-whatsapp" target="_blank">
+  <a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text=Check%20out%20this%20article%3A%20%22{{ .Title }}%22%21%20{{ .Permalink }}" id="share-whatsapp" target="_blank" aria-label="Share on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
-  <a class="btn btn-sm telegram-btn" href="https://t.me/share/url?url={{ .Permalink }}&text=Check%20out%20this%20article%3A%20%22{{ .Title }}%22%21" id="share-telegram" target="_blank">
+  <a class="btn btn-sm telegram-btn" href="https://t.me/share/url?url={{ .Permalink }}&text=Check%20out%20this%20article%3A%20%22{{ .Title }}%22%21" id="share-telegram" target="_blank" aria-label="Share on Telegram">
     <i class="fa-brands fa-telegram"></i>
   </a>
-  <a class="btn btn-sm email-btn" href="mailto:?subject={{ .Title }}&body={{ .Permalink }}" id="share-email" target="_blank">
+  <a class="btn btn-sm email-btn" href="mailto:?subject={{ .Title }}&body={{ .Permalink }}" id="share-email" target="_blank" aria-label="Share by Email">
     <i class="fas fa-envelope-open-text"></i>
   </a>
 </div>
