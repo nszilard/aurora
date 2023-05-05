@@ -1,8 +1,11 @@
-{{- $img := "" -}}
-{{- if .Image -}}
-  {{- $img = ( .Image | relURL ) -}}
-{{- else -}}
-  {{- $img = (partial "get/logo/site").RelPermalink -}}
+{{- $asset := .Resources.GetMatch .Params.Image -}}
+
+{{- if not $asset -}}
+  {{- $asset = resources.Get .Params.Image -}}
 {{- end -}}
 
-{{- return $img -}}
+{{- if not $asset -}}
+  {{- $asset = (partial "get/logo/site") -}}
+{{ end }}
+
+{{- return $asset.RelPermalink -}}
