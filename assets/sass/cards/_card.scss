@@ -122,6 +122,20 @@
   .card {
     .cover {
       .media {
+        height: 175px;
+      }
+
+      &::before {
+        height: 175px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .card {
+    .cover {
+      .media {
         height: 150px;
       }
 
