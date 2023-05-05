@@ -1,4 +1,4 @@
-{{- $cover := partial "get/image/articleCover" .Params -}}
+{{- $cover := partial "get/image/articleCover" . -}}
 {{- $publishedOn := partial "get/date/published" . -}}
 
 <article>
@@ -32,19 +32,21 @@
       <div class="read-more">
         <a class="btn btn-dark" href="{{ .RelPermalink }}" aria-label="Article: {{ .Title }}">Continue reading</a>
       </div>
+      {{ with .Params.Topics -}}
       <div class="tags">
         <div class="name">
           <i class="fa-solid fa-tag"></i>
           Topics:
         </div>
         <div class="topics">
-          {{ range $index, $elements:= .Params.Topics -}}
-          <a href="{{ `topics/` | relLangURL }}{{ . | lower }}">
+          {{ range $index, $elements:= . -}}
+          <a href="{{ `topics/` | relLangURL }}{{ . | urlize | lower }}">
             <mark>{{ . | humanize }}</mark>
           </a>
           {{ end -}}
         </div>
       </div>
+      {{ end -}}
     </div>
   </div>
 </article>
