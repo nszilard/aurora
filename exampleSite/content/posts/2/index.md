@@ -1,7 +1,7 @@
 ---
 draft: false
 date: 2023-05-04T20:50:22+02:00
-image: images/cairn.jpg
+image: cairn.jpg
 author: Aurora Borealis
 title: The Benefits of Meditation
 description: "Discover the Benefits of Meditation: Reduce Stress, Improve Focus, Increase Self-Awareness and Sleep Better"
