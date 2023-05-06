@@ -1,0 +1,10 @@
+{{- $type := "" -}}
+{{- if .IsNamedParams -}}
+  {{- $type = .Get "type" -}}
+{{- else -}}
+  {{- $type = .Get 0 -}}
+{{- end -}}
+
+<blockquote class='{{ $type }}'>
+  <p> {{ .Inner | markdownify }} </p>
+</blockquote>

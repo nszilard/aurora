@@ -1,0 +1,14 @@
+{{- $alt := "Article image" -}}
+{{- with (.Get "alt") -}} {{ $alt = . }}{{ end -}}
+{{- $alt := (.Get "alt") -}}
+
+{{- $src := (printf "*%s*" (.Get "src")) -}}
+{{- $asset := .Page.Resources.GetMatch $src -}}
+
+
+<figure class="media">
+  <img src="{{ $asset.RelPermalink }}" alt="{{ $alt }}"/>
+  <figcaption class="meta pt-1">
+    > {{ $alt }}
+  </figcaption>
+</figure>
