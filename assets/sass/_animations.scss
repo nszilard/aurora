@@ -14,43 +14,6 @@ $AURORA_TRANSITION: all 500ms ease-in-out 0s;
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-}
-
-.bounce-small {
-  -webkit-animation: bounce-small 2s infinite;
-  animation: bounce-small 2s infinite;
-}
-
-@-webkit-keyframes bounce-small {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
     transform: translateY(-12px);
   }
   60% {
@@ -58,7 +21,7 @@ $AURORA_TRANSITION: all 500ms ease-in-out 0s;
   }
 }
 
-@keyframes bounce-small {
+@keyframes bounce {
   0%,
   20%,
   50%,
