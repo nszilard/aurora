@@ -1,24 +1,18 @@
 "use strict";
 
-$(function () {
-  if (document.getElementById('typing-carousel-data') != undefined) {
-    var ul = document.getElementById('typing-carousel-data').children;
+window.addEventListener('DOMContentLoaded', function () {
+  const ul = document.getElementById('typing-carousel-data')?.children;
+  if (ul == null || ul.length == 0) return
 
-    if (ul.length != 0) {
-      var data = [];
-      Array.from(ul).forEach(el => {
-        data.push(el.textContent);
-      })
+  const data = Array.from(ul).map($el => $el.textContent);
 
-      ityped.init('#ityped', {
-        strings: data,
-        typeSpeed: 60,
-        backSpeed: 30,
-        startDelay: 250,
-        backDelay: 1000,
-        showCursor: true,
-        loop: true
-      });
-    }
-  }
+  ityped.init('#ityped', {
+    strings: data,
+    typeSpeed: 60,
+    backSpeed: 30,
+    startDelay: 250,
+    backDelay: 1000,
+    showCursor: true,
+    loop: true
+  });
 });
