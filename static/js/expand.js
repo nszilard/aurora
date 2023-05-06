@@ -1,11 +1,21 @@
 "use strict";
 
-$(".toggle").on("click", function () {
-  var $item = $(this);
-  var $content = $item.prev();
-  var $icon = $item.children();
+const toggleIcons = document.querySelectorAll('.toggle')
+toggleIcons.forEach(toggle => {
+  toggle.addEventListener('click', function () {
+    var content = this.previousElementSibling;
+    var icon = this.querySelector('.fas');
+    const card = this.closest('.details')
 
-  $content.slideToggle(500, function () {
-    $icon.toggleClass("fa-angle-double-down fa-angle-double-up")
+    content.slider(() => {
+      content.classList.toggle('hidden');
+
+      if (content.classList.contains('hidden')) {
+        icon.classList.replace('fa-angle-double-up', 'fa-angle-double-down');
+        card.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+      } else {
+        icon.classList.replace('fa-angle-double-down', 'fa-angle-double-up');
+      }
+    });
   });
-});
+})

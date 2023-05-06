@@ -19,6 +19,10 @@ section {
   font-family: $FONT_Headings;
 }
 
+.hidden {
+  display: none;
+}
+
 .header {
   .title {
     padding-top: 2rem;

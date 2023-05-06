@@ -32,8 +32,8 @@
     {{ end -}}
     <div class="details" id="{{ $educationID }}-details">
       <div class="sub-title">Details</div>
-      <div class="markdown collapse"> {{ .description | markdownify }} </div>
-      <div class="toggle bounce" role="button" aria-label="Expand/collapse details" aria-expanded="false" aria-controls="{{ $educationID }}-details">
+      <div class="markdown hidden"> {{ .description | markdownify }} </div>
+      <div class="toggle bounce" role="button" aria-label="Toggle details" aria-expanded="false" aria-controls="{{ $educationID }}-details">
         <i class="fas fa-angle-double-down"></i>
       </div>
     </div>
