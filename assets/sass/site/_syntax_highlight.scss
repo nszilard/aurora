@@ -9,8 +9,11 @@
   overflow: auto;
   padding: 0.5em;
   color: $FONT;
-  font-family: $FONT_Mono;
   background-color: $BACKGROUND_LIGHTER;
+
+  code {
+    font-family: $FONT_Mono !important;
+  }
 
   .line {
     display: flex;
