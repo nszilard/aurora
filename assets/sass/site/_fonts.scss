@@ -2,7 +2,8 @@ $_MONO_FONTS: "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono"
 $_SANS_FONTS: system-ui, -apple-system, "Roboto", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 $FONT_Mono: "Roboto Mono", $_MONO_FONTS;
-$FONT_Normal: "Questrial", $_SANS_FONTS;
+$FONT_Headings: "Questrial", $_SANS_FONTS;
+$FONT_Text: "Manrope", $_SANS_FONTS;
 
 /* Questrial variable fonts */
 @font-face {
@@ -10,6 +11,15 @@ $FONT_Normal: "Questrial", $_SANS_FONTS;
   font-style: normal;
   src: local(''),
        url('../fonts/questrial/regular.ttf') format("truetype");
+  font-weight: 1 999;
+}
+
+/* Manrope variable fonts */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  src: local(''),
+       url('../fonts/manrope/normal.ttf') format("truetype");
   font-weight: 1 999;
 }
 

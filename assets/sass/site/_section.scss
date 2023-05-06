@@ -12,6 +12,13 @@ section {
   display: none;
 }
 
+.title, .sub-title,
+.date, .sub-date,
+.head, .header,
+.meta {
+  font-family: $FONT_Headings;
+}
+
 .header {
   .title {
     padding-top: 2rem;

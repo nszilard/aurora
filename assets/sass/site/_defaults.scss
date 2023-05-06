@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  font-family: $FONT_Normal;
+  font-family: $FONT_Text;
   color: $FONT_LOWLIGHT;
   background-color: $BACKGROUND_BLACK;
   quotes: "„" "“";
@@ -15,6 +15,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: $FONT_HIGHLIGHT;
+  font-family: $FONT_Headings !important;
 }
 
 a {
@@ -31,7 +32,7 @@ div:nth-child(1) {
 }
 
 code {
-  font-family: $FONT_Mono;
+  font-family: $FONT_Text;
   font-size: 0.9em;
   color: lighten($AURORA_GREEN, 20);
 }

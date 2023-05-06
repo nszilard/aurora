@@ -3,6 +3,10 @@
   max-width: calc(min(75vw, 1650px));
 }
 
+.navbar, .btn {
+  font-family: $FONT_Headings;
+}
+
 mark {
   font-size: 0.9rem;
   line-height: 2.2rem;
@@ -15,6 +19,7 @@ mark {
   transition: $AURORA_TRANSITION;
 
   color: $FONT_LOWLIGHT;
+  font-family: $FONT_Headings;
   background-color: transparent;
   box-shadow: 0 1px 2px $PRIMARY, 0 -2px 0px $BACKGROUND_BLACK;
 

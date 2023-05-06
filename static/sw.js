@@ -16,6 +16,7 @@ class PWA {
       '/fonts/roboto-mono/italic.ttf',
       '/fonts/roboto-mono/normal.ttf',
       '/fonts/questrial/regular.ttf',
+      '/fonts/manrope/normal.ttf',
       '/js/article.js',
       '/js/expand.js',
       '/js/itype.js',
