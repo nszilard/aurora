@@ -24,3 +24,7 @@
 {{ partial "section/pagination" . -}}
 
 {{- end -}}
+
+{{- define "scripts" }}
+  <script src='{{ "js/navbar.js" | relURL }}'></script>
+{{- end -}}
