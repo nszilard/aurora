@@ -38,7 +38,11 @@
   }
 
   .navbar-collapse {
-    flex-direction: row-reverse;
+    .section-items {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
 
     li {
       a {
@@ -58,7 +62,6 @@
 
     &.show,
     &.collapsing {
-      padding-bottom: 0.5rem;
       background-color: $BACKGROUND_BLACK;
     }
   }

@@ -1,26 +1,16 @@
 "use strict";
 
-const updateNavBar = () => {
-  if ($(document).scrollTop() > 10) {
-    $('#top-navbar').removeClass('initial-navbar');
-    $('#top-navbar').addClass('final-navbar shadow');
-  } else {
-    $('#top-navbar').removeClass('final-navbar shadow');
-    $('#top-navbar').addClass('initial-navbar');
-  }
-};
+document.addEventListener("DOMContentLoaded", function () {
+  function collapse(e) {
+    const dropdowns = document.querySelectorAll('#navbarDropdownItems')
 
-$(function () {
-  $(document).scroll(function () {
-    updateNavBar();
-  });
-
-  var navMain = $(".navbar-collapse");
-  if (navMain) {
-    navMain.on("click", "a", null, function (e) {
-      $('.navbar-collapse').collapse('hide');
-    });
+    if (e.target && e.target.tagName === "A") {
+      dropdowns.forEach(item => {
+        item.classList.remove("show");
+      })
+    }
   }
 
-  updateNavBar();
+  const navbar = document.querySelector(".navbar-collapse");
+  navbar.addEventListener("click", collapse)
 });

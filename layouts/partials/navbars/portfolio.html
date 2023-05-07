@@ -20,33 +20,35 @@
       Home
     </a>
     <button type="button" id="navbar-toggler" class="navbar-toggler navbar-dark"
-      data-bs-toggle="collapse" data-bs-target=".collapse"
-      aria-label="menu" aria-expanded="false" aria-controls="portfolioSectionNavs">
+      data-bs-toggle="collapse" data-bs-target="#navbarDropdownItems"
+      aria-label="Toggle menu" aria-expanded="false" aria-controls="navbarDropdownItems">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="portfolioSectionNavs">
-      <ul class="navbar-nav">
-        {{ range $portfolioNavs -}}
-        <li class="nav-item">
-          <a class="nav-link" id="{{ .name }}-link" href="#{{ .id }}">{{ .name }}</a>
-        </li>
-        {{ end -}}
-      </ul>
-    </div>
-    <div class="collapse navbar-collapse" id="pageNavs">
-      <ul class="navbar-nav">
-        <li class="divider"> </li>
-        {{ if gt $projectsCount 0 -}}
-        <li class="nav-item">
-          <a class="nav-link" id="projects-link" href='{{ partial "get/path/projects" }}'>Projects</a>
-        </li>
-        {{ end -}}
-        {{ if gt $postCount 0 -}}
-        <li class="nav-item">
-          <a class="nav-link" id="blog-link" href='{{ partial "get/path/posts" }}'> Posts </a>
-        </li>
-        {{ end -}}
-      </ul>
+    <div class="collapse navbar-collapse" id="navbarDropdownItems">
+      <div class="section-items">
+        <ul class="navbar-nav">
+          {{ range $portfolioNavs -}}
+          <li class="nav-item">
+            <a class="nav-link" id="{{ .name }}-link" href="#{{ .id }}">{{ .name }}</a>
+          </li>
+          {{ end -}}
+        </ul>
+      </div>
+      <div class="page-items">
+        <ul class="navbar-nav">
+          <li class="divider"> </li>
+          {{ if gt $projectsCount 0 -}}
+          <li class="nav-item">
+            <a class="nav-link" id="projects-link" href='{{ partial "get/path/projects" }}'>Projects</a>
+          </li>
+          {{ end -}}
+          {{ if gt $postCount 0 -}}
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href='{{ partial "get/path/posts" }}'> Posts </a>
+          </li>
+          {{ end -}}
+        </ul>
+      </div>
     </div>
   </div>
 </nav>
