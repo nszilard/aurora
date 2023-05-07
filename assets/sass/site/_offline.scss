@@ -2,7 +2,6 @@
   .content {
     max-width: calc(min(99vw, 900px));
     margin: 0 auto;
-    font-style: italic;
     align-items: center;
     flex-direction: column;
 
@@ -19,9 +18,10 @@
     .markdown {
       z-index: 10;
       position: relative;
-      color: $FONT;
       margin: 0.25rem;
       font-size: 1.1rem;
+      color: $FONT;
+      font-style: italic;
     }
   }
 }
