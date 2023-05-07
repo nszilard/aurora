@@ -7,7 +7,7 @@
   font-family: $FONT_Headings;
   position: relative;
 
-  .copyright {
+  .content {
     width: 100%;
     min-height: 50px;
     display: flex;
@@ -22,7 +22,7 @@
       flex: 0 1 40px;
     }
 
-    .copyright-text {
+    .copyright {
       flex: 1 1 auto;
     }
 

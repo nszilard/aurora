@@ -3,18 +3,16 @@
 {{- $copyrightNotice := now.Format "2006" | printf "Copyright © %s" -}}
 
 <footer id="footer" class="text-center align-content-center footer">
-  <div class="container container-fluid">
-    <div class="copyright">
+  <div class="container content">
       <div class="site-logo">
         <img src="{{ $siteLogo.RelPermalink }}" id="site-logo" alt="site-logo" height="42" width="42"/>
       </div>
-      <div class="markdown copyright-text text-center">
+      <div class="markdown copyright text-center">
         {{ $copyrightNotice | markdownify }}
       </div>
       <div class="theme-logo">
         <img src="{{ $themeLogo.RelPermalink }}" id="theme-logo" alt="theme-logo" height="42" width="42"/>
       </div>
-    </div>
   </div>
 </footer>
 

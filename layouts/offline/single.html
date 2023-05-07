@@ -3,13 +3,11 @@
 {{ partial "navbars/simple" . }}
 <section class="container-fluid aurora-background single-page offline" id="offline">
   <div id="particles-js" class="particles"></div>
-  <div class="container">
-    <div class="content">
-      <div class="row title">
-        <h1>{{ .Title }}</h1>
-      </div>
-      <div class="row markdown">{{ .Content | markdownify }}</div>
+  <div class="container content">
+    <div class="row title">
+      <h1>{{ .Title }}</h1>
     </div>
+    <div class="row markdown">{{ .Content | markdownify }}</div>
   </div>
 </section>
 

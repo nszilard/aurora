@@ -1,6 +1,6 @@
 {{- $related := .Site.RegularPages.Related . | first 3 -}}
 {{- with $related -}}
-<section class="bg container container-fluid p-lg-5 py-3 related-posts" id="related-posts">
+<section class="bg container p-lg-5 py-3 related-posts" id="related-posts">
   {{ partial "section/title" "Related posts" }}
   <div class="row posts">
   {{ range . -}}
