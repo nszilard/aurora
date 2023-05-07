@@ -88,6 +88,8 @@ related:
   indices:
   - name: topics
     weight: 100
+  - name: categories
+    weight: 50
   - name: date
     weight: 10
 
