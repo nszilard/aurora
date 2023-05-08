@@ -7,7 +7,7 @@
     {{ partial "head/main" . }}
     {{ block "header" . -}} {{- end }}
   </head>
-  <body id="body" data-bs-spy="scroll" data-bs-target=".scroll-target" data-bs-offset="50">
+  <body id="body" data-bs-spy="scroll" data-bs-target=".scroll-target" data-bs-offset="50" data-bs-no-jquery>
     <div class="page-content">
       {{ block "content" . -}} {{- end }}
     </div>
