@@ -1,0 +1,72 @@
+@include tablet {
+  .timeline {
+    .center-line {
+      left: 20px;
+    }
+
+    .wrapper {
+      margin: 30px 0 30px 60px;
+
+      .odd {
+        .aurora-card {
+          .icon {
+            left: -60px;
+          }
+
+          &::before {
+            left: -11px;
+            border-top: none !important;
+            border-right: none !important;
+            border-left: $_TIMELINE_CARD_BORDER;
+            border-bottom: $_TIMELINE_CARD_BORDER;
+            border-color: lighten($BACKGROUND_LIGHTER, 4);
+          }
+        }
+      }
+
+      .aurora-card {
+        width: 100%;
+
+        &:hover {
+          &::before {
+            border-color: $BACKGROUND_HIGHLIGHT !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .timeline {
+    .center-line {
+      top: 0;
+      left: 50%;
+      height: 98%;
+
+      .scroll-icon {
+        display: none;
+        bottom: -1em;
+      }
+    }
+
+    .wrapper {
+      margin: 20px auto;
+      padding-top: 50px;
+
+      .odd, .even {
+        .aurora-card {
+          .icon {
+            position: absolute;
+            left: calc(50% - 20px);
+            top: -60px;
+          }
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

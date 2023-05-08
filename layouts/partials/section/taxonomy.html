@@ -1,48 +1,48 @@
-{{- $currURL := (trim .Page.RelPermalink "/") -}}
+{{- $showTopics := false -}}
+{{- $showCategories := false -}}
 
-<aside class="taxonomies">
-  {{ if isset site.Taxonomies "categories" -}}
-  {{ if (gt (len site.Taxonomies.categories) 1) -}}
-  <div class="category">
-    <div class="title">
-      <i class="fa-solid fa-user-tag"></i>
-      Categories
-      {{ if strings.Contains $currURL "categories" -}}
-      <em>
-        (<a href='{{ partial "get/path/posts" }}'>All posts<a/>)
-      <em/>
-      {{ end -}}
+{{- if and (isset site.Taxonomies "categories") (gt (len site.Taxonomies.categories) 1) -}}
+  {{- $showCategories = true -}}
+{{- end -}}
+{{- if and (isset site.Taxonomies "topics") (gt (len site.Taxonomies.topics) 1) -}}
+  {{- $showTopics = true -}}
+{{- end -}}
+
+{{- if or ($showCategories) ($showTopics) -}}
+
+<section class="bg-darker container-fluid">
+  <div class="container taxonomies">
+    {{ if $showCategories -}}
+    <div class="category">
+      <header class="header">
+        <i class="fa-solid fa-user-tag"></i>
+        <h2 class="title"> Categories </h2>
+      </header>
+      <div class="items">
+        {{ range $name, $items := site.Taxonomies.categories -}}
+        <a href="{{ `categories/` | relLangURL }}{{ $name | urlize | lower }}">
+          <mark>{{ $name | title | humanize }}</mark>
+        </a>
+        {{ end -}}
+      </div>
     </div>
-    <div class="items">
-      {{ range $name, $items := site.Taxonomies.categories -}}
-      <a href="{{ `categories/` | relLangURL }}{{ $name | urlize | lower }}">
-        <mark>{{ $name | title | humanize }}</mark>
-      </a>
-      {{ end -}}
+    {{- end -}}
+    {{ if $showTopics -}}
+    <div class="tag">
+      <header class="header">
+        <i class="fa-solid fa-tags"></i>
+        <h2 class="title"> Topics </h2>
+      </header>
+      <div class="items">
+        {{ range site.Taxonomies.topics.Alphabetical -}}
+        <a href="{{ `topics/` | relLangURL }}{{ .Term | urlize | lower }}">
+          <mark>{{ .Term | humanize }} ({{ .Count }})</mark>
+        </a>
+        {{ end -}}
+      </div>
     </div>
+    {{- end -}}
   </div>
-  {{ end -}}
-  {{- end -}}
-  {{ if isset site.Taxonomies "topics" -}}
-  {{ if (gt (len site.Taxonomies.topics) 1) -}}
-  <div class="tag">
-    <div class="title">
-      <i class="fa-solid fa-tags"></i>
-      Topics
-      {{ if strings.Contains $currURL "topics" -}}
-      <em>
-        (<a href='{{ partial "get/path/posts" }}'>All posts<a/>)
-      <em/>
-      {{ end -}}
-    </div>
-    <div class="items">
-      {{ range site.Taxonomies.topics.Alphabetical -}}
-      <a href="{{ `topics/` | relLangURL }}{{ .Term | urlize | lower }}">
-        <mark>{{ .Term | humanize }} ({{ .Count }})</mark>
-      </a>
-      {{ end -}}
-    </div>
-  </div>
-  {{ end -}}
-  {{- end }}
-</aside>
+</section>
+
+{{- end -}}

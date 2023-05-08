@@ -1,0 +1,11 @@
+@include mobile-landscape {
+  .aurora-border {
+    width: 75%;
+  }
+}
+
+@include mobile-small {
+  .aurora-border {
+    width: 85%;
+  }
+}

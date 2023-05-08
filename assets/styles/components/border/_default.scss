@@ -1,0 +1,17 @@
+.aurora-border {
+  position: relative;
+  width: calc(min(85%, 765px));
+  height: 1px;
+  margin: 1rem auto;
+  border-top: 2px solid $BACKGROUND_HIGHLIGHT;
+
+  &:before {
+    position: absolute;
+    content: '';
+    left: calc(50% - 40px);
+    top: -3px;
+    height: 4px;
+    width: 80px;
+    background-color: $HIGHLIGHT;
+  }
+}

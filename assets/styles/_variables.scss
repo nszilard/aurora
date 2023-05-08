@@ -1,0 +1,14 @@
+$_MONO_FONTS: "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+$_SANS_FONTS: system-ui, -apple-system, "Roboto", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$AURORA_FONT_Mono: "Roboto Mono", $_MONO_FONTS;
+$AURORA_FONT_Headings: "Questrial", $_SANS_FONTS;
+$AURORA_FONT_Body: "Manrope", $_SANS_FONTS;
+
+$AURORA_NAVBAR_HEIGHT: 50px;
+$AURORA_FOOTER_HEIGHT: 50px;
+
+$AURORA_BORDER_RADIUS: 0.45rem;
+
+$AURORA_BOUNCE_HEIGHT: 20px;
+$AURORA_TRANSITION: all 500ms ease-in-out 0s;

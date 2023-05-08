@@ -1,0 +1,51 @@
+.aurora-icon-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  a {
+    margin: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.875rem;
+    border-radius: 0;
+    border: 1px solid $BACKGROUND_LIGHTER;
+    background-color: transparentize($BACKGROUND_LIGHTER, 0.70);
+    transition: $AURORA_TRANSITION;
+
+    i {
+      margin: 0;
+      display: inline-block;
+      opacity: 0.75;
+      font-size: 2rem;
+      line-height: 3.5rem;
+      color: $BACKGROUND_HIGHLIGHT;
+      transition: $AURORA_TRANSITION;
+    }
+
+    &:hover {
+      background: $BACKGROUND_LIGHTER;
+      border-color: $BACKGROUND_HIGHLIGHT;
+
+      i {
+        opacity: 1;
+        color: $HIGHLIGHT;
+      }
+    }
+
+    &:focus-visible {
+      outline: 0;
+      opacity: 0.85;
+      background-color: $BACKGROUND_LIGHTER;
+      border: 1px solid $BACKGROUND_HIGHLIGHT;
+    }
+
+    &:active {
+      opacity: 0.85;
+      border: 1px solid $FONT_LOWLIGHT;
+    }
+  }
+}

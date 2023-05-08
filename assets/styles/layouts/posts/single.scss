@@ -1,0 +1,135 @@
+@import "../_sections/related-posts/main";
+
+$_articleWidth: 800px;
+
+.single-post {
+  .article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    header {
+      width: 100%;
+      margin-bottom: 1rem;
+      text-align: center;
+
+      .head {
+        margin: 1rem auto 2rem;
+        max-width: $_articleWidth;
+
+        .description {
+          font-size: 1.5rem;
+        }
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .item {
+          margin: 0.25rem 1rem;
+          font-style: italic;
+          font-size: 0.85rem;
+
+          i {
+            color: $PRIMARY;
+            margin: 0 0.1rem;
+          }
+
+          .key {
+            color: $FONT;
+          }
+        }
+      }
+    }
+
+    article {
+      max-width: calc(max(100vw - 2rem), #{$_articleWidth});
+      width: calc(min(100%, #{$_articleWidth}));
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+
+      h1, h2, h3, h4, h5, h6 {
+        padding-top: 1.25rem;
+      }
+
+      blockquote {
+        font-size: 1rem;
+        background-color: $BACKGROUND_LIGHTER;
+
+        >p {
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
+          color: $FONT_LOWLIGHT;
+        }
+
+        &.warning, &.danger >p {
+          font-weight: bolder;
+        }
+
+        &.warning {
+          border-left-color: #eea161;
+        }
+
+        &.danger {
+          border-left-color: #e06c75;
+        }
+
+        &.success {
+          border-left-color: #98c379;
+        }
+      }
+
+      .table-wrapper {
+        width: 100%;
+        overflow: auto;
+      }
+
+      & > :first-child {
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+
+    .share {
+      width: 100%;
+      margin: 1rem 0;
+
+      .message {
+        color: $FONT;
+        text-align: center;
+        font-size: 1.35rem;
+      }
+
+      .items {
+        padding-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .single-post {
+    .article {
+      article {
+        font-size: 1rem;
+
+        h1, h2, h3, h4, h5, h6 {
+          padding-top: 1rem;
+        }
+      }
+
+      .share {
+        .message {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}

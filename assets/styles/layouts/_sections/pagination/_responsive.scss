@@ -1,0 +1,32 @@
+@include mobile {
+  .posts-navigation {
+    .pagination {
+      .item {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.85rem;
+      }
+
+      .ellipsis {
+        padding: 0.3rem;
+      }
+    }
+  }
+}
+
+@include mobile-small {
+  .posts-navigation {
+    .pagination {
+      display: inline-flex;
+      flex-wrap: wrap;
+
+      .pages {
+        .item:not(.active, .list-end) {
+          display: none;
+        }
+      }
+      .ellipsis {
+        display: none;
+      }
+    }
+  }
+}

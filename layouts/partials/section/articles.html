@@ -1,0 +1,13 @@
+{{- $oddColumns := (modBool .Paginator.PageSize 3) -}}
+
+{{ range .Paginator.Pages -}}
+{{- if $oddColumns -}}
+  <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
+    {{ partial "cards/article" . }}
+  </div>
+{{ else -}}
+  <div class="col-xs-12 col-md-6 d-flex">
+    {{ partial "cards/article" . }}
+  </div>
+{{- end -}}
+{{ end -}}

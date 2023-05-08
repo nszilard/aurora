@@ -1,0 +1,39 @@
+@include mobile-landscape {
+  .slider {
+    .previous {
+      left: 5px;
+    }
+
+    .next {
+      right: 5px;
+    }
+  }
+}
+
+@include mobile {
+  .slider {
+    .previous {
+      display: none !important;
+    }
+
+    .next {
+      display: none !important;
+    }
+
+    .wrapper {
+      width: 100%;
+
+      .aurora-card {
+        max-width: calc(100vw - 4rem);
+      }
+    }
+
+    .indicator {
+      margin: 0.25rem 0;
+
+      li {
+        margin: 0.55rem 0.35rem;
+      }
+    }
+  }
+}

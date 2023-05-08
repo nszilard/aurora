@@ -1,0 +1,22 @@
+.interest {
+  .aurora-card {
+    margin: 1rem;
+    background-color: $BACKGROUND_LIGHTER;
+
+    .content {
+      text-align: center;
+
+      mark {
+        margin: 0;
+        box-shadow: none;
+        font-style: normal;
+        color: $FONT_LOWLIGHT;
+        white-space: break-spaces;
+
+        &:hover {
+          color: $BACKGROUND_DARKER;
+        }
+      }
+    }
+  }
+}

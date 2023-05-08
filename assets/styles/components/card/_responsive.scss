@@ -1,0 +1,27 @@
+@include mobile-landscape {
+  .aurora-card {
+    .cover {
+      .media {
+        height: 175px;
+      }
+
+      &::before {
+        height: 175px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .aurora-card {
+    .cover {
+      .media {
+        height: 150px;
+      }
+
+      &::before {
+        height: 150px;
+      }
+    }
+  }
+}

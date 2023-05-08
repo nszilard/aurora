@@ -1,27 +1,22 @@
 {{- define "content" -}}
-{{- $oddColumns := (modBool .Paginator.PageSize 3) -}}
+{{- .Scratch.Set "staticTitle" "Posts" -}}
 
-{{ partial "navbars/posts" . }}
+{{ partial "navbars/simple" . }}
 {{ partial "section/hero" . }}
-<div class="bg container p-lg-5 py-3 blog" id="blog">
-  <div class="row pt-4">
-    {{ partial "section/taxonomy" . }}
-  </div>
-  <div class="row posts pt-4 justify-content-center">
-  {{ range .Paginator.Pages -}}
-  {{- if $oddColumns -}}
-    <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
-      {{ partial "cards/article" . }}
+<section class="bg container-fluid posts" id="posts">
+  <div class="container">
+    {{ partial "section/title" .Title }}
+    <div class="row">
+      <a class="btn" id="posts-link" href='{{ partial "get/path/posts" }}'>Clear filter</a>
     </div>
-  {{ else -}}
-    <div class="col-xs-12 col-md-6 d-flex">
-      {{ partial "cards/article" . }}
+    <div class="row articles">
+      {{ partial "section/articles" . }}
     </div>
-  {{- end -}}
-  {{ end -}}
+    <div class="row">
+      {{ partial "section/pagination" . }}
+    </div>
   </div>
-</div>
-{{ partial "section/pagination" . -}}
+</section>
 
 {{- end -}}
 

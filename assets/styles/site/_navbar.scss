@@ -1,0 +1,170 @@
+.aurora-navbar {
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: $AURORA_NAVBAR_HEIGHT;
+  min-height: $AURORA_NAVBAR_HEIGHT;
+  background-color: $BACKGROUND_BLACK;
+  border-bottom: 1px solid $BACKGROUND_HIGHLIGHT;
+  transition: $AURORA_TRANSITION;
+
+  .container {
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    color: $FONT;
+    font-weight: 600;
+    font-size: 1.15rem;
+  }
+
+  .menu-toggle {
+    margin-left: 0.5rem;
+    color: $FONT;
+    border: 0;
+
+    i {
+      color: $FONT;
+    }
+
+    .title {
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin-right: 0.5rem;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .nav-link {
+    color: $FONT;
+    font-weight: 600;
+
+    &.active {
+      color: $PRIMARY;
+    }
+
+    &:hover {
+      color: $HIGHLIGHT;
+    }
+  }
+
+  .center-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar-collapse {
+    justify-content: end;
+
+    &.show, &.collapsing {
+      text-align: center;
+      background-color: $BACKGROUND_BLACK;
+    }
+
+    &.show {
+      padding: 0 0.75rem 0.5rem;
+      margin: -1px -0.75rem 0;
+      margin: 0 -0.75rem 0;
+      flex-wrap: wrap;
+      max-height: 100vh !important;
+      overflow-y: auto;
+      border-bottom: 2px solid $BACKGROUND_HIGHLIGHT;
+
+      .divider {
+        display: block;
+      }
+    }
+  }
+
+  .divider {
+    display: none;
+    height: auto;
+    width: auto;
+    margin: 0.75rem 1rem;
+    background: $FONT_LOWLIGHT;
+    border-top: 1px solid $FONT_LOWLIGHT;
+  }
+
+  .toc {
+    .toc-title {
+      padding: 0 0.25rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: $BACKGROUND_HIGHLIGHT;
+
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .nav-item {
+      margin: 0 auto;
+      width: 100%;
+      max-width: calc(min(85%, 600px));
+      text-align: left;
+
+      .nav-link {
+        margin: 0
+      }
+
+      .h2 {
+        font-size: 1.1rem;
+      }
+
+      .h3 {
+        padding-left: 0.5rem;
+        font-size: 1.05rem;
+      }
+
+      .h3 {
+        padding-left: 1rem;
+        font-size: 1rem;
+      }
+
+      .h4 {
+        padding-left: 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .h5 {
+        padding-left: 2rem;
+        font-size: 0.9rem;
+      }
+
+      .h6 {
+        padding-left: 2.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .aurora-navbar {
+    .navbar-brand {
+      font-size: 0;
+    }
+
+    .menu-toggle {
+      margin-left: 0.5rem;
+
+      .title {
+        font-size: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}

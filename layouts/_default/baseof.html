@@ -4,14 +4,14 @@
 <!DOCTYPE html>
 <html lang="{{ $languageCode }}">
   <head>
-    {{ partial "head/main" . }}
+    {{ partial "head/main" . -}}
     {{ block "header" . -}} {{- end }}
   </head>
-  <body id="body" data-bs-spy="scroll" data-bs-target=".scroll-target" data-bs-offset="50" data-bs-no-jquery>
+  <body id="body" data-bs-spy="scroll" data-bs-target=".aurora-navbar" data-bs-offset="50" data-bs-no-jquery>
     <div class="page-content">
       {{ block "content" . -}} {{- end }}
     </div>
-    {{ if ne site.Home.Page .Page -}} {{ partialCached "footer" . }} {{- end }}
+    {{ if ne site.Home.Page .Page -}} {{ partialCached "footer" . }} {{- end -}}
     {{ block "scripts" . -}} {{- end }}
   </body>
 </html>

@@ -13,19 +13,19 @@
   {{- end -}}
 {{- end -}}
 
-<nav class="navbar navbar-expand-lg top-navbar sticky-top scroll-target" id="portfolio-navbar">
+<nav class="navbar navbar-expand-lg aurora-navbar" id="portfolio-navbar">
   <div class="container">
     <a class="navbar-brand" id="home-link" href="{{ site.BaseURL | relURL }}">
       <img src="{{ $logo.RelPermalink }}" id="logo" alt="logo" height="40" width="40">
       Home
     </a>
-    <button type="button" id="navbar-toggler" class="navbar-toggler navbar-dark"
+    <button type="button" id="navbar-toggler" class="navbar-toggler menu-toggle"
       data-bs-toggle="collapse" data-bs-target="#navbarDropdownItems"
       aria-label="Toggle menu" aria-expanded="false" aria-controls="navbarDropdownItems">
-      <span class="navbar-toggler-icon"></span>
+      <i class="fa-solid fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarDropdownItems">
-      <div class="section-items">
+      <div class="center-nav">
         <ul class="navbar-nav">
           {{ range $portfolioNavs -}}
           <li class="nav-item">
@@ -52,3 +52,5 @@
     </div>
   </div>
 </nav>
+
+{{- /* EOF */ -}}

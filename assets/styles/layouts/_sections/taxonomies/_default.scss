@@ -1,0 +1,56 @@
+.taxonomies {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-around;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 3rem 0;
+
+    .title {
+      padding: 0;
+      margin: 0;
+    }
+
+    i {
+      margin-right: 0.75rem;
+      color: $PRIMARY;
+    }
+  }
+
+  .aurora-border {
+    padding-bottom: 0.5rem;
+  }
+
+  .category {
+    flex-grow: 1;
+  }
+
+  .tag {
+    flex-grow: 1;
+  }
+
+  .items {
+    margin: 0.75rem 0;
+    font-style: italic;
+
+    a {
+      margin: auto 0.1rem;
+    }
+
+    mark {
+      font-size: 1rem;
+      text-transform: none;
+      letter-spacing: 0.02rem;
+      background-color: $BACKGROUND_LIGHTER;
+
+      &:hover {
+        background-color: $FONT_LOWLIGHT;
+      }
+    }
+  }
+}

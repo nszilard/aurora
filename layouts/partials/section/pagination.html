@@ -34,48 +34,48 @@
 {{- end -}}
 
 {{- if gt $paginator.TotalPages 1 -}}
-<div class="container-fluid py-3" id="posts-navigation">
-  <div class="container posts-navigation">
-    <nav>
-      <ul class="pagination">
-        <li class="page-item previous">
-          {{ if $paginator.HasPrev -}}
-          <a class="item button" href="{{ $paginator.Prev.URL }}" aria-label="Previous page">
-            <i class="fa-solid fa-angles-left"></i>
-          </a>
-          {{ else -}}
-          <span class="item button disabled">
-            <i class="fa-solid fa-angles-left"></i>
-          </span>
-          {{ end -}}
-        <li>
-      {{ range $paginator.Pagers -}}
-      {{ if or (or (eq .PageNumber 1) (eq .PageNumber $paginator.TotalPages)) (and (ge .PageNumber $lowerLimit) (le .PageNumber $upperLimit)) -}}
-        <li class="page-item">
-          <a href="{{ .URL }}" class="item {{ if eq $paginator.PageNumber .PageNumber }} active {{ end }}" aria-current="page" aria-label="Page {{ .PageNumber }}" role="button" >
-            {{ .PageNumber }}
-          </a>
-        </li>
-      {{ if or (and (eq .PageNumber 1) (eq $includeEllipsisBefore true)) (and (eq .PageNumber $upperLimit) (eq $includeEllipsisAfter true)) -}}
-        <li class="page-item">
-          <span class="item ellipsis">&hellip;</span>
-        </li>
+<nav class="posts-navigation" id="posts-navigation">
+  <ul class="pagination">
+    <li class="page-item previous">
+      {{ if $paginator.HasPrev -}}
+      <a class="item button" href="{{ $paginator.Prev.URL }}" aria-label="Previous page">
+        <i class="fa-solid fa-angles-left"></i>
+      </a>
+      {{ else -}}
+      <span class="item button disabled">
+        <i class="fa-solid fa-angles-left"></i>
+      </span>
       {{ end -}}
+    <li>
+  {{ range $paginator.Pagers -}}
+  {{ if or (or (eq .PageNumber 1) (eq .PageNumber $paginator.TotalPages)) (and (ge .PageNumber $lowerLimit) (le .PageNumber $upperLimit)) -}}
+    <li class="page-item pages">
+      {{- $activeClass := "" -}}
+      {{- $endClass := "" -}}
+      {{- if eq $paginator.PageNumber .PageNumber }} {{ $activeClass = "active" }} {{ end -}}
+      {{ if or (eq .PageNumber 1) (eq .PageNumber $paginator.TotalPages) }} {{ $endClass = "list-end" }} {{ end -}}
+      <a href="{{ .URL }}" class="item {{ $activeClass }} {{ $endClass }}" aria-current="page" aria-label="Page {{ .PageNumber }}" role="button" >
+        {{ .PageNumber }}
+      </a>
+    </li>
+  {{ if or (and (eq .PageNumber 1) (eq $includeEllipsisBefore true)) (and (eq .PageNumber $upperLimit) (eq $includeEllipsisAfter true)) -}}
+    <li class="page-item">
+      <span class="item ellipsis">&hellip;</span>
+    </li>
+  {{ end -}}
+  {{ end -}}
+  {{ end -}}
+    <li class="page-item next">
+      {{ if $paginator.HasNext -}}
+      <a class="item button" href="{{ $paginator.Next.URL }}" aria-label="Next page">
+        <i class="fa-solid fa-angles-right"></i>
+      </a>
+      {{ else -}}
+      <span class="item button disabled">
+        <i class="fa-solid fa-angles-right"></i>
+      </span>
       {{ end -}}
-      {{ end -}}
-        <li class="page-item next">
-          {{ if $paginator.HasNext -}}
-          <a class="item button" href="{{ $paginator.Next.URL }}" aria-label="Next page">
-            <i class="fa-solid fa-angles-right"></i>
-          </a>
-          {{ else -}}
-          <span class="item button disabled">
-            <i class="fa-solid fa-angles-right"></i>
-          </span>
-          {{ end -}}
-        <li>
-      </ul>
-    </nav>
-  </div>
-</div>
+    <li>
+  </ul>
+</nav>
 {{- end -}}

@@ -1,0 +1,13 @@
+.title, .sub-title,
+.date, .sub-date,
+.head, .header,
+.meta {
+  font-family: $AURORA_FONT_Headings;
+}
+
+.header {
+  .title {
+    padding-top: 2rem;
+    text-align: center;
+  }
+}

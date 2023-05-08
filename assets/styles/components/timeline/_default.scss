@@ -1,0 +1,213 @@
+$_TIMELINE_CARD_BORDER: 1px solid;
+$_TIMELINE_ICON_WIDTH: 40px;
+
+.timeline {
+  position: relative;
+  margin-bottom: 2.5rem;
+
+  .center-line {
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $FONT;
+    transition: $AURORA_TRANSITION;
+
+    .scroll-icon{
+      position: absolute;
+      left: 50%;
+      bottom: 0px;
+      width: $_TIMELINE_ICON_WIDTH;
+      height:$_TIMELINE_ICON_WIDTH;
+      line-height: $_TIMELINE_ICON_WIDTH;
+      background: $FONT;
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .wrapper {
+    .odd {
+      display: flex;
+      justify-content: flex-start;
+
+      .aurora-card {
+        .icon {
+          top: 15px;
+          right: -60px;
+        }
+
+        &::before {
+          right: -11px;
+          border-top: $_TIMELINE_CARD_BORDER;
+          border-right: $_TIMELINE_CARD_BORDER;
+          border-color: lighten($BACKGROUND_LIGHTER, 4);
+          transition: $AURORA_TRANSITION;
+        }
+      }
+    }
+
+    .even {
+      display: flex;
+      justify-content: flex-end;
+
+      .aurora-card {
+        .icon {
+          top: 15px;
+          left: -60px;
+        }
+
+        &::before {
+          left: -11px;
+          border-left: $_TIMELINE_CARD_BORDER;
+          border-bottom: $_TIMELINE_CARD_BORDER;
+          border-color: lighten($BACKGROUND_LIGHTER, 4);
+          transition: $AURORA_TRANSITION;
+        }
+      }
+    }
+
+    .aurora-card {
+      padding: 1rem;
+      position: relative;
+      width: calc(50% - 40px);
+      background-color: $BACKGROUND_LIGHTER;
+
+      .icon {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: unset;
+        font-size: 18px;
+        width: $_TIMELINE_ICON_WIDTH;
+        height: $_TIMELINE_ICON_WIDTH;
+        line-height: $_TIMELINE_ICON_WIDTH;
+        color: $BACKGROUND_HIGHLIGHT;
+        background-color: $FONT;
+        border-radius: 50%;
+      }
+
+      .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        font-size: 1.15rem;
+
+        .link {
+          flex-basis: 55%;
+          text-align: start;
+          text-decoration: none;
+          color: $FONT_HIGHLIGHT;
+          transition: $AURORA_TRANSITION;
+        }
+
+        .date {
+          flex-basis: 35%;
+          flex-grow: 0.6;
+          font-style: italic;
+          text-align: right;
+        }
+      }
+
+      .title {
+        color: $PRIMARY;
+        margin-bottom: 0.25rem;
+      }
+
+      .content {
+        padding-top: 0;
+        padding-bottom: 0;
+        text-align: center;
+
+        .marks {
+          text-align: center;
+
+          ul {
+            list-style-type: none;
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 0px;
+
+            li {
+              font-style: italic;
+              display: inline-block;
+            }
+          }
+        }
+
+        .details {
+          margin-top: 0.5rem;
+
+          .markdown {
+            margin: 0.5rem 0.25rem 0.75rem;
+            text-align: left;
+
+            ul {
+              text-align: left;
+              margin-block-start: 0;
+              margin-block-end: 1rem;
+              margin-inline-start: 0;
+              margin-inline-end: 0;
+              padding-inline-start: 1rem;
+
+              li {
+                margin-bottom: 0.25em;
+              }
+            }
+          }
+
+          .toggle {
+            cursor: pointer;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1.3rem;
+            color: $PRIMARY;
+            transition: $AURORA_TRANSITION;
+          }
+        }
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 25px;
+        width: 20px;
+        height: 20px;
+        transform: rotate(45deg);
+        background: $BACKGROUND_LIGHTER;
+      }
+
+      &:hover {
+        .icon {
+          color: $HIGHLIGHT;
+          color: $BACKGROUND_BLACK;
+          border-color: $BACKGROUND_HIGHLIGHT;
+          background-color: $FONT_HIGHLIGHT;
+          box-shadow: 0 0 0.5rem 0.2rem $LOWLIGHT;
+          transform: none;
+        }
+
+        &::before {
+          border-color: $BACKGROUND_HIGHLIGHT;
+        }
+
+        .title {
+          color: $HIGHLIGHT;
+        }
+
+        .content {
+          .toggle {
+            color: $HIGHLIGHT;
+          }
+        }
+      }
+    }
+  }
+}

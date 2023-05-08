@@ -1,0 +1,30 @@
+@import "404/single";
+@import "offline/single";
+@import "landing/single";
+
+@import "portfolio/list";
+@import "projects/list";
+@import "posts/single";
+@import "posts/list";
+
+
+.page-content {
+  margin-top: $AURORA_NAVBAR_HEIGHT;
+  min-height: calc(100vh - 100px);
+  background-color: $BACKGROUND_LIGHTER;
+}
+
+#typing-carousel-data {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.markdown {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
