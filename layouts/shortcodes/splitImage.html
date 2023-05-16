@@ -1,0 +1,30 @@
+{{- $alt := (dict "alt" "Article image") -}}
+
+{{- $asset1 := (dict "src" (.Get "src1") "alt" (.Get "alt1")) -}}
+{{- if not ($asset1.alt) }}{{ $asset1 = merge $asset1 $alt }}{{ end -}}
+{{- $assetLeft := .Page.Resources.GetMatch (printf "*%s*" $asset1.src) -}}
+
+{{- $asset2 := (dict "src" (.Get "src2") "alt" (.Get "alt2")) -}}
+{{- if not ($asset2.alt) }}{{ $asset2 = merge $asset2 $alt }}{{ end -}}
+{{- $assetRight := .Page.Resources.GetMatch (printf "*%s*" $asset2.src) -}}
+
+<div class="row">
+  <div class="col-6">
+    <figure class="media">
+      <img loading="lazy" width="200" height="200" src="{{ $assetLeft.RelPermalink }}" alt="{{ $asset1.alt }}">
+      <figcaption class="meta pt-1">
+        > {{ $asset1.alt }}
+      </figcaption>
+    </figure>
+  </div>
+  <div class="col-6">
+    <figure class="media">
+      <img loading="lazy" width="200" height="200" src="{{ $assetRight.RelPermalink }}" alt="{{ $asset2.alt }}">
+      <figcaption class="meta pt-1">
+        > {{ $asset2.alt }}
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+{{- /* EOF */ -}}

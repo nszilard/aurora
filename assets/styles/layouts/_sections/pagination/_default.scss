@@ -1,0 +1,86 @@
+.posts-navigation {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .pagination {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+    .item {
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+
+      padding: 0.5rem 1rem;
+      border: 1px solid $BACKGROUND_HIGHLIGHT;
+      transition: $AURORA_TRANSITION;
+
+      color: $FONT_LOWLIGHT;
+      background-color: $LOWLIGHT;
+
+      &:hover {
+        background-color: $PRIMARY;
+        background-color: $BACKGROUND_HIGHLIGHT;
+      }
+    }
+
+    .button {
+      color: $FONT_LOWLIGHT;
+      background-color: $BACKGROUND_DARKER;
+
+      &:hover {
+        background-color: $BACKGROUND_HIGHLIGHT;
+      }
+    }
+
+    .previous {
+      .button {
+        border-right: none;
+        border-top-left-radius: $AURORA_BORDER_RADIUS;
+        border-bottom-left-radius: $AURORA_BORDER_RADIUS;
+      }
+    }
+
+    .next {
+      .button {
+        border-left: none;
+        border-top-right-radius: $AURORA_BORDER_RADIUS;
+        border-bottom-right-radius: $AURORA_BORDER_RADIUS;
+      }
+    }
+
+    .disabled {
+      pointer-events: none;
+      color: $BACKGROUND_HIGHLIGHT;
+
+      &:hover {
+        background-color: $BACKGROUND_DARKER;
+      }
+    }
+
+    .ellipsis {
+      border: none;
+      pointer-events: none;
+      padding: 0.25rem 0.5rem;
+      background-color: transparent;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    .active {
+      color: $BACKGROUND_BLACK;
+      background-color: $HIGHLIGHT;
+
+      &:hover {
+        background-color: $HIGHLIGHT;
+      }
+    }
+  }
+}

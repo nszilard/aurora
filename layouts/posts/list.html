@@ -1,0 +1,22 @@
+{{- define "content" -}}
+
+{{ partial "navbars/posts" . }}
+{{ partial "section/hero" . }}
+<section class="bg container-fluid posts" id="posts">
+  <div class="container">
+    {{ partial "section/title" "Recent posts" }}
+    <div class="row articles">
+      {{ partial "section/articles" . }}
+    </div>
+    <div class="row">
+      {{ partial "section/pagination" . }}
+    </div>
+  </div>
+</section>
+{{ partial "section/taxonomy" . }}
+
+{{- end -}}
+
+{{- define "scripts" }}
+  <script src='{{ "js/navbar.js" | relURL }}'></script>
+{{- end -}}

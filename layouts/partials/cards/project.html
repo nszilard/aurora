@@ -1,7 +1,7 @@
 {{- $icon := "fa-brands fa-git-alt" -}}
 {{- if .icon }} {{ $icon = .icon }} {{ end -}}
 
-<div class="card flex-fill">
+<div class="aurora-card">
   <div class="cover">
     <div class="media">
       <i class="{{ $icon }}"></i>
@@ -13,7 +13,7 @@
         <div class="git-icon">
           <i class="fa-brands fa-github-square"></i>
         </div>
-        <div class="git-repo align-self-center">
+        <div class="git-repo">
           <span class="user">{{ .user }}</span>/<wbr><span class="repo">{{ .repo }}</span>
         </div>
       </div>
@@ -25,11 +25,13 @@
         </a>
       </div>
     </div>
-    <div class="title">{{ .name }}</div>
-    <div class="description markdown">
-      {{ .description | markdownify }}
+    <div class="body">
+      <div class="title">{{ .name }}</div>
+      <div class="description markdown">
+        {{ .description | markdownify }}
+      </div>
     </div>
-    <div class="details">
+    <div class="details meta">
       <div class="languages">
         <i class="fa-solid fa-gear"></i>
         <span> {{ delimit .language ", " }} </span>
@@ -41,3 +43,5 @@
     </div>
   </div>
 </div>
+
+{{- /* EOF */ -}}

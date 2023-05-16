@@ -2,9 +2,11 @@
 
 {{ partial "navbars/portfolio" . }}
 {{ partial "section/hero" . }}
+<div class="portfolio-page">
 {{ range sort site.Data.portfolio "section.weight" -}}
   {{ partial .section.template . }}
 {{ end -}}
+</div>
 
 {{- end -}}
 

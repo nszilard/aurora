@@ -2,7 +2,7 @@
 {{- $bg := partial "get/section/background" .section -}}
 {{- $sectionID := partial "get/section/ID" .section -}}
 
-<section class="{{ $bg }} container-fluid p-lg-5 py-3 about" id="{{ $sectionID }}">
+<section class="{{ $bg }} container-fluid about" id="{{ $sectionID }}">
   <div class="container">
     {{ partial "section/title" .section.name }}
     {{ with .headlines -}}
@@ -18,7 +18,7 @@
       </div>
     </div>
     {{ end -}}
-    <div class="row pt-sm-2 pt-md-4">
+    <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-6 summary">
         <div class="name">
           <span class="highlight">{{ $author.FirstName }}</span>
@@ -47,23 +47,23 @@
         </div>
       </div>
     </div>
-    <div class="row pt-sm-2">
+    <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-12">
         <div class="social">
-          <ul class="list-inline">
-            {{ partialCached "section/social-links" . }}
-          </ul>
+          {{ partialCached "section/social-links" . }}
         </div>
       </div>
     </div>
     {{ with .resume -}}
-    <div class="row pt-sm-2 pt-md-4">
+    <div class="row">
       <div class="col-12">
         <form class="resume" action="{{ . | relURL }}" method="get" target="_blank">
-          <button class="btn btn-dark" type="submit">Get my resume</button>
+          <button class="btn" type="submit">Get my resume</button>
         </form>
       </div>
     </div>
     {{ end -}}
   </div>
 </section>
+
+{{- /* EOF */ -}}

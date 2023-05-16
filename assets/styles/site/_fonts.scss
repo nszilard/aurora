@@ -1,0 +1,42 @@
+$_MONO_FONTS: "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+$_SANS_FONTS: system-ui, -apple-system, "Roboto", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$AURORA_FONT_Mono: "Roboto Mono", $_MONO_FONTS;
+$AURORA_FONT_Headings: "Questrial", $_SANS_FONTS;
+$AURORA_FONT_Body: "Manrope", $_SANS_FONTS;
+
+/* Questrial variable fonts */
+@font-face {
+  font-family: 'Questrial';
+  font-style: normal;
+  src: local(''),
+       url('../fonts/questrial/regular.ttf') format("truetype");
+  font-weight: 1 999;
+}
+
+/* Manrope variable fonts */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  src: local(''),
+       url('../fonts/manrope/normal.ttf') format("truetype");
+  font-weight: 1 999;
+}
+
+/* roboto-mono variable fonts */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  src: local(''),
+       url('../fonts/roboto-mono/normal.ttf') format("truetype");
+  font-weight: 1 999;
+}
+
+/* roboto-mono italic variable fonts */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  src: local(''),
+       url('../fonts/roboto-mono/italic.ttf') format("truetype");
+  font-weight: 1 999;
+}

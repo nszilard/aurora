@@ -1,0 +1,23 @@
+@include mobile-landscape {
+  .achievements {
+    .slider {
+      .wrapper {
+        .aurora-card {
+          min-height: 340px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile-small {
+  .achievements {
+    .slider {
+      .wrapper {
+        .aurora-card {
+          min-height: 410px;
+        }
+      }
+    }
+  }
+}

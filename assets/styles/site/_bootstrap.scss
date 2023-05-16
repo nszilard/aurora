@@ -1,0 +1,20 @@
+.navbar, .btn {
+  font-family: $AURORA_FONT_Headings;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(min(90%, 1650px));
+}
+
+@include laptop {
+  .container {
+    max-width: 95%;
+  }
+}
+
+@include tablet {
+  .container {
+    max-width: 100%;
+  }
+}

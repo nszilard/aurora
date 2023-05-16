@@ -1,76 +1,60 @@
 {{ with site.Params.Social -}}
+<div class="aurora-icon-links">
 {{ with .email -}}
-<li class="list-inline-item">
-  <a target="_blank" href="mailto:{{ . | htmlEscape }}" rel="noopener">
-    <i class="fas fa-envelope" title="Email"></i>
-  </a>
-</li>
+<a target="_blank" href="mailto:{{ . | htmlEscape }}" rel="noopener" aria-label="E-Mail Address">
+  <i class="fas fa-envelope" title="Email"></i>
+</a>
 {{ end -}}
 
 {{ with .github -}}
-<li class="list-inline-item">
-  <a target="_blank" href="https://github.com/{{ . | htmlEscape }}" rel="noopener">
-    <i class="fab fa-github" title="GitHub"></i>
-  </a>
-</li>
+<a target="_blank" href="https://github.com/{{ . | htmlEscape }}" rel="noopener" aria-label="GitHub Profile">
+  <i class="fab fa-github" title="GitHub"></i>
+</a>
 {{ end -}}
 
 {{ with .gitlab -}}
-<li class="list-inline-item">
-  <a target="_blank" href="https://gitlab.com/{{ . | htmlEscape }}" rel="noopener">
-    <i class="fab fa-gitlab" title="GitLab"></i>
-  </a>
-</li>
+<a target="_blank" href="https://gitlab.com/{{ . | htmlEscape }}" rel="noopener" aria-label="GitLab Profile">
+  <i class="fab fa-gitlab" title="GitLab"></i>
+</a>
 {{ end -}}
 
 {{ with .linkedin -}}
-<li class="list-inline-item">
-  <a target="_blank" href="https://linkedin.com/in/{{ . | htmlEscape }}" rel="noopener">
-    <i class="fab fa-linkedin" title="LinkedIn"></i>
-  </a>
-</li>
+<a target="_blank" href="https://linkedin.com/in/{{ . | htmlEscape }}" rel="noopener" aria-label="LinkedIn Profile">
+  <i class="fab fa-linkedin" title="LinkedIn"></i>
+</a>
 {{ end -}}
 
 {{ with .stackoverflow -}}
-<li class="list-inline-item">
-  <a target="_blank" href="https://stackoverflow.com/users/{{ . | htmlEscape }}" rel="noopener">
-    <i class="fab fa-stack-overflow" title="StackOverflow"></i>
-  </a>
-</li>
+<a target="_blank" href="https://stackoverflow.com/users/{{ . | htmlEscape }}" rel="noopener" aria-label="StackOverflow Profile">
+  <i class="fab fa-stack-overflow" title="StackOverflow"></i>
+</a>
 {{ end -}}
 
 {{ with .instagram -}}
-<li class="list-inline-item">
-  <a target="_blank" href="https://instagram.com/{{ . | htmlEscape }}" rel="noopener">
-    <i class="fab fa-instagram" title="Instagram"></i>
-  </a>
-</li>
+<a target="_blank" href="https://instagram.com/{{ . | htmlEscape }}" rel="noopener" aria-label="Instagram Profile">
+  <i class="fab fa-instagram" title="Instagram"></i>
+</a>
 {{ end -}}
 
 {{ with .facebook -}}
-<li class="list-inline-item">
-  <a target="_blank" href="https://facebook.com/{{ . | htmlEscape }}" rel="noopener">
-    <i class="fab fa-facebook" title="Facebook"></i>
-  </a>
-</li>
+<a target="_blank" href="https://facebook.com/{{ . | htmlEscape }}" rel="noopener" aria-label="Facebook Profile">
+  <i class="fab fa-facebook" title="Facebook"></i>
+</a>
 {{ end -}}
 
 {{ with .twitter -}}
-<li class="list-inline-item">
-  <a target="_blank" href="https://twitter.com/{{ . | htmlEscape }}" rel="noopener">
-    <i class="fab fa-twitter" title="Twitter"></i>
-  </a>
-</li>
+<a target="_blank" href="https://twitter.com/{{ . | htmlEscape }}" rel="noopener" aria-label="Twitter Profile">
+  <i class="fab fa-twitter" title="Twitter"></i>
+</a>
 {{ end -}}
 
 
 {{ if .custom -}}
   {{ range .custom -}}
-<li class="list-inline-item">
-  <a target="_blank" href="{{ .url | htmlEscape }}" rel="noopener">
-    <i class="{{ .icon }}" title="{{ .name | title }}"></i>
-  </a>
-</li>
+<a target="_blank" href="{{ .url | htmlEscape }}" rel="noopener" aria-label="{{ .name | title }} Profile">
+  <i class="{{ .icon }}" title="{{ .name | title }}"></i>
+</a>
   {{ end -}}
 {{ end -}}
+</div>
 {{- end -}}

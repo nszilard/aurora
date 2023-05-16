@@ -1,0 +1,82 @@
+.slider {
+  position: relative;
+
+  width: 100%;
+  overflow: hidden;
+  margin-top: 1rem;
+
+  .previous, .next {
+    position: absolute;
+    top: 38%;
+    font-size: 2em;
+    cursor: pointer;
+  }
+
+  .previous {
+    left: 16px;
+  }
+
+  .next {
+    right: 16px;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    width: 90%;
+    overflow: hidden;
+
+    .aurora-card {
+      margin: 0 1em;
+      display: flex;
+      flex-direction: column;
+      width: calc(max(20vw, 375px));
+      max-width: calc(max(75vw, 475px));
+
+      .content {
+        text-align: center;
+      }
+    }
+  }
+
+  .indicator {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    margin: 0.75rem 0;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+
+    li {
+      margin: 0.5rem 0.25rem;
+    }
+
+    button {
+      display: block;
+      padding: 0;
+      width: 3rem;
+      height: 0.4rem;
+      border: 1px solid $BACKGROUND_HIGHLIGHT;
+      opacity: 0.75;
+      background-color: $LOWLIGHT;
+      text-indent: -99999rem;
+      transition: $AURORA_TRANSITION;
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &:hover {
+        opacity: 1;
+        border: none;
+        background-color: $BACKGROUND_HIGHLIGHT;
+      }
+    }
+
+    .slick-active button {
+      opacity: 1;
+      border: none;
+      background-color: $HIGHLIGHT !important;
+    }
+  }
+}

@@ -8,7 +8,7 @@ class PWA {
       '/css/font-awesome.css',
       '/css/bootstrap.css',
       '/css/slick.css',
-      '/css/main.css',
+      '/css/aurora.css',
       '/fonts/font-awesome/fa-regular-400.ttf',
       '/fonts/font-awesome/fa-regular-400.woff2',
       '/fonts/font-awesome/fa-solid-900.ttf',

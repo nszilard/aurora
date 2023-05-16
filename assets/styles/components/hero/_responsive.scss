@@ -1,0 +1,21 @@
+@include mobile {
+  .hero {
+    min-height: 20vh;
+
+    .title {
+      font-size: 3rem;
+    }
+
+    .description {
+      font-size: 1.15rem;
+    }
+  }
+}
+
+@include mobile-small {
+  .hero {
+    .title {
+      font-size: 2.5rem;
+    }
+  }
+}

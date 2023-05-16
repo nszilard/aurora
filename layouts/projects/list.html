@@ -2,15 +2,18 @@
 
 {{ partial "navbars/projects" . }}
 {{ partial "section/hero" . }}
-<div class="bg container p-lg-5 py-3 projects-section" id="projects">
-  <div class="row projects pt-sm-2 pt-md-4 justify-content-space-between">
-    {{ range sort site.Data.projects ".weight" -}}
-    <div class="col-xs-12 col-md-6 col-xl-4 justify-content-center d-flex">
-      {{ partial "cards/project" . }}
+<section class="bg container-fluid projects-page" id="projects">
+  <div class="container">
+    {{ partial "section/title" "Open Source Projects" }}
+    <div class="row projects">
+      {{ range sort site.Data.projects ".weight" -}}
+      <div class="col-xs-12 col-md-6 col-xl-4 project">
+        {{ partial "cards/project" . }}
+      </div>
+      {{ end -}}
     </div>
-    {{ end -}}
   </div>
-</div>
+</section>
 
 {{- end -}}
 

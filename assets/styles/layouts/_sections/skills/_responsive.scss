@@ -1,0 +1,43 @@
+@include mobile-landscape {
+  .skills {
+    .slider {
+      .wrapper {
+        .aurora-card {
+          min-height: 350px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .skills {
+    .slider {
+      .wrapper {
+        .aurora-card {
+          min-height: 380px;
+
+          .title {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile-small {
+  .skills {
+    .slider {
+      .wrapper {
+        .aurora-card {
+          min-height: 420px;
+
+          .title {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+}

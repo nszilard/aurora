@@ -1,0 +1,43 @@
+.not-found {
+  .content {
+    font-style: italic;
+
+    .back {
+      z-index: 10;
+      position: relative;
+      margin: 0 0.25rem 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      right: 0;
+      width: fit-content;
+
+      .btn {
+        border: none;
+        background: none;
+        color: $FONT;
+        border-color: $BACKGROUND_HIGHLIGHT;
+        transition: $AURORA_TRANSITION;
+
+        i {
+          color: $PRIMARY;
+          margin-left: 0.5rem;
+          transition: $AURORA_TRANSITION;
+        }
+
+        &:hover {
+          color: $BACKGROUND_DARKER;
+          background: $PRIMARY;
+
+          i {
+            color: $BACKGROUND_DARKER;
+          }
+        }
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}

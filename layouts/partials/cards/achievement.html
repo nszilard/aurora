@@ -3,14 +3,12 @@
 {{- if eq .type "Certificate" }} {{ $icon = "fas fa-medal" }} {{ end -}}
 {{- if .icon }} {{ $icon = .icon }} {{ end -}}
 
-<div class="card">
+<div class="aurora-card">
   <div class="icon">
     <i class="{{ $icon }}"></i>
   </div>
-  <div class="header">
-    <div class="title"> {{ .name }} </div>
-    <div class="date"> {{ .date }} </div>
-  </div>
+  <div class="title"> {{ .name }} </div>
+  <div class="date"> {{ .date }} </div>
   <div class="content">
     {{ if eq .type "Award" -}}
     <div class="description">{{ .description }}</div>
@@ -23,3 +21,5 @@
     {{ end -}}
   </div>
 </div>
+
+{{- /* EOF */ -}}

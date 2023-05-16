@@ -10,20 +10,18 @@
   {{- if eq (add $i 1) $len }} {{ $start = $d.date.start }} {{ end -}}
 {{- end -}}
 
-<div class="card">
+<div class="aurora-card">
   <div class="icon {{ $icon }}"></div>
   <div class="header">
-    <div class="head">
-      <a class="link" href="{{ .link }}" target="_blank" rel="noopener">{{ .company }}</a>
-      <span class="date"> {{- $start }} - {{ $end -}} </span>
-    </div>
-    {{ range .jobs -}}
-    <div class="row">
-      <div class="title">{{ .title }}</div>
-      <span class="date sub-date">({{ .date.start }} - {{ .date.finish }})</span>
-    </div>
-    {{ end -}}
+    <a class="link" href="{{ .link }}" target="_blank" rel="noopener">{{ .company }}</a>
+    <span class="date"> {{- $start }} - {{ $end -}} </span>
   </div>
+  {{ range .jobs -}}
+  <div class="row">
+    <div class="title">{{ .title }}</div>
+    <span class="date sub-date">({{ .date.start }} - {{ .date.finish }})</span>
+  </div>
+  {{ end -}}
   <div class="content">
     {{ if .languages -}}
     <div class="languages marks">
@@ -50,3 +48,5 @@
     </div>
   </div>
 </div>
+
+{{- /* EOF */ -}}

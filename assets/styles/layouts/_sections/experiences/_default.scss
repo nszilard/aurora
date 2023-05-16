@@ -1,0 +1,26 @@
+.experiences {
+  .timeline {
+    .aurora-card {
+      .sub-date {
+        margin-bottom: 0.75rem;
+        text-align: center;
+        font-size: 0.95rem;
+        font-style: italic;
+        color: $FONT_LOWLIGHT;
+      }
+
+      .content {
+        margin-top: 1rem;
+
+        .details {
+          margin-top: 1.75rem;
+        }
+
+        .marks {
+          margin-left: -0.5rem;
+          margin-right: -0.5rem;
+        }
+      }
+    }
+  }
+}

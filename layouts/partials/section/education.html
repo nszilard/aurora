@@ -1,7 +1,7 @@
 {{- $bg := partial "get/section/background" .section -}}
 {{- $sectionID := partial "get/section/ID" .section -}}
 
-<section class="{{ $bg }} container-fluid p-lg-5 py-3 education" id="{{ $sectionID }}">
+<section class="{{ $bg }} container-fluid education" id="{{ $sectionID }}">
   <div class="container">
     {{ partial "section/title" .section.name }}
     <div class="row pt-sm-2 pt-md-4">
@@ -24,3 +24,5 @@
     </div>
   </div>
 </section>
+
+{{- /* EOF */ -}}

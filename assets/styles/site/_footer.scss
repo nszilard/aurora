@@ -1,0 +1,39 @@
+.footer {
+  z-index: 9999;
+  position: relative;
+  min-height: $AURORA_FOOTER_HEIGHT;
+  text-align: center;
+  color: $FONT_LOWLIGHT;
+  font-family: $AURORA_FONT_Headings;
+  background-color: $BACKGROUND_BLACK;
+  border-top: 1px solid $BACKGROUND_HIGHLIGHT;
+
+  .content {
+    width: 100%;
+    min-height: $AURORA_FOOTER_HEIGHT;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    .site-logo {
+      flex: 0 1 40px;
+    }
+
+    .copyright {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    .theme-logo {
+      flex: 0 1 40px;
+    }
+  }
+
+  hr {
+    background-color: $BACKGROUND_HIGHLIGHT;
+  }
+}

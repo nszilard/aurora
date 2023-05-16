@@ -1,0 +1,110 @@
+.landing {
+  height: 100vh;
+  margin-top: -$AURORA_NAVBAR_HEIGHT;
+
+  .content {
+    .logo {
+      margin-bottom: 0.5rem;
+
+      img {
+        z-index: 10;
+        position: relative;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+      }
+    }
+
+    .body {
+      margin-bottom: 0.5rem;
+
+      .greeting {
+        z-index: 10;
+        position: relative;
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .intro {
+        z-index: 10;
+        position: relative;
+        font-size: 2rem;
+        text-align: center;
+        color: $FONT_HIGHLIGHT;
+      }
+
+      .typing-carousel {
+        z-index: 10;
+        color: $FONT;
+        font-style: italic;
+        text-align: center;
+        min-height: 4rem;
+        font-size: 1.25rem;
+        margin: 0 0 1rem;
+      }
+    }
+
+    .links {
+      width: 75%;
+      width: calc(min(95%, 600px));
+      margin-bottom: 1.5rem;
+
+      .nav {
+        padding: 0.5rem 0.25rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: space-between;
+
+        .nav-item {
+          z-index: 10;
+          position: relative;
+          margin: 0.25rem;
+          flex: 1 0 130px;
+
+          .nav-link {
+            min-width: 130px;
+            font-size: 1.1rem;
+            letter-spacing: 0.06rem;
+
+            color: $FONT_LOWLIGHT;
+            background: $BACKGROUND_BLACK;
+            border-color: $FONT_LOWLIGHT;
+            transition: $AURORA_TRANSITION;
+
+            &:hover {
+              color: $BACKGROUND_BLACK;
+              background: $FONT;
+              border-color: $FONT_LOWLIGHT;
+            }
+
+            &:active {
+              color: $BACKGROUND_BLACK;
+              background: $FONT_LOWLIGHT;
+              border-color: $FONT_LOWLIGHT;
+            }
+
+            &:focus {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .landing {
+    .content {
+      .links {
+        .full-width {
+          flex-basis: 80% !important;
+        }
+      }
+    }
+  }
+}

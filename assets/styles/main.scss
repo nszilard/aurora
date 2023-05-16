@@ -1,0 +1,21 @@
+/*!
+ *-------------------------------------------------------------------
+ * PROJECT: Aurora (https://github.com/nszilard/aurora)
+ * VERSION: 1.0.0
+ * AUTHOR:  Szilárd Nagy
+ * LICENSE: MIT (https://github.com/nszilard/aurora/blob/main/LICENSE)
+ *-------------------------------------------------------------------
+ */
+
+// Configuration
+@import "colours";
+@import "variables";
+@import "animations";
+@import "mixins";
+
+// Components and layouts
+@import "site/main";
+@import "components/main";
+@import "layouts/main";
+
+@import "overwrite";

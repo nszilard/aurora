@@ -2,17 +2,13 @@
 {{- if .icon }} {{ $icon = .icon }} {{ end -}}
 {{- $educationID := replaceRE "(\\s)" "_" .institution.name -}}
 
-<div class="card">
+<div class="aurora-card">
   <div class="icon {{ $icon }}"></div>
   <div class="header">
-    <div class="head">
-      <a class="link" target="_blank" href="{{ .institution.url }}" rel="noopener">{{ .institution.name }}</a>
-      <span class="date">{{ .date.start }} - {{ .date.finish }}</span>
-    </div>
-    <div class="row">
-      <div class="title">{{ .name }}</div>
-    </div>
+    <a class="link" target="_blank" href="{{ .institution.url }}" rel="noopener">{{ .institution.name }}</a>
+    <span class="date">{{ .date.start }} - {{ .date.finish }}</span>
   </div>
+  <div class="title">{{ .name }}</div>
   <div class="content">
     <div class="thesis">
       <div class="sub-title">Thesis</div>
@@ -39,3 +35,5 @@
     </div>
   </div>
 </div>
+
+{{- /* EOF */ -}}

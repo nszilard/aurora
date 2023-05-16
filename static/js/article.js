@@ -12,7 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
     wrapper.appendChild(table);
   }
 
-
   const postContent = document.getElementById('content');
   if (postContent != null) {
     const headerTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']

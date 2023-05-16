@@ -1,0 +1,122 @@
+.about {
+  .headlines {
+    font-style: italic;
+    margin: 0.5rem 0;
+
+    .typing-carousel {
+      color: $FONT;
+      font-size: 1rem;
+      margin: auto;
+      height: 1.5rem;
+      width: max-content;
+    }
+  }
+
+  .name {
+    padding-top: 0.25rem;
+    font-size: 1.75rem;
+    color: $FONT_HIGHLIGHT;
+
+    .highlight {
+      color: $HIGHLIGHT;
+    }
+  }
+
+  .role {
+    font-size: 1.25rem;
+    color: $FONT_HIGHLIGHT;
+    margin-bottom: 0.25rem;
+
+    .highlight {
+      color: $HIGHLIGHT;
+    }
+  }
+
+  .content {
+    padding-top: 1.25rem;
+  }
+
+  .soft-skills {
+    display: grid;
+
+    .skill-bar {
+      margin: 0;
+      padding: 0;
+
+      ul {
+        list-style-type: none;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        padding-inline-start: 0;
+
+        li {
+          margin-top: 1rem;
+        }
+
+        .title {
+          color: $FONT;
+          font-size: 1.12rem;
+          margin-top: 0.8rem;
+          margin-bottom: 0.25rem;
+
+        }
+
+        .progress {
+          height: 16px;
+          background-color: $BACKGROUND_HIGHLIGHT;
+          border: 1px solid $BACKGROUND_HIGHLIGHT;
+
+          .name {
+            color: $FONT;
+          }
+
+          .progress-bar {
+            background-color: $HIGHLIGHT;
+            background: linear-gradient(
+              90deg,
+              $BACKGROUND_LIGHTER 0%,
+              $HIGHLIGHT 100%,
+            );
+          }
+        }
+      }
+    }
+  }
+
+  .social {
+    padding: 2.5rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .resume {
+    padding: 0 0 1.5rem;
+    text-align: center;
+
+    .btn,
+    .btn-dark {
+      color: $PRIMARY;
+      background: transparentize($BACKGROUND_LIGHTER, 0.70);
+      border-color: $BACKGROUND_HIGHLIGHT;
+      transition: $AURORA_TRANSITION;
+
+      &:hover {
+        color: $BACKGROUND_DARKER;
+        background: $PRIMARY;
+      }
+
+      &:active {
+        color: $PRIMARY;
+        background: $BACKGROUND_LIGHTER;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}

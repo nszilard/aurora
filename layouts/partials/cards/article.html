@@ -1,52 +1,54 @@
 {{- $cover := partial "get/image/articleCover" . -}}
 {{- $publishedOn := partial "get/date/published" . -}}
 
-<article>
-  <div class="card flex-fill">
-    <a href="{{ .RelPermalink }}" aria-label="Article: {{ .Title }}">
-      <div class="cover">
-        {{ with .Params.Image -}}
-        <div class="media" style="background-image: url({{ $cover }})"></div>
-        {{ else -}}
-        <div class="media" style="background-image: url({{ $cover }});background-size: contain;"></div>
-        {{ end -}}
-      </div>
-    </a>
-    <div class="content">
-      <div class="meta">
-        <div class="date">
-          <i class="far fa-calendar-alt"></i>
-          {{ partial "get/date/formatShort" $publishedOn }}
-        </div>
-        <div class="info">
-          ~{{ .ReadingTime }} minutes
-          <i class="fas fa-book-open"></i>
-        </div>
-      </div>
-      <div class="title">
-        <h2>{{ .Title }}</h2>
-      </div>
-      <div class="markdown preamble">
-        {{ .Summary | markdownify | humanize | truncate 255 }}
-      </div>
-      <div class="read-more">
-        <a class="btn btn-dark" href="{{ .RelPermalink }}" aria-label="Article: {{ .Title }}">Continue reading</a>
-      </div>
-      {{ with .Params.Topics -}}
-      <div class="tags">
-        <div class="name">
-          <i class="fa-solid fa-tag"></i>
-          Topics:
-        </div>
-        <div class="topics">
-          {{ range $index, $elements:= . -}}
-          <a href="{{ `topics/` | relLangURL }}{{ . | urlize | lower }}">
-            <mark>{{ . | humanize }}</mark>
-          </a>
-          {{ end -}}
-        </div>
-      </div>
+<article class="aurora-card">
+  <a href="{{ .RelPermalink }}" aria-label="Article: {{ .Title }}">
+    <div class="cover">
+      {{ with .Params.Image -}}
+      <div class="media" style="background-image: url({{ $cover }})"></div>
+      {{ else -}}
+      <div class="media" style="background-image: url({{ $cover }});background-size: contain;"></div>
       {{ end -}}
     </div>
+  </a>
+  <div class="content">
+    <div class="meta">
+      <div class="date">
+        <i class="far fa-calendar-alt"></i>
+        {{ partial "get/date/formatShort" $publishedOn }}
+      </div>
+      <div class="info">
+        ~{{ .ReadingTime }} minutes
+        <i class="fas fa-book-open"></i>
+      </div>
+    </div>
+    <div class="body">
+      <h2 class="title">{{ .Title }}</h2>
+      <div class="markdown preamble">
+        {{ .Summary | markdownify | truncate 255 }}
+      </div>
+      <div class="read-more">
+        <a class="btn btn-dark" href="{{ .RelPermalink }}" aria-label="Article: {{ .Title }}">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    {{ with .Params.Topics -}}
+    <div class="tags">
+      <div class="name">
+        <i class="fa-solid fa-tag"></i>
+        Topics:
+      </div>
+      <div class="topics">
+        {{ range $index, $elements:= . -}}
+        <a href="{{ `topics/` | relLangURL }}{{ . | urlize | lower }}">
+          <mark>{{ . | humanize }}</mark>
+        </a>
+        {{ end -}}
+      </div>
+    </div>
+    {{ end -}}
   </div>
 </article>
+
+{{- /* EOF */ -}}
