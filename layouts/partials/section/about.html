@@ -19,7 +19,7 @@
     </div>
     {{ end -}}
     <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-6 summary">
+      <div class="col-sm-12 col-md-6 summary">
         <div class="name">
           <span class="highlight">{{ $author.FirstName }}</span>
           {{ with $author.MiddleNames }} {{ . }}, {{ end -}}
@@ -31,7 +31,7 @@
         </div>
         <div class="content text-justify markdown"> {{ .summary | markdownify }} </div>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg-6 soft-skills">
+      <div class="col-sm-12 col-md-6 soft-skills">
         <div class="skill-bar align-self-center">
           <ul>
           {{ range .softSkills -}}
@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-12">
+      <div class="col-12">
         <div class="social">
           {{ partialCached "section/social-links" . }}
         </div>
