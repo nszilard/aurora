@@ -5,6 +5,7 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: $AURORA_FONT_Body;
   color: $FONT_LOWLIGHT;
   background-color: $BACKGROUND_BLACK;
@@ -13,7 +14,12 @@ body {
   scrollbar-color: $FONT_LOWLIGHT $LOWLIGHT;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: $FONT_HIGHLIGHT;
   font-family: $AURORA_FONT_Headings !important;
 }
@@ -66,12 +72,11 @@ mark {
   color: $FONT_LOWLIGHT;
   font-family: $AURORA_FONT_Headings;
   background-color: transparent;
-  box-shadow: 0 1px 2px $PRIMARY, 0 -2px 0px $BACKGROUND_BLACK;
+  border: 1px solid $FONT;
 
   &:hover {
     color: $BACKGROUND_BLACK;
-    background-color: $FONT;
-    box-shadow: 0 1px 2px $BACKGROUND_BLACK;
+    background-color: $FONT_LOWLIGHT;
   }
 }
 
@@ -83,7 +88,8 @@ table {
   border: 1px solid transparent;
   transition: $AURORA_TRANSITION;
 
-  th, td {
+  th,
+  td {
     padding: 0.5rem;
     word-wrap: break-word;
     transition: $AURORA_TRANSITION;
@@ -144,9 +150,7 @@ table {
 }
 
 figure {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  @include flex-center-column;
 
   img {
     margin: auto;
@@ -156,11 +160,7 @@ figure {
     object-fit: contain;
 
     -drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    @include no-user-select;
   }
 
   figcaption {
@@ -173,5 +173,20 @@ figure {
 @include desktop {
   section {
     padding: 3rem;
+  }
+}
+
+img.lazy {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img.lazy:not([data-src]) {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  img.lazy {
+    transition: none;
   }
 }

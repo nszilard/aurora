@@ -23,14 +23,6 @@
   </div>
   {{ end -}}
   <div class="content">
-    {{ if .languages -}}
-    <div class="languages marks">
-      <div class="sub-title">Languages</div>
-      <ul>
-        {{ range .languages -}} <li><mark>{{ . }}</mark></li> {{- end }}
-      </ul>
-    </div>
-    {{ end -}}
     {{ if .highlights -}}
     <div class="highlights marks">
       <div class="sub-title">Highlights</div>

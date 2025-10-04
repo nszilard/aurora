@@ -7,9 +7,7 @@
 @import "posts/single";
 @import "posts/list";
 
-
 .page-content {
-  margin-top: $AURORA_NAVBAR_HEIGHT;
   min-height: calc(100vh - 100px);
   background-color: $BACKGROUND_LIGHTER;
 }

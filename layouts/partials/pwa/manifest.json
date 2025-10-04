@@ -10,7 +10,7 @@
 {{- $data.SetInMap "json" "scope" "/" -}}
 {{- $data.SetInMap "json" "display" "standalone" -}}
 {{- $data.SetInMap "json" "orientation" "portrait" -}}
-{{- $data.SetInMap "json" "theme_color" "#191f26" -}}
+{{- $data.SetInMap "json" "theme_color" "#19d3da" -}}
 {{- $data.SetInMap "json" "background_color" "#13171b" -}}
 
 {{- $icons := slice -}}

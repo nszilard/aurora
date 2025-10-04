@@ -9,42 +9,70 @@ section:
 
 # Content
 degrees:
-  - name: M.Sc. in Artificial Intelligence
-    icon: fas fa-microscope
+  - name: Professional Certifications
+    icon: fas fa-certificate
     date:
-      start: 2014
-      finish: 2016
+      start: 2016
     institution:
-      name: Stanford University
-      url: "#"
+      name: Various Platforms
+      url: '#'
     thesis: Master's thesis title here
     description: |
-      Courses:
-        - Machine Learning
-        - Natural Language Processing
-        - Computer Vision
-        - Deep Learning
-        - Reinforcement Learning
-        - Probabilistic Graphical Models
-        - Robotics
-        - Neural Networks
+      Continuous learning through online courses and industry certifications to stay current with evolving technologies.
 
-  - name: B.Sc. in Computer Science
+      **Completed Certifications:**
+
+      1. **AWS Certified Developer - Associate** (2021)
+         - EC2, S3, Lambda, DynamoDB, API Gateway
+         - Infrastructure as Code with `CloudFormation`
+         - Certificate ID: `AWS-DEV-123456`
+
+      2. **MongoDB Certified Developer** (2020)
+         - Database design and schema optimization
+         - Aggregation pipelines and indexing strategies
+         - Working with `MongoDB Atlas` and replica sets
+
+      3. **React Advanced Patterns** - Udemy (2019)
+         - Custom hooks, context API, performance optimization
+         - Testing with `Jest` and `React Testing Library`
+         - *Certificate of completion with 4.8/5.0 rating*
+
+      4. **Docker & Kubernetes: The Complete Guide** (2019)
+         - Container orchestration and deployment
+         - `kubectl` commands, YAML configurations, networking
+         - Hands-on labs with multi-container applications
+
+      **Additional Learning:**
+      - Regularly attend tech conferences and local meetups
+      - Complete **20+ hours** of technical learning per month via Pluralsight and Frontend Masters
+      - Active on *Stack Overflow* (reputation: 2.5k+)
+
+  - name: B.S. in Computer Science
     icon: fas fa-graduation-cap
     date:
-      start: 2010
-      finish: 2014
+      start: 2011
+      finish: 2015
     institution:
-      name: New York University
-      url: "#"
+      name: University of Technology
+      url: '#'
     thesis: Bachelor's title here
     description: |
-      Courses:
-        - Programming Fundamentals with Java
-        - Discrete Mathematics
-        - Computer Organization and Architecture
-        - Data Structures and Algorithms
-        - Operating Systems
-        - Database Systems
-        - Computer Networks
-        - Software Engineering
+      Graduated with **honors** (GPA: 3.7/4.0) focusing on software engineering and web technologies.
+
+      **Core Coursework:**
+      - `Data Structures & Algorithms` - Foundation for efficient problem-solving
+      - `Database Management Systems` - SQL, NoSQL, query optimization
+      - `Software Engineering` - Agile methodologies, design patterns
+      - `Web Development` - HTML/CSS/JavaScript, client-server architecture
+      - `Computer Networks` - TCP/IP, HTTP protocols, network security
+      - `Operating Systems` - Process management, memory allocation, concurrency
+      - `Artificial Intelligence` - Machine learning basics, search algorithms
+
+      **Senior Capstone Project:**
+
+      Built a collaborative task management platform using `React` and `Node.js` with real-time updates via WebSockets:
+      - **1st place** in department showcase
+      - Successfully deployed and used by *50+ students* during beta
+      - Features: user auth, real-time notifications, file attachments, team collaboration
+
+      > "This project taught me more about full-stack development than any single course. Dealing with real users and bug reports was invaluable experience."

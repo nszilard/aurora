@@ -8,10 +8,12 @@
 
       mark {
         margin: 0;
-        box-shadow: none;
+        border: none;
         font-style: normal;
         color: $FONT_LOWLIGHT;
         white-space: break-spaces;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
 
         &:hover {
           color: $BACKGROUND_DARKER;

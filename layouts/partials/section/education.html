@@ -1,7 +1,7 @@
 {{- $bg := partial "get/section/background" .section -}}
 {{- $sectionID := partial "get/section/ID" .section -}}
 
-<section class="{{ $bg }} container-fluid education" id="{{ $sectionID }}">
+<section class="{{ $bg }} container-fluid education" id="{{ $sectionID }}" aria-label="education-section">
   <div class="container">
     {{ partial "section/title" .section.name }}
     <div class="row pt-sm-2 pt-md-4">

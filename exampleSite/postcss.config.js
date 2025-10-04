@@ -1,17 +1,14 @@
-const purgecss = require('@fullhuman/postcss-purgecss')({
-  content: ['./hugo_stats.json'],
-  safelist: [
-    'fa-angle-double-down',
-    'fa-angle-double-up'
-  ],
-  defaultExtractor: (content) => {
-    let els = JSON.parse(content).htmlElements;
-    return els.tags.concat(els.classes, els.ids);
-  }
-});
+import purgecss from "@fullhuman/postcss-purgecss";
 
-module.exports = {
+export default {
   plugins: [
-    purgecss
-  ]
+    purgecss.default({
+      content: ["./hugo_stats.json"],
+      safelist: ["fa-angle-double-down", "fa-angle-double-up"],
+      defaultExtractor: (content) => {
+        let els = JSON.parse(content).htmlElements;
+        return els.tags.concat(els.classes, els.ids);
+      },
+    }),
+  ],
 };

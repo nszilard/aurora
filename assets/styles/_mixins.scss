@@ -37,3 +37,43 @@
     @content;
   }
 }
+
+// User selection utilities - eliminates repeated user-select properties
+@mixin no-user-select {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+// Common flex patterns
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+// Aurora-specific border patterns
+@mixin aurora-border {
+  border: 1px solid $BACKGROUND_HIGHLIGHT;
+  border-radius: $AURORA_BORDER_RADIUS;
+}
+
+@mixin aurora-border-gradient {
+  border-image: linear-gradient(90deg, $BACKGROUND_HIGHLIGHT 0%, $FONT_LOWLIGHT 50%, $BACKGROUND_HIGHLIGHT 100%) 1;
+}
+
+// Aurora card hover effect pattern
+@mixin aurora-card-hover {
+  box-shadow: 0 0 0.5rem 0.2rem $LOWLIGHT;
+  border-color: lighten($BACKGROUND_HIGHLIGHT, 5);
+  border-bottom-color: $HIGHLIGHT;
+}

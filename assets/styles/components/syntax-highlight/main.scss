@@ -1,6 +1,5 @@
-.highlight>.chroma {
-  border-radius: 0.45rem;
-  border: 1px solid $BACKGROUND_HIGHLIGHT;
+.highlight > .chroma {
+  @include aurora-border;
 }
 
 // Generic
@@ -32,17 +31,18 @@
 
   // Generic emph
   .ge {
-    font-style: italic
+    font-style: italic;
   }
 
   // Generic Strong
   .gs {
-    font-weight: bold
+    font-weight: bold;
   }
 
   // gu: Generic Subheading
   // gh: Generic Heading
-  .gu, .gh {
+  .gu,
+  .gh {
     color: $FONT_LOWLIGHT;
   }
 
@@ -57,8 +57,9 @@
   }
 
   table {
-    th, td {
-      &:hover{
+    th,
+    td {
+      &:hover {
         background: none !important;
       }
     }
@@ -89,14 +90,14 @@
 
   /* LineNumbers */
   /* LineNumbersTable */
-  .ln, .lnt {
+  .ln,
+  .lnt {
     white-space: pre;
     user-select: none;
     margin-right: 0.4em;
     padding: 0 0.4em 0 0.4em;
     color: $FONT_LOWLIGHT;
   }
-
 }
 
 // Mapped classes
@@ -107,7 +108,12 @@
   // kr: Reserved keywords
   // nb: Builtin names
   // mh: LiteralNumberHex
-  .k, .kn, .kp, .kr, .nb, .mh {
+  .k,
+  .kn,
+  .kp,
+  .kr,
+  .nb,
+  .mh {
     color: #56b6c2;
   }
 
@@ -122,7 +128,12 @@
   // vc: Class names
   // vg: Global Variable names
   // vi: Instance Variable names
-  .kc, .n, .nv, .vc, .vg, .vi {
+  .kc,
+  .n,
+  .nv,
+  .vc,
+  .vg,
+  .vi {
     color: #eea161;
   }
 
@@ -133,7 +144,13 @@
   // ow: Operator Words
   // l : Literals
   // se: Literal StringEscapes
-  .kd, .kt, .kn, .o, .ow, .l, .se {
+  .kd,
+  .kt,
+  .kn,
+  .o,
+  .ow,
+  .l,
+  .se {
     color: #c678dd;
   }
 
@@ -150,7 +167,19 @@
   // sr: LiteralStringRegex
   // s1: LiteralStringSingle
   // ss: LiteralStringSymbol
-  .s, .sa, .sb, .sc, .dl, .sd, .s2, .sh, .si, .sx, .sr, .s1, .ss {
+  .s,
+  .sa,
+  .sb,
+  .sc,
+  .dl,
+  .sd,
+  .s2,
+  .sh,
+  .si,
+  .sx,
+  .sr,
+  .s1,
+  .ss {
     color: #98c379;
   }
 
@@ -160,13 +189,19 @@
   // mi: LiteralNumberInteger
   // mo: LiteralNumberOct
   // il: LiteralNumberIntegerLong
-  .m, .mb, .mf, .mi, .mo, .il {
+  .m,
+  .mb,
+  .mf,
+  .mi,
+  .mo,
+  .il {
     color: #d19a66;
   }
 
   // p : Punctuation
   // ld: Date literals
-  .p, .ld {
+  .p,
+  .ld {
     color: #e6c07b;
   }
 
@@ -177,7 +212,13 @@
   // cs : CommentSpecial
   // cp : CommentPreproc
   // cpf: CommentPreprocFile
-  .c, .ch, .cm, .c1, .cs, .cp, .cpf {
+  .c,
+  .ch,
+  .cm,
+  .c1,
+  .cs,
+  .cp,
+  .cpf {
     font-style: italic;
     color: #5c6370;
   }
@@ -205,7 +246,13 @@
   // ni: Entity names
   // nl: Label names
   // nn: Namespace names
-  .nc, .no, .nd, .ne, .ni, .nl, .nn {
+  .nc,
+  .no,
+  .nd,
+  .ne,
+  .ni,
+  .nl,
+  .nn {
     color: #a6e22e;
   }
 }

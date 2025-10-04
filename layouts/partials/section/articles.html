@@ -1,4 +1,4 @@
-{{- $oddColumns := (modBool .Paginator.PageSize 3) -}}
+{{- $oddColumns := (modBool .Paginator.PagerSize 3) -}}
 
 {{ range .Paginator.Pages -}}
 {{- if $oddColumns -}}

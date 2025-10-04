@@ -13,14 +13,14 @@ languages:
     weight: 1
     qualification: Native
 
-  - name: Swedish
+  - name: Spanish
     weight: 2
-    qualification: Native
-
-  - name: German
-    weight: 3
     qualification: Professional
 
-  - name: Spanish
+  - name: French
     weight: 3
+    qualification: Intermediate
+
+  - name: German
+    weight: 4
     qualification: Beginner

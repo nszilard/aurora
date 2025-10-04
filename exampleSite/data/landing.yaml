@@ -1,5 +1,8 @@
 particles: true
-greeting: Welcome!
-intro: This is Aurora,
+greeting: Welcome to Aurora!
+intro: A Hugo theme built for,
 headlines:
-  - "A demo website to highlight the theme"
+  - 'showcasing your portfolio and experience'
+  - 'sharing your thoughts through blogging'
+  - 'presenting your projects beautifully'
+  - 'creating a memorable online presence'

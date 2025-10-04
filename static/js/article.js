@@ -1,28 +1,21 @@
 "use strict";
 
-window.addEventListener('DOMContentLoaded', () => {
-  function addAnchor(element) {
-    element.innerHTML = `<a href="#${element.id}" class="anchor">${element.innerHTML}</a>`
-  }
-
-  function wrap(table) {
-    const wrapper = document.createElement('div');
-    wrapper.classList.add('table-wrapper');
-    table.parentNode.insertBefore(wrapper, table);
-    wrapper.appendChild(table);
-  }
-
-  const postContent = document.getElementById('content');
-  if (postContent != null) {
-    const headerTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
-    for (let i = 0; i < headerTypes.length; i++) {
-      const headers = postContent.querySelectorAll(headerTypes[i])
-      if (headers) {
-        headers.forEach(addAnchor)
+document.addEventListener("DOMContentLoaded", () => {
+  const postContent = document.getElementById("content");
+  if (postContent) {
+    postContent.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]").forEach((element) => {
+      if (!element.querySelector(".anchor")) {
+        element.innerHTML = `<a href="#${element.id}" class="anchor">${element.innerHTML}</a>`;
       }
-    }
+    });
   }
 
-  const tables = document.querySelectorAll('table');
-  tables.forEach(wrap);
+  document.querySelectorAll("table").forEach((table) => {
+    if (table.parentNode && !table.parentNode.classList.contains("table-wrapper")) {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("table-wrapper");
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    }
+  });
 });

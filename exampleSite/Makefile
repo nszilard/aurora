@@ -9,7 +9,7 @@
 #----------------------------------------
 .PHONY: bootstrap
 bootstrap: ## Ensures Node dependencies are installed
-	@npm install --no-save @fullhuman/postcss-purgecss postcss-cli --silent
+	@npm install --silent
 
 .PHONY: dev
 dev: clean ## Serves the site locally
@@ -18,6 +18,11 @@ dev: clean ## Serves the site locally
 .PHONY: build
 build: clean bootstrap ## Compiles site for deployment
 	@hugo --minify
+
+.PHONY: serve
+serve: clean bootstrap ## Serves the compiled site locally
+	@hugo --minify --environment development
+	@npx serve public -l 1313
 
 .PHONY: clean
 clean: ## Cleanup
@@ -29,4 +34,4 @@ clean: ## Cleanup
 	@rm -f hugo_stats.json
 
 help:
-	@fgrep -h "## " $(MAKEFILE_LIST) | fgrep -v fgrep | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-9s\033[0m %s\n", $$1, $$2}'
+	@fgrep -h "## " $(MAKEFILE_LIST) | fgrep -v fgrep | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-12s\033[0m %s\n", $$1, $$2}'

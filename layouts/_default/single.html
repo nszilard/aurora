@@ -13,7 +13,7 @@
         <div class="description">{{ . }}</div>
         {{ end -}}
       </div>
-      <div class="aurora-border"></div>
+      <div class="aurora-separator"></div>
       <aside class="meta">
         <div class="item published">
           <i class="fa-regular fa-calendar"></i>
@@ -38,15 +38,15 @@
         </div>
         {{ end -}}
       </aside>
-      <div class="aurora-border"></div>
+      <div class="aurora-separator"></div>
     </header>
     <article class="content markdown" id="content">
       {{ .Content | markdownify }}
     </article>
     <div class="share">
-      <div class="aurora-border"></div>
+      <div class="aurora-separator"></div>
       <div class="message title">{{ $shareMessage }}</div>
-      <div class="aurora-border"></div>
+      <div class="aurora-separator"></div>
       <div class="items">
         {{ partial "section/shareButtons" . }}
       </div>
@@ -58,6 +58,6 @@
 {{- end -}}
 
 {{ define "scripts" -}}
-  <script src='{{ "js/navbar.js" | relURL }}'></script>
-  <script src='{{ `js/article.js` | relURL }}'></script>
+  <script async src='{{ "js/navbar.js" | relURL }}'></script>
+  <script async src='{{ `js/article.js` | relURL }}'></script>
 {{- end -}}

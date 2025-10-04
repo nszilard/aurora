@@ -1,6 +1,5 @@
 module github.com/nszilard/aurora/exampleSite
 
-go 1.20
-
+go 1.22
 
 replace github.com/nszilard/aurora => ../..
