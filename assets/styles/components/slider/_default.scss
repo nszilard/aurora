@@ -5,47 +5,8 @@
   overflow: hidden;
   margin-top: 1rem;
 
-  .splide__arrows {
-    @media (max-width: 576px) {
-      display: none;
-    }
-
-    .splide__arrow {
-      position: absolute;
-      top: 41%;
-      transform: translateY(-50%);
-      background: transparent;
-      border: none;
-      width: auto;
-      height: auto;
-      opacity: 1;
-      z-index: 2;
-
-      i {
-        font-size: 2em;
-        cursor: pointer;
-        color: $FONT_LOWLIGHT;
-        transition: $AURORA_TRANSITION;
-      }
-
-      &:hover i {
-        color: $FONT;
-      }
-
-      &--prev {
-        left: 20px;
-      }
-
-      &--next {
-        right: 20px;
-      }
-    }
-  }
-
   .splide__track {
     margin: 0 auto;
-    /* width: calc(100% - 80px); */
-    width: calc(100% - 7rem);
   }
 
   .splide__list {
@@ -60,6 +21,7 @@
         margin: auto 1em;
         display: flex;
         flex-direction: column;
+        max-width: calc(100vw - 3rem);
         height: 100%;
         flex: 1;
 
