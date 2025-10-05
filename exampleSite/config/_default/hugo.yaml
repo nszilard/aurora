@@ -33,6 +33,10 @@ params:
     twitter: '#'
     stackoverflow: '#'
     email: '#'
+  analytics:
+    enabled: false
+    goatCounter:
+      code: aurora
 
 #-----------------------------------------
 # Module settings

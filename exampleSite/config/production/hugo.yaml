@@ -1,1 +1,5 @@
 baseURL: https://nszilard.github.io/aurora/
+
+params:
+  analytics:
+    enabled: true

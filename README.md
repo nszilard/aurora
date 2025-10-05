@@ -17,6 +17,7 @@ with a focus on delivering a seamless user experience across multiple devices.**
 - Dark theme
 - Post categories and topics
 - Syntax highlighting
+- Analytics (Cloudflare & GoatCounter)
 - PWA
 
 ## Requirements
@@ -89,3 +90,32 @@ module.exports = {
 
 ```
 
+## Analytics
+
+Aurora supports optional integration with Cloudflare Web Analytics and GoatCounter. Both services are privacy-friendly and provide valuable insights about your site traffic.
+
+### Configuration
+
+Add the following to your `hugo.yaml` file:
+
+```yaml
+# hugo.yaml
+params:
+  analytics:
+    enabled: true
+    # For using Cloudflare Web Analytics
+    cloudflare:
+      code: 'your-cloudflare-analytics-token'
+    # For using GoatCounter
+    goatCounter:
+      code: 'your-site-code'
+```
+
+### Privacy Notes
+
+Both Cloudflare Web Analytics and GoatCounter are privacy-focused:
+
+- ✅ No cookies
+- ✅ GDPR compliant
+- ✅ No personal data collection
+- ✅ Lightweight and fast

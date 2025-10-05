@@ -13,5 +13,6 @@
     </div>
     {{ if ne site.Home.Page .Page -}} {{ partialCached "footer" . }} {{- end -}}
     {{ block "scripts" . -}} {{- end }}
+    {{ if site.Params.analytics.enabled -}}{{ partialCached "analytics" . }}{{- end }}
   </body>
 </html>
