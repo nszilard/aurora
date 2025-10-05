@@ -1,64 +1,66 @@
-'use strict';
+"use strict";
 
-HTMLElement.prototype.slider = function (callback) {
-  if (this.clientHeight === 0) {
-    _s(this, callback, true);
+function slider(element, callback, scrollTarget = null) {
+  if (!element) return;
+  if (element.clientHeight === 0) {
+    slideDown(element, callback);
   } else {
-    _s(this, callback);
+    slideUp(element, callback, scrollTarget);
   }
+}
+
+function slideDown(element, callback) {
+  element.style.display = "block";
+  animateElement(element, 0, element.scrollHeight, callback);
+}
+
+function slideUp(element, callback, scrollTarget) {
+  const initialHeight = element.scrollHeight;
+  const initialScrollY = scrollTarget ? window.pageYOffset : 0;
+  animateElement(element, initialHeight, 0, callback, scrollTarget, initialScrollY);
+}
+
+function animateElement(element, startHeight, endHeight, callback, scrollTarget) {
+  const duration = 500;
+  const heightDiff = endHeight - startHeight;
+
+  element.style.overflow = "hidden";
+  element.style.height = startHeight + "px";
+
+  let startTime;
+  let previousHeight = startHeight;
+
+  function animate(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    const currentHeight = startHeight + heightDiff * progress;
+    element.style.height = currentHeight + "px";
+
+    if (scrollTarget && endHeight === 0) {
+      const heightChange = previousHeight - currentHeight;
+      if (heightChange > 0) {
+        window.scrollBy(0, -heightChange);
+        previousHeight = currentHeight;
+      }
+    }
+
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    } else {
+      element.style.height = "";
+      element.style.overflow = "";
+      if (endHeight === 0) element.style.display = "none";
+      callback?.();
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+HTMLElement.prototype.slider = function (callback, scrollTarget = null) {
+  slider(this, callback, scrollTarget);
 };
 
-function _s(el, callback, isDown) {
-  const duration = 500;
-  if (typeof isDown === 'undefined') isDown = false;
-
-  el.style.overflow = "hidden";
-  if (isDown) el.style.display = "block";
-
-  const elStyles = window.getComputedStyle(el);
-  const elHeight = parseFloat(elStyles.getPropertyValue('height'));
-  const elPaddingTop = parseFloat(elStyles.getPropertyValue('padding-top'));
-  const elPaddingBottom = parseFloat(elStyles.getPropertyValue('padding-bottom'));
-  const elMarginTop = parseFloat(elStyles.getPropertyValue('margin-top'));
-  const elMarginBottom = parseFloat(elStyles.getPropertyValue('margin-bottom'));
-
-  const stepHeight = elHeight / duration;
-  const stepPaddingTop = elPaddingTop / duration;
-  const stepPaddingBottom = elPaddingBottom / duration;
-  const stepMarginTop = elMarginTop / duration;
-  const stepMarginBottom = elMarginBottom / duration;
-
-  var start;
-  function step(timestamp) {
-    if (start === undefined) start = timestamp;
-    var elapsed = timestamp - start;
-
-    if (isDown) {
-      el.style.height = (stepHeight * elapsed) + "px";
-      el.style.paddingTop = (stepPaddingTop * elapsed) + "px";
-      el.style.paddingBottom = (stepPaddingBottom * elapsed) + "px";
-      el.style.marginTop = (stepMarginTop * elapsed) + "px";
-      el.style.marginBottom = (stepMarginBottom * elapsed) + "px";
-    } else {
-      el.style.height = elHeight - (stepHeight * elapsed) + "px";
-      el.style.paddingTop = elPaddingTop - (stepPaddingTop * elapsed) + "px";
-      el.style.paddingBottom = elPaddingBottom - (stepPaddingBottom * elapsed) + "px";
-      el.style.marginTop = elMarginTop - (stepMarginTop * elapsed) + "px";
-      el.style.marginBottom = elMarginBottom - (stepMarginBottom * elapsed) + "px";
-    }
-
-    if (elapsed >= duration) {
-      el.style.height = "";
-      el.style.paddingTop = "";
-      el.style.paddingBottom = "";
-      el.style.marginTop = "";
-      el.style.marginBottom = "";
-      el.style.overflow = "";
-      if (!isDown) el.style.display = "none";
-      if (typeof callback === 'function') callback();
-    } else {
-      window.requestAnimationFrame(step);
-    }
-  }
-  window.requestAnimationFrame(step);
-}
+window.slider = slider;

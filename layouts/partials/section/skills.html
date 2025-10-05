@@ -1,18 +1,28 @@
 {{- $bg := partial "get/section/background" .section -}}
 {{- $sectionID := partial "get/section/ID" .section -}}
 
-<section class="{{ $bg }} container-fluid skills" id="{{ $sectionID }}">
+<section class="{{ $bg }} container-fluid skills" id="{{ $sectionID }}" aria-label="skills-section">
   <div class="container">
     {{ partial "section/title" .section.name }}
     <div class="row">
-      <div class="slider">
-        <i class="fas fa-chevron-left previous"></i>
-        <i class="fas fa-chevron-right next"></i>
-        <div class="wrapper">
-          {{ range .skills }} {{ partial "cards/skill" . }} {{ end }}
+      <div class="splide slider">
+        <div class="splide__arrows">
+          <button class="splide__arrow splide__arrow--prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="splide__arrow splide__arrow--next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
+        <div class="splide__track">
+          <div class="splide__list">
+            {{ range .skills -}}
+            <div class="splide__slide">{{ partial "cards/skill" . }}</div>
+            {{- end }}
+          </div>
+        </div>
+        <ul class="splide__pagination"></ul>
       </div>
-      <div class="indicator"></div>
     </div>
   </div>
 </section>

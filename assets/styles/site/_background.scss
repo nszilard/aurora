@@ -7,14 +7,8 @@
 }
 
 .aurora-background {
-  background: $BACKGROUND_BLACK;
-  background: linear-gradient(180deg,
-    $AURORA_GREEN 0%,
-    black 25%,
-    black 75%,
-    $AURORA_BLUE 100%
-  );
-
-  border-top: 1px solid $BACKGROUND_HIGHLIGHT;
+  background:
+    linear-gradient(135deg, $AURORA_GREEN 0%, $AURORA_GREEN 1%, transparent 20%),
+    linear-gradient(-45deg, $AURORA_BLUE 0%, $AURORA_BLUE 1%, transparent 20%), $BACKGROUND_BLACK;
   border-bottom: 1px solid $BACKGROUND_HIGHLIGHT;
 }

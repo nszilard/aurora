@@ -2,10 +2,7 @@
   min-height: 25vh;
   margin-top: $AURORA_NAVBAR_HEIGHT;
 
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  @include flex-center-column;
 
   .title {
     font-size: 3.5rem;

@@ -8,27 +8,31 @@ section:
   template: section/about
 
 # Content
+resume: '#'
+
 headlines:
-  - "Just a heads up, the content here is completely made up."
-  - "It's only being used to show off the theme."
+  - 'This is a demo portfolio showcasing the Aurora Hugo theme.'
+  - 'All content here is designed to demonstrate theme features.'
 
-role: CEO
+role: Theme Mascot
 company:
-  name: Aurora
-  url: "#"
+  name: Aurora Theme
+  url: '#'
 summary: |
-  <p>I'm Aurora Borealis, and I am proud to serve as the CEO of Hugo Aurora. With over two decades of experience in the tech industry, I have had the privilege of leading several successful companies, all of which have left a significant impact on the industry. Through my years of leadership, I have developed a passion for innovation, continuously striving to push the boundaries of what's possible and make a positive impact in the world./<p>
+  <p>Hi, I'm Aurora Borealis - the namesake and mascot of this Hugo theme. This example site demonstrates how you can use Aurora to build a beautiful, responsive portfolio and blog.</p>
 
-  <p>In my free time, I enjoy exploring the great outdoors, immersing myself in the natural beauty that surrounds us. From stargazing under the Aurora Borealis to hiking through mountain ranges, I draw inspiration from the majesty of the world around us. I also love spending time with my family and friends, sharing in the joys of life and creating meaningful memories that will last a lifetime.</p>
+  <p>The Aurora theme is designed for developers, designers, and creative professionals who want a clean, modern website without the hassle. It features a card-based layout, dark theme support, fully responsive design, and easy customization through YAML configuration files.</p>
+
+  <p>This portfolio section showcases how you can present your professional information - from work experience and skills to education and achievements. Everything you see here is configurable through simple YAML files in the data directory, no coding required.</p>
 
 softSkills:
-- name: Leadership
-  percentage: 95
-- name: Communication
-  percentage: 90
-- name: Creativity
-  percentage: 88
-- name: Empathy
-  percentage: 92
-- name: Adaptability
-  percentage: 85
+  - name: Responsive Design
+    percentage: 100
+  - name: User Experience
+    percentage: 95
+  - name: Accessibility
+    percentage: 100
+  - name: Performance
+    percentage: 95
+  - name: Customizability
+    percentage: 85

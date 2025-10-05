@@ -1,6 +1,5 @@
 .landing {
   height: 100vh;
-  margin-top: -$AURORA_NAVBAR_HEIGHT;
 
   .content {
     .logo {
@@ -9,11 +8,7 @@
       img {
         z-index: 10;
         position: relative;
-        -webkit-user-drag: none;
-        user-select: none;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
+        @include no-user-select;
       }
     }
 
@@ -72,6 +67,7 @@
 
             color: $FONT_LOWLIGHT;
             background: $BACKGROUND_BLACK;
+            border: 1px solid;
             border-color: $FONT_LOWLIGHT;
             transition: $AURORA_TRANSITION;
 

@@ -1,11 +1,11 @@
 @include mobile-landscape {
-  .aurora-border {
+  .aurora-separator {
     width: 75%;
   }
 }
 
 @include mobile-small {
-  .aurora-border {
+  .aurora-separator {
     width: 85%;
   }
 }

@@ -60,7 +60,6 @@
           font-size: 1.12rem;
           margin-top: 0.8rem;
           margin-bottom: 0.25rem;
-
         }
 
         .progress {
@@ -74,11 +73,7 @@
 
           .progress-bar {
             background-color: $HIGHLIGHT;
-            background: linear-gradient(
-              90deg,
-              $BACKGROUND_LIGHTER 0%,
-              $HIGHLIGHT 100%,
-            );
+            background: linear-gradient(90deg, $BACKGROUND_LIGHTER 0%, $HIGHLIGHT 100%);
           }
         }
       }
@@ -87,10 +82,7 @@
 
   .social {
     padding: 2.5rem 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    @include flex-center-column;
   }
 
   .resume {
@@ -100,7 +92,7 @@
     .btn,
     .btn-dark {
       color: $PRIMARY;
-      background: transparentize($BACKGROUND_LIGHTER, 0.70);
+      background: transparentize($BACKGROUND_LIGHTER, 0.7);
       border-color: $BACKGROUND_HIGHLIGHT;
       transition: $AURORA_TRANSITION;
 

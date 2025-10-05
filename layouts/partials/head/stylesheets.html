@@ -1,30 +1,34 @@
+<link rel="preload" href="/fonts/manrope/normal.ttf" as="font" type="font/ttf" crossorigin />
+<link rel="preload" href="/fonts/questrial/regular.ttf" as="font" type="font/ttf" crossorigin />
+
 {{- $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) -}}
 
-{{- $slickOptions := $options | merge (dict "targetPath" "css/slick.css") -}}
-{{- $slick := resources.Get "plugins/slick/slick.min.css" -}}
-{{- $slick = $slick | resources.ToCSS $slickOptions }}
-<link rel="stylesheet" type="text/css" media="screen" href="{{ $slick.RelPermalink }}" integrity="{{ $slick.Data.Integrity }}">
+{{- $splideOptions := $options | merge (dict "targetPath" "css/splide.css") -}}
+{{- $splide := resources.Get "plugins/splide/splide.min.css" -}}
+{{- $splide = $splide | css.Sass $splideOptions }}
+<link rel="stylesheet" type="text/css" media="screen" href="{{ $splide.RelPermalink }}" integrity="{{ $splide.Data.Integrity }}"/>
 
 {{- $bootstrapOptions := $options | merge (dict "targetPath" "css/bootstrap.css") -}}
 {{- $bootstrap := resources.Get "plugins/bootstrap/bootstrap.css" -}}
-{{- $bootstrap = $bootstrap | resources.ToCSS $bootstrapOptions -}}
+{{- $bootstrap = $bootstrap | css.Sass $bootstrapOptions -}}
 {{- with hugo.IsProduction -}}
-  {{- $bootstrap = $bootstrap | resources.PostCSS -}}
+  {{- $bootstrap = $bootstrap | css.PostCSS -}}
   {{- $bootstrap = $bootstrap | resources.PostProcess }}
 {{- end -}}
-<link rel="stylesheet" type="text/css" media="screen" href="{{ $bootstrap.RelPermalink }}" integrity="{{ $bootstrap.Data.Integrity }}">
+<link rel="stylesheet" type="text/css" media="screen" href="{{ $bootstrap.RelPermalink }}" integrity="{{ $bootstrap.Data.Integrity }}"/>
 
 {{- $faOptions := $options | merge (dict "targetPath" "css/font-awesome.css") -}}
 {{- $fa := resources.Get "plugins/font-awesome/all.min.css" -}}
-{{- $fa = $fa | resources.ToCSS $faOptions -}}
+{{- $fa = $fa | css.Sass $faOptions -}}
 {{- with hugo.IsProduction -}}
-  {{- $fa = $fa | resources.PostCSS -}}
+  {{- $fa = $fa | css.PostCSS -}}
   {{- $fa = $fa | resources.PostProcess }}
 {{- end -}}
-<link rel="stylesheet" type="text/css" media="screen" href="{{ $fa.RelPermalink }}" integrity="{{ $fa.Data.Integrity }}">
+<link rel="stylesheet" type="text/css" media="screen" href="{{ $fa.RelPermalink }}" integrity="{{ $fa.Data.Integrity }}"/>
 
 {{- $auroraOptions := $options | merge (dict "targetPath" "css/aurora.css") -}}
 {{- $aurora := resources.Get "styles/main.scss" -}}
-{{- $aurora = $aurora | resources.ToCSS $auroraOptions }}
-<link rel="stylesheet" type="text/css" media="screen" href="{{ $aurora.RelPermalink }}" integrity="{{ $aurora.Data.Integrity }}">
+{{- $aurora = $aurora | css.Sass $auroraOptions }}
+<link rel="stylesheet" type="text/css" media="screen" href="{{ $aurora.RelPermalink }}" integrity="{{ $aurora.Data.Integrity }}"/>
+
 {{- /* EOF */ -}}

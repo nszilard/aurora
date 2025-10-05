@@ -4,9 +4,10 @@ date: 2023-05-16T19:58:32+02:00
 image:
 author: Aurora Borealis
 title: Shortcode Demo
-description: Showcases supported shortcodes
+description: A complete guide to all custom shortcodes available in the Aurora theme
 summary: |
-  Discover the potential of Shortcodes as we explore the various features that the Aurora theme provides you with.
+  Aurora includes several custom shortcodes to enhance your content beyond standard markdown.
+  This post demonstrates all available shortcodes and how to use them in your posts.
 categories:
   - Professional
 topics:
@@ -57,4 +58,3 @@ You can use this shortcode to center text.
   src1="logo.svg" alt1="First image."
   src2="logo.svg" alt2="Second image."
 >}}
-

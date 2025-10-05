@@ -6,11 +6,11 @@
   {{- $projectClass = "nav-item full-width" -}}
 {{- end -}}
 
-<div class="container-fluid aurora-background single-page landing" id="landing">
+<div class="container-fluid aurora-background single-page landing" id="landing" aria-label="landing-page">
   {{ with .particles -}} <div id="particles-js" class="particles"></div> {{- end }}
   <div class="container content">
     <div class="row logo">
-      <img src="{{ $logo.RelPermalink }}" draggable="false" id="logo" alt="logo" height="300" width="300">
+      <img src="{{ $logo.RelPermalink }}" draggable="false" id="logo" alt="site-logo" height="300" width="300">
     </div>
     <div class="row body">
       {{ with .greeting -}}

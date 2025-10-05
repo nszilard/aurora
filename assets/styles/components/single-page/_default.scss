@@ -6,15 +6,12 @@
   width: 100vw;
   height: calc(100vh - 100px);
   color: $FONT_HIGHLIGHT;
-  display: flex;
-  align-items: center;
+  @include flex-center;
 
   .content {
     position: relative;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    @include flex-center-column;
     justify-content: space-between;
     max-width: calc(min(100%, 900px));
 
@@ -22,10 +19,7 @@
       z-index: 10;
       position: relative;
       margin: 0 0.25rem 1rem;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+      @include no-user-select;
     }
   }
 

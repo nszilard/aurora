@@ -1,7 +1,8 @@
 # ---------------------------------------
 # Top level settings
 # ---------------------------------------
-paginate: 6
+pagination:
+  pagerSize: 6
 enableEmoji: true
 enableGitInfo: true
 enableRobotsTXT: true
@@ -52,7 +53,7 @@ markup:
 module:
   hugoVersion:
     extended: true
-    min: "0.111.0"
+    min: '0.150.0'
 
 # ---------------------------------------
 # Privacy settings
@@ -68,7 +69,7 @@ privacy:
   instagram:
     disable: false
     simple: false
-  twitter:
+  x:
     disable: false
     enableDNT: true
     simple: false
@@ -86,23 +87,23 @@ related:
   toLower: true
   includeNewer: true
   indices:
-  - name: topics
-    weight: 100
-  - name: categories
-    weight: 50
-  - name: date
-    weight: 10
+    - name: topics
+      weight: 100
+    - name: categories
+      weight: 50
+    - name: date
+      weight: 10
 
 # ---------------------------------------
 # Server settings
 # ---------------------------------------
 server:
   headers:
-    for: /*
-    values:
-      X-XSS-Protection: "1; mode=block"
-      X-Content-Type-Options: "nosniff"
-      Referrer-Policy: "strict-origin-when-cross-origin"
+    - for: /*
+      values:
+        X-XSS-Protection: '1; mode=block'
+        X-Content-Type-Options: 'nosniff'
+        Referrer-Policy: 'strict-origin-when-cross-origin'
 
 # ---------------------------------------
 # Taxonomies settings

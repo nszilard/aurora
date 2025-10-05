@@ -3,7 +3,7 @@ description = "A fully responsive Hugo theme featuring a minimalist and user-fri
 homepage    = "https://github.com/nszilard/aurora"
 license     = "MIT"
 licenselink = "https://github.com/nszilard/aurora/blob/main/LICENSE"
-min_version = "0.111.0"
+min_version = "0.150.0"
 
 features = [
   "Minimalist design",

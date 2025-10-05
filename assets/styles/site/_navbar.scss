@@ -66,7 +66,8 @@
   .navbar-collapse {
     justify-content: end;
 
-    &.show, &.collapsing {
+    &.show,
+    &.collapsing {
       text-align: center;
       background-color: $BACKGROUND_BLACK;
     }
@@ -104,10 +105,7 @@
       font-style: italic;
       color: $BACKGROUND_HIGHLIGHT;
 
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+      @include no-user-select;
     }
 
     .nav-item {
@@ -117,16 +115,11 @@
       text-align: left;
 
       .nav-link {
-        margin: 0
+        margin: 0;
       }
 
       .h2 {
         font-size: 1.1rem;
-      }
-
-      .h3 {
-        padding-left: 0.5rem;
-        font-size: 1.05rem;
       }
 
       .h3 {

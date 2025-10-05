@@ -19,6 +19,6 @@
 {{- end -}}
 
 {{- define "scripts" -}}
-  <script src='{{ partial "get/path/particlesPlugin" }}'></script>
-  <script src='{{ partial "get/path/particlesConfig" }}'></script>
+  <script src='{{ `plugins/particles/particles.min.js` | relURL }}'></script>
+  <script src='{{ `plugins/particles/config.js` | relURL }}'></script>
 {{- end -}}

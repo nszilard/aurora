@@ -2,7 +2,7 @@
 {{- $bg := partial "get/section/background" .section -}}
 {{- $sectionID := partial "get/section/ID" .section -}}
 
-<section class="{{ $bg }} container-fluid about" id="{{ $sectionID }}">
+<section class="{{ $bg }} container-fluid about" id="{{ $sectionID }}" aria-label="about-section">
   <div class="container">
     {{ partial "section/title" .section.name }}
     {{ with .headlines -}}
@@ -29,29 +29,26 @@
           {{ with .role -}} {{ . }} {{- end }}
           {{ with .company -}} <a target="_blank" rel="noopener" href="{{ .url }}">@{{ .name }}</a> {{- end }}
         </div>
-        <div class="content text-justify markdown"> {{ .summary | markdownify }} </div>
+        <div class="content text-justify markdown">{{ .summary | markdownify }}</div>
       </div>
       <div class="col-sm-12 col-md-6 soft-skills">
         <div class="skill-bar align-self-center">
           <ul>
-          {{ range .softSkills -}}
+            {{ range .softSkills -}}
             <li>
               <span class="title">{{ .name }}</span>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: {{ .percentage }}%" aria-valuemin="0" aria-label="{{ .name }}" aria-valuemax="100">
-                </div>
+              <div class="aurora-progress">
+                <div class="aurora-progress-bar" style="width: {{ .percentage }}%"></div>
               </div>
             </li>
-          {{ end -}}
+            {{ end -}}
           </ul>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
-        <div class="social">
-          {{ partialCached "section/social-links" . }}
-        </div>
+        <div class="social">{{ partialCached "section/social-links" . }}</div>
       </div>
     </div>
     {{ with .resume -}}

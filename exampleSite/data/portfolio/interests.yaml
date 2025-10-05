@@ -9,18 +9,18 @@ section:
 
 # Content
 content:
-  - type: Sport
-    icon: fas fa-dumbbell
+  - type: Technical
+    icon: fas fa-laptop-code
     items:
-      - Snowboarding
-      - Hiking
-      - Rock climbing
-      - Kayaking
+      - Open source projects
+      - Web development
+      - System architecture
+      - UI/UX design
 
-  - type: Leisure
-    icon: fas fa-passport
+  - type: Creative
+    icon: fas fa-palette
     items:
       - Photography
-      - Cooking
-      - Travelling
-      - Stargazing
+      - Digital art
+      - Music
+      - Cycling

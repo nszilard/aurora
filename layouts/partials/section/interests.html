@@ -2,7 +2,7 @@
 {{- $bg := partial "get/section/background" .section -}}
 {{- $sectionID := partial "get/section/ID" .section -}}
 
-<section class="{{ $bg }} container-fluid interest" id="{{ $sectionID }}">
+<section class="{{ $bg }} container-fluid interest" id="{{ $sectionID }}" aria-label="interests-section">
   <div class="container">
     {{ partial "section/title" .section.name }}
     <div class="row">

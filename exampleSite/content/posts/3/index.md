@@ -4,9 +4,10 @@ date: 2023-05-04T23:50:22+02:00
 image:
 author: Aurora Borealis
 title: Markdown Demo
-description: Showcases various markdown features
+description: A comprehensive showcase of all markdown features supported by the Aurora theme
 summary: |
-  Discover the full potential of markdown as we explore the various features and capabilities that can take your content to the next level. From syntax highlighting to tables, this article will showcase how to make the most of markdown.
+  This post demonstrates all the markdown features that Aurora supports out of the box. Use this as a reference
+  when writing your own blog posts to see what's possible with Hugo's markdown renderer.
 categories:
   - Professional
 topics:

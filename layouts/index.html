@@ -9,12 +9,11 @@
 {{- define "scripts" -}}
   {{- partialCached "scripts" . }}
   {{ with site.Data.landing.headlines -}}
-  <script src='{{ "plugins/jquery/jquery-3.6.0.min.js" | relURL }}'></script>
-  <script src='{{ partial "get/path/itypePlugin" }}'></script>
-  <script src='{{ partial "get/path/itypeConfig" }}'></script>
+  <script src='{{ `plugins/itype/itype.min.js` | relURL }}'></script>
+  <script src='{{ `plugins/itype/config.js` | relURL }}'></script>
   {{ end -}}
   {{ with site.Data.landing.particles -}}
-  <script src='{{ partial "get/path/particlesPlugin" }}'></script>
-  <script src='{{ partial "get/path/particlesConfig" }}'></script>
+  <script src='{{ `plugins/particles/particles.min.js` }}'></script>
+  <script src='{{ `plugins/particles/config.js` | relURL }}'></script>
   {{ end -}}
 {{- end -}}

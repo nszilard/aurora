@@ -9,19 +9,31 @@ section:
 
 # Content
 achievements:
-- type: Award
-  icon: fas fa-medal
-  name: CS Achievement Award
-  date: 2023
-  description: Presented by the New York University Computer Science Department
+  - type: Award
+    icon: fas fa-medal
+    name: CS Achievement Award
+    date: 2023
+    description: Presented by the New York University Computer Science Department
 
-- type: Award
-  name: Best Paper Award
-  date: 2020
-  description: International Conference on Artificial Intelligence for a research paper on deep reinforcement learning in robotics
+  - type: Award
+    name: Best Paper Award
+    date: 2020
+    description: International Conference on Artificial Intelligence for a research paper on deep reinforcement learning in robotics
 
-- type: Certificate
-  icon: fa-brands fa-jedi-order
-  name: AWS Certified Solutions Architect
-  date: May 2021
-  ID: ABCD012345
+  - type: Certificate
+    icon: fa-brands fa-jedi-order
+    name: AWS Certified Solutions Architect
+    date: May 2021
+    ID: ABCD012345
+
+  - type: Award
+    icon: fab fa-github
+    name: Open Source Contributor
+    date: 2022-Present
+    description: Regular contributor to various open source projects, with focus on documentation improvements and bug fixes
+
+  - type: Award
+    icon: fas fa-trophy
+    name: Hackathon Winner
+    date: 2020
+    description: First place at regional tech hackathon for building a real-time collaboration tool

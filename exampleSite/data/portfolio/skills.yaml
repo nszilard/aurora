@@ -9,25 +9,31 @@ section:
 
 # Content
 skills:
-- name: Software Development
-  icon: fas fa-code
-  summary: |
-    I have a deep understanding of software development, including programming languages, software architecture, and agile methodologies. With years of experience in the tech industry,
-    I have a proven track record of developing innovative solutions that solve complex problems and drive business success.
+  - name: Cybersecurity
+    icon: fas fa-dharmachakra
+    summary: |
+      In today's digital landscape, cybersecurity is more important than ever, and Aurora has a strong understanding of cybersecurity best practices. With expertise in threat analysis, vulnerability assessment, and risk management, Aurora can help organizations keep their data secure and protected from cyber threats.
 
-- name: Cloud Computing
-  icon: fas fa-cloud
-  summary: |
-    I have a strong understanding of cloud computing, including cloud infrastructure, security, and deployment models.
-    With this knowledge, I can help businesses make informed decisions about cloud solutions and drive successful cloud-based projects.
+  - name: Web Development
+    icon: fas fa-code
+    summary: |
+      Experienced in modern web development with HTML5, CSS3, and JavaScript. Proficient in building responsive,
+      accessible websites that work seamlessly across all devices and browsers.
 
-- name: Data Science
-  icon: fab fa-gg-circle
-  summary: |
-    With experience in data analysis, machine learning, and artificial intelligence, I have a deep understanding of the latest data science tools and techniques.
-    This skillset enables me to make data-driven decisions and guide teams in developing cutting-edge solutions.
+  - name: Frontend Frameworks
+    icon: fab fa-react
+    summary: |
+      Skilled in React, Vue, and other modern JavaScript frameworks. Comfortable building complex single-page
+      applications with state management, routing, and optimized performance.
 
-- name: Cybersecurity
-  icon: fas fa-dharmachakra
-  summary: |
-    In today's digital landscape, cybersecurity is more important than ever, and Aurora has a strong understanding of cybersecurity best practices. With expertise in threat analysis, vulnerability assessment, and risk management, Aurora can help organizations keep their data secure and protected from cyber threats.
+  - name: Backend Development
+    icon: fas fa-server
+    summary: |
+      Proficient in Node.js, Python, and Go for backend development. Experience building RESTful APIs,
+      microservices, and database-driven applications with PostgreSQL, MongoDB, and Redis.
+
+  - name: DevOps & Cloud
+    icon: fas fa-cloud
+    summary: |
+      Experienced with AWS, Docker, and Kubernetes for deployment and infrastructure management.
+      Familiar with CI/CD pipelines, monitoring, and maintaining production systems.

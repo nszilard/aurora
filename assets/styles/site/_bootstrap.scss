@@ -1,10 +1,11 @@
-.navbar, .btn {
+.navbar,
+.btn {
   font-family: $AURORA_FONT_Headings;
 }
 
 .container {
   width: 100%;
-  max-width: calc(min(90%, 1650px));
+  max-width: calc(min(90%, 1520px));
 }
 
 @include laptop {

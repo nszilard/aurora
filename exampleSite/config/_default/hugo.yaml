@@ -1,3 +1,4 @@
+---
 #-----------------------------------------
 # Site settings
 #-----------------------------------------
@@ -6,13 +7,14 @@ _merge: deep
 title: Hugo Aurora
 languageCode: en-gb
 
-paginate: 3
-enableEmoji:            true
-enableGitInfo:          true
-enableRobotsTXT:        true
+pagination:
+  pagerSize: 3
+enableEmoji: true
+enableGitInfo: true
+enableRobotsTXT: true
 enableInlineShortcodes: true
-pygmentsUseClasses:     true
-pygmentsCodefences:     true
+pygmentsUseClasses: true
+pygmentsCodefences: true
 
 #-----------------------------------------
 # Params settings
@@ -23,19 +25,19 @@ params:
     lastName: Borealis
   description: An example site showcasing the Aurora Hugo theme.
   social:
-    github: "#"
-    gitlab: "#"
-    linkedin: "#"
-    instagram: "#"
-    facebook: "#"
-    twitter: "#"
-    stackoverflow: "#"
-    email: "#"
+    github: '#'
+    gitlab: '#'
+    linkedin: '#'
+    instagram: '#'
+    facebook: '#'
+    twitter: '#'
+    stackoverflow: '#'
+    email: '#'
 
 #-----------------------------------------
 # Module settings
 #-----------------------------------------
 module:
-  replacements: "github.com/nszilard/aurora -> ../.."
+  replacements: 'github.com/nszilard/aurora -> ../..'
   imports:
-  - path: github.com/nszilard/aurora
+    - path: github.com/nszilard/aurora

@@ -15,12 +15,12 @@ $_TIMELINE_ICON_WIDTH: 40px;
     background: $FONT;
     transition: $AURORA_TRANSITION;
 
-    .scroll-icon{
+    .scroll-icon {
       position: absolute;
       left: 50%;
       bottom: 0px;
       width: $_TIMELINE_ICON_WIDTH;
-      height:$_TIMELINE_ICON_WIDTH;
+      height: $_TIMELINE_ICON_WIDTH;
       line-height: $_TIMELINE_ICON_WIDTH;
       background: $FONT;
       border-radius: 50%;
@@ -43,7 +43,7 @@ $_TIMELINE_ICON_WIDTH: 40px;
           right: -11px;
           border-top: $_TIMELINE_CARD_BORDER;
           border-right: $_TIMELINE_CARD_BORDER;
-          border-color: lighten($BACKGROUND_LIGHTER, 4);
+          border-color: $BACKGROUND_HIGHLIGHT;
           transition: $AURORA_TRANSITION;
         }
       }
@@ -63,7 +63,7 @@ $_TIMELINE_ICON_WIDTH: 40px;
           left: -11px;
           border-left: $_TIMELINE_CARD_BORDER;
           border-bottom: $_TIMELINE_CARD_BORDER;
-          border-color: lighten($BACKGROUND_LIGHTER, 4);
+          border-color: $BACKGROUND_HIGHLIGHT;
           transition: $AURORA_TRANSITION;
         }
       }
@@ -74,12 +74,11 @@ $_TIMELINE_ICON_WIDTH: 40px;
       position: relative;
       width: calc(50% - 40px);
       background-color: $BACKGROUND_LIGHTER;
+      border-color: $BACKGROUND_HIGHLIGHT;
 
       .icon {
         position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-center;
 
         margin: unset;
         font-size: 18px;
@@ -186,7 +185,6 @@ $_TIMELINE_ICON_WIDTH: 40px;
 
       &:hover {
         .icon {
-          color: $HIGHLIGHT;
           color: $BACKGROUND_BLACK;
           border-color: $BACKGROUND_HIGHLIGHT;
           background-color: $FONT_HIGHLIGHT;

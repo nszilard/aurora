@@ -9,45 +9,74 @@ section:
 
 # Content
 experiences:
-- company: Cloud9 Technologies
-  link: "#"
-  jobs:
-    - title: Chief Technology Officer (CTO)
-      date:
-        start: 2021
-    - title: Head of Engineering
-      date:
-        start: 2017
-        finish: 2021
-  highlights:
-    - AWS
-    - Kubernetes
-    - Docker
-    - React Native
-    - Node.js
-    - PostgreSQL
-  languages:
-    - JavaScript
-    - Python
-    - SQL
-  description: |
-    As CTO at Cloud9 Technologies, I was responsible for overseeing the company's technology strategy and operations. Played a critical role in developing and implementing the company's cloud-based communication platform, which has since become one of the most widely used solutions in the financial industry. Also managed a team of developers and engineers, ensuring that all products and services met the highest standards of quality and innovation.
-    - Led the company's technical strategy and oversaw software development teams
-    - Managed large-scale projects, including the development of a new mobile app and the implementation of a cloud-based infrastructure
+  - company: Aurora Tech Solutions
+    link: '#'
+    jobs:
+      - title: Lead Developer
+        date:
+          start: 2020
+      - title: Senior Developer
+        date:
+          start: 2018
+          finish: 2020
+    highlights:
+      - React
+      - TypeScript
+      - Node.js
+      - PostgreSQL
+      - Docker
+      - AWS
+    description: |
+      Currently leading development of our **main SaaS platform** serving `50k+ active users`. Major achievements include:
 
-- company: FutureTech, LLC
-  jobs:
-    - title: Director of Engineering
-      date:
-        start: 2013
-        finish: 2017
-  highlights:
-    - AWS
-    - Elasticsearch
-    - Redis
-  languages:
-    - Golang
-  description: |
-    - Led a team of software developers and engineers to develop cutting-edge technology solutions
-    - Managed the development of a complex web application used by millions of users
-    - Spearheaded the adoption of new technologies, including machine learning and artificial intelligence, to improve the company's offerings and stay ahead of the competition.
+      - Migrated entire frontend codebase from JavaScript to **TypeScript** (reduced runtime errors by ~40%)
+      - Implemented `CI/CD pipeline` using GitHub Actions and Docker, cutting deployment time from 2 hours to 15 minutes
+      - Redesigned database schema improving query performance by **3x** on core endpoints
+      - Led team of 5 developers through agile sprints and code reviews
+
+      *Tech stack*: React 18, TypeScript, Node.js/Express, PostgreSQL, Redis, AWS (EC2, S3, RDS)
+
+  - company: Digital Ventures Inc
+    link: '#'
+    jobs:
+      - title: Full Stack Developer
+        date:
+          start: 2016
+          finish: 2018
+    highlights:
+      - JavaScript
+      - Vue.js
+      - Python
+      - MongoDB
+      - REST APIs
+    description: |
+      Worked on diverse client projects ranging from **internal dashboards** to customer-facing applications:
+
+      1. Built real-time analytics dashboard processing `100k+ events/day`
+      2. Developed REST API serving 50+ endpoints with comprehensive documentation
+      3. Created automated testing suite achieving **85% code coverage**
+      4. Mentored 3 junior developers on best practices and code quality
+
+      Key learning: The importance of *good documentation* and writing maintainable code. Also discovered that technical debt always catches up with you eventually.
+
+  - company: StartupCo
+    jobs:
+      - title: Junior Developer
+        date:
+          start: 2015
+          finish: 2016
+    highlights:
+      - JavaScript
+      - PHP
+      - MySQL
+      - jQuery
+    description: |
+      **First professional role** where I learned the fundamentals of web development in a fast-paced startup environment.
+
+      Responsibilities included:
+      - Maintaining legacy `PHP/MySQL` applications while gradually modernizing the stack
+      - Building new features using JavaScript and jQuery (yes, this was 2015!)
+      - Performing database optimizations - turned a **45-second query** into sub-second response time
+      - Participating in daily standups and sprint planning meetings
+
+      > This role taught me more about debugging, problem-solving, and reading legacy code than any bootcamp could. Made plenty of mistakes, but that's how you learn!

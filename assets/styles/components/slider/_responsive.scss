@@ -1,36 +1,8 @@
-@include mobile-landscape {
-  .slider {
-    .previous {
-      left: 6px;
-    }
-
-    .next {
-      right: 6px;
-    }
-  }
-}
-
 @include mobile {
   .slider {
     padding: 0;
 
-    .previous {
-      display: none !important;
-    }
-
-    .next {
-      display: none !important;
-    }
-
-    .wrapper {
-      width: 100%;
-
-      .aurora-card {
-        max-width: calc(100vw - 3rem);
-      }
-    }
-
-    .indicator {
+    .splide__pagination {
       margin: 0.25rem 0;
 
       li {
