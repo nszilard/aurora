@@ -40,7 +40,7 @@
 @include mobile {
   .timeline {
     .center-line {
-      top: 0;
+      top: 10px;
       left: 50%;
       height: 98%;
 
@@ -52,7 +52,7 @@
 
     .wrapper {
       margin: 20px auto;
-      padding-top: 50px;
+      padding-top: 60px;
 
       .odd, .even {
         .aurora-card {
