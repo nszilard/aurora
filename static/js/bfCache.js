@@ -2,8 +2,8 @@ const BFCache = {
   restored: false,
 
   init() {
-    addEventListener("pageshow", this.handlePageShow.bind(this));
-    addEventListener("pagehide", this.handlePageHide.bind(this));
+    addEventListener('pageshow', this.handlePageShow.bind(this));
+    addEventListener('pagehide', this.handlePageHide.bind(this));
   },
 
   handlePageShow(e) {
@@ -25,17 +25,17 @@ const BFCache = {
     }
 
     if (window.particlesJS && window.particlesConfig) {
-      particlesJS("particles-js", window.particlesConfig);
+      particlesJS('particles-js', window.particlesConfig);
     }
 
-    if (window.iType && document.querySelector(".itype")) {
-      document.querySelectorAll(".itype").forEach((el) => {
+    if (window.iType && document.querySelector('.itype')) {
+      document.querySelectorAll('.itype').forEach((el) => {
         if (el._itype) el._itype.restart();
       });
     }
 
     if (window.Splide) {
-      document.querySelectorAll(".splide").forEach((el) => {
+      document.querySelectorAll('.splide').forEach((el) => {
         if (el.splide) el.splide.refresh();
       });
     }
@@ -52,8 +52,8 @@ const BFCache = {
   },
 };
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", () => BFCache.init());
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => BFCache.init());
 } else {
   BFCache.init();
 }

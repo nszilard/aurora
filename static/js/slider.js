@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 function slider(element, callback, scrollTarget = null) {
   if (!element) return;
@@ -10,7 +10,7 @@ function slider(element, callback, scrollTarget = null) {
 }
 
 function slideDown(element, callback) {
-  element.style.display = "block";
+  element.style.display = 'block';
   animateElement(element, 0, element.scrollHeight, callback);
 }
 
@@ -24,8 +24,8 @@ function animateElement(element, startHeight, endHeight, callback, scrollTarget)
   const duration = 500;
   const heightDiff = endHeight - startHeight;
 
-  element.style.overflow = "hidden";
-  element.style.height = startHeight + "px";
+  element.style.overflow = 'hidden';
+  element.style.height = startHeight + 'px';
 
   let startTime;
   let previousHeight = startHeight;
@@ -36,7 +36,7 @@ function animateElement(element, startHeight, endHeight, callback, scrollTarget)
     const progress = Math.min(elapsed / duration, 1);
 
     const currentHeight = startHeight + heightDiff * progress;
-    element.style.height = currentHeight + "px";
+    element.style.height = currentHeight + 'px';
 
     if (scrollTarget && endHeight === 0) {
       const heightChange = previousHeight - currentHeight;
@@ -49,9 +49,9 @@ function animateElement(element, startHeight, endHeight, callback, scrollTarget)
     if (progress < 1) {
       requestAnimationFrame(animate);
     } else {
-      element.style.height = "";
-      element.style.overflow = "";
-      if (endHeight === 0) element.style.display = "none";
+      element.style.height = '';
+      element.style.overflow = '';
+      if (endHeight === 0) element.style.display = 'none';
       callback?.();
     }
   }

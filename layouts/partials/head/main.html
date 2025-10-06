@@ -22,6 +22,7 @@
 <meta name="msapplication-TileColor" content="#13171b" />
 <meta name="application-name" content="{{ .Site.Title }}" />
 
-{{- $manifest := resources.Get "pwa/manifest.json" | resources.ExecuteAsTemplate "manifest.json" . }}
+{{- $manifest := resources.Get "pwa/manifest.json" | resources.ExecuteAsTemplate "manifest.json" . -}}
 <link rel="manifest" href="{{ $manifest.Permalink }}" />
+
 {{- /* EOF */ -}}

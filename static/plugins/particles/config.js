@@ -8,13 +8,13 @@ const particleOptions = {
       },
     },
     color: {
-      value: "#50deb4",
+      value: '#50deb4',
     },
     shape: {
-      type: "circle",
+      type: 'circle',
       stroke: {
         width: 1,
-        color: "#03141655",
+        color: '#03141655',
       },
       polygon: {
         nb_sides: 5,
@@ -47,17 +47,17 @@ const particleOptions = {
     line_linked: {
       enable: true,
       distance: 150,
-      color: "#67b4c0",
+      color: '#67b4c0',
       opacity: 0.45,
       width: 1,
     },
     move: {
       enable: true,
       speed: 3,
-      direction: "none",
+      direction: 'none',
       random: true,
       straight: false,
-      out_mode: "out",
+      out_mode: 'out',
       bounce: false,
       attract: {
         enable: true,
@@ -67,15 +67,15 @@ const particleOptions = {
     },
   },
   interactivity: {
-    detect_on: "canvas",
+    detect_on: 'canvas',
     events: {
       onhover: {
         enable: true,
-        mode: "grab",
+        mode: 'grab',
       },
       onclick: {
         enable: true,
-        mode: "repulse",
+        mode: 'repulse',
       },
       resize: true,
     },
@@ -111,5 +111,5 @@ const particleOptions = {
 window.particlesConfig = particleOptions;
 
 if (!window.auroraBFCache?.isRestored()) {
-  particlesJS("particles-js", particleOptions);
+  particlesJS('particles-js', particleOptions);
 }

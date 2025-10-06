@@ -6,8 +6,8 @@
 {{- $data.SetInMap "json" "name" $.Site.Title -}}
 {{- $data.SetInMap "json" "short_name" $.Site.Title -}}
 {{- $data.SetInMap "json" "description" $.Site.Params.description -}}
-{{- $data.SetInMap "json" "start_url" "/" -}}
-{{- $data.SetInMap "json" "scope" "/" -}}
+{{- $data.SetInMap "json" "start_url" ("" | relURL) -}}
+{{- $data.SetInMap "json" "scope" ("" | relURL) -}}
 {{- $data.SetInMap "json" "display" "standalone" -}}
 {{- $data.SetInMap "json" "orientation" "portrait" -}}
 {{- $data.SetInMap "json" "theme_color" "#19d3da" -}}
